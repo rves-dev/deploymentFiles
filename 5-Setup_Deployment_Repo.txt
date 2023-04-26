@@ -23,7 +23,7 @@ $ cd
 ## Clone the deployment repository
 ## 
 
-$ git clone -b {REPO-BRANCH}  https://github.com/ramesesinc/etracs-{LGU-TYPE}-deployments.git  docker 
+$ git clone -b {province-municipality}  https://github.com/ramesesinc/etracs-{LGU-TYPE}-deployments.git  docker 
 
     //github user:etracslgurepo
 
