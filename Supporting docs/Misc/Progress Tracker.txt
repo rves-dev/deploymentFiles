@@ -1,0 +1,60 @@
+=======================================
+Progress Tracker
+=======================================
+
+
+
+* ROXAS, PALAWAN
+	-16gb RAM, Ubuntu Server
+	-Dockerized
+
+	username: lguroxaspal
+	password: #@ss3ss012
+	192.168.0.100
+
+		April 4, 2023
+		x	- On hold, brownout.
+		x	- Table 'etracs255_tester.sys_message_queue' 	doesn't exist
+		x	- Pending Etracs Installation on other client PC
+		April 11, 2023
+			- Other Client registration
+			- Users Account Creation
+
+
+
+* SARANGANI
+
+	username: administrator
+	password: berdugo1977
+	192.168.2.23
+
+		April 12, 2023
+			- for upgrade
+
+
+* KOLAMBUGAN, LANAO DEL NORTE
+
+	username:kolambugan
+	pass: admin
+	192.168.8.188
+
+		April 13, 2023
+			- standalone to dockerize
+			- webmin done
+			- docker/portainer done
+			- samba done
+			- mysql done
+			- 
+
+* SIBUNAG, GUIMARAS
+	
+	username: etracs
+	password: 12etr@cs34
+	192.168.5.222
+
+		April 18, 2023
+			- verified OS: Ubuntu Linux
+			- created backup of etracs254_sibunag
+			- No Samba, installed WinSCP
+
+

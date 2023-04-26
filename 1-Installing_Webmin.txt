@@ -1,0 +1,39 @@
+
+Login to your ubuntu server and execute the following steps below 
+and use "Git Bash" to login remotely to the server.
+
+
+------------------------------------------
+Step-01: Installing Webmin 
+------------------------------------------
+$ wget -qO- http://www.webmin.com/jcameron-key.asc | sudo apt-key add
+
+$ sudo add-apt-repository "deb http://download.webmin.com/download/repository sarge contrib"
+
+$ sudo apt update
+
+$ sudo apt install webmin
+
+NOTE: Press Y and then press ENTER when prompted to continue installation.
+
+
+$ sudo usermod -aG sudo $USER
+
+$ sudo systemctl restart webmin
+
+$ exit 
+
+
+
+------------------------------------------
+Step-02: Access Webmin
+------------------------------------------
+In order to access Webmin, open your web browser 
+and use the following info below: 
+
+URL :  https://{SERVER_IP}:10000
+
+
+This web monitoring tool is used to check 
+running processes and health information 
+of the server. 

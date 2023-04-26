@@ -1,0 +1,28 @@
+=================
+Steps To Execute:
+=================
+
+1. Create a new VM and install Ubuntu Server 18.04
+   //Install Git
+
+2. Install Webmin
+
+3. Install Docker
+
+4. Install Samba
+
+5. Install MySQL Server
+
+6. Clone Repository (Municipality)
+
+   REPO-BRANCH : master
+   LGU-TYPE    : municipality
+   Git-User    : etracslgurepo
+
+7. Configure Repository
+
+8. Restore Initial Databases
+
+9. Download Docker Images
+
+10. Run ETRACS-Docker
