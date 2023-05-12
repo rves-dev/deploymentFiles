@@ -46,6 +46,16 @@ Progress Tracker
 			- mysql done
 			- 
 
+	new server:
+		192.168.5.103/24
+		user: kolambugan
+		pass: admin123
+
+	old server:
+		192.168.5.102
+
+
+
 * SIBUNAG, GUIMARAS
 	
 	username: etracs
@@ -58,3 +68,11 @@ Progress Tracker
 			- No Samba, installed WinSCP
 
 
+* MALINAO
+
+	username: etracs_malinao
+	password: m@1in@0
+	192.168.0.100
+
+		May 11, 2023
+			-
