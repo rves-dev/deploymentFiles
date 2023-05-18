@@ -1,0 +1,28 @@
+git clone -b palawan-roxas https://github.com/ramesesinc/etracs-municipality-deployments.git  docker 
+
+nano ext/set-municipality-data.sql
+
+http://192.168.0.100:8000/platform/etracs255-platform.zip
+
+mysql -u root -p -f -D etracs255_roxas < 01-etracs255-schema.sql
+
+mysql -u root -p -f -D etracs255_roxas < 02-etracs255-data.sql
+
+mysql -u root -p -f -D etracs255_roxas < ext/set-municipality-data.sql
+
+ext/set-municipality-data.sql
+
+Portainer:
+	user: admin
+	pass: p@ssw0rd1234
+
+Shared files:
+	user lguroxaspal
+	pass: 1234
+
+MySQL:
+	pass: P@ssw0rd#
+
+etracs:
+	user: admin
+	pass: 1

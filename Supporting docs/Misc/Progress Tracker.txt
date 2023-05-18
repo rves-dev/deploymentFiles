@@ -68,11 +68,30 @@ Progress Tracker
 			- No Samba, installed WinSCP
 
 
-* MALINAO
+* MALINAO, AKLAN
 
 	username: etracs_malinao
 	password: m@1in@0
 	192.168.0.100
+	192.168.254.175
 
 		May 11, 2023
-			-
+			- error on patch 10
+			- 
+
+	DUMMY SERVER
+	username:etracs_malinao@192.168.254.165
+		m@1in@0
+
+		mysql:
+		root
+		P@ssw0rd#
+
+* DALAGUETE, CEBU
+
+	<User>      - User name of your ubuntu server 
+                    usr:itsm
+                    pwd:dalaguete
+
+   <ServerIP>   - IP address of your ubuntu server
+                    ip:192.168.11.18

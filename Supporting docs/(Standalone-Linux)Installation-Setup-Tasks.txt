@@ -59,9 +59,9 @@ STEPS:
 
     3.02 Start cloning the repo:
 
-    URL   : https://github.com/ramesesinc/etracs255-server-{LGU-Type}.git 
-    Branch: depteam
+        git clone -b {province-municipality}  https://github.com/ramesesinc/etracs255-server-{LGU-Type}.git
 
+        github user:etracslgurepo
 
 04. Configure Repository
 
