@@ -1,0 +1,133 @@
+
+Administrator@WIN-15PA8KNTPD7 MINGW64 /c/etracs255-server-municipality (master)
+$ git branch
+* master
+
+Administrator@WIN-15PA8KNTPD7 MINGW64 /c/etracs255-server-municipality (master)
+$ git remote -v
+origin  https://github.com/ramesesinc/etracs255-server-municipality.git (fetch)
+origin  https://github.com/ramesesinc/etracs255-server-municipality.git (push)
+
+Administrator@WIN-15PA8KNTPD7 MINGW64 /c/etracs255-server-municipality (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    web/resources/platform/etracs255-platform.zip
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        web/resources/downloads/etracs255-platform.zip
+        web/resources/downloads/jre-8u311-windows-i586.exe
+        web/resources/downloads/jre-8u311-windows-x64.exe
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@WIN-15PA8KNTPD7 MINGW64 /c/etracs255-server-municipality (master)
+$ git log --graph | head -100
+*   commit 6323dee235a6d20d53c4ff33b9c09835b54b7ab2
+|\  Merge: 221b850 336eab1
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:25:36 2021 +0800
+| |
+| |     Merge branch 'master' of file:///o/gitrepo/etracs255-server-main
+| |
+| * commit 336eab1212e463a52708d37f8a90291b365adefc
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:19:58 2021 +0800
+| |
+| |     core: shared: updated
+| |
+| * commit e287ebaf8766a1066f569f4817474938072a813e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:19:36 2021 +0800
+| |
+| |     lib: updated
+| |
+| * commit 4268ceb773ebefaff098250e320d8e5356afdb59
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:06:51 2021 +0800
+| |
+| |     jasper: updated
+| |
+| * commit c204337a78b94ab17739d904f4258a25cef68e35
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:06:04 2021 +0800
+| |
+| |     financial: updated
+| |
+| * commit 89f4845aa0f43162c3c7135d72a098afc16e7490
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 29 15:05:22 2021 +0800
+| |
+| |     rameses-gov-lgu-services: updated
+| |
+* |   commit 221b8509bd5903929f5adb76966f842abc9eb7dc
+|\ \  Merge: 953bf98 a61a2ae
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Nov 29 14:55:31 2021 +0800
+| | |
+| | |     Merge branch 'master' of file:///o/gitrepo/template-etracs255-bpls
+| | |
+| | |     # Conflicts:
+| | |     #       services/apps/etracs25/modules.conf.d/bpls.conf
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-online-services.jar/scripts/gdx/OnlineBusinessRenewalService
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-online-services.jar/scripts/interceptors/BusinessApplicationWorkflowInterceptor
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-online-services.jar/scripts/interceptors/OnlineBusinessRenewalInterceptor
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-online-services.jar/sql/online_bpls_renewal_builder.sql
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-online-services.jar/sql/online_bpls_renewal_builder_mssql.sql
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-reports-services.jar/sql/report_bpdelinquency_item.sql
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-services.jar/bpls/actions/ComputeTaxFee.groovy
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-services.jar/scripts/BPAssessmentRuleService
+| | |     #       services/modules/bpls/rameses-gov-etracs-bpls-services.jar/scripts/interceptors/BusinessPermitInterceptor
+| | |     #       web/resources/downloads/modules/bpls/pub-updates.pxml
+| | |     #       web/resources/downloads/modules/bpls/rameses-gov-etracs-bpls-online.jar
+| | |     #       web/resources/downloads/modules/bpls/rameses-gov-etracs-bpls.jar
+| | |     #       web/resources/downloads/modules/bpls/updates.pxml
+| | |
+| * | commit a61a2ae42b40b3222076575e4342852118e743ec
+|  /  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Mon Nov 29 14:43:31 2021 +0800
+| |
+| |       bpls: updated
+| |
+* | commit 953bf98e2043a47475aa4d7ecdaca06e99a29a2e
+|\| Merge: 4063b7e 67b4551
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 22 22:21:35 2021 +0800
+| |
+| |     Merge branch 'master' of file:///o/gitrepo/etracs255-server-main
+| |
+| * commit 67b45513af9dd297001e4925a5636db94a3e4525
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 22 22:16:29 2021 +0800
+| |
+| |     treasury:
+| |
+| |     - Bug fixed on Cash Ticket serial
+| |     - Bug fixed on Batch Capture Collection
+| |
+* |   commit 4063b7eb89770c78dc041aadf77cfebc174f9908
+|\ \  Merge: 17c417e 5bca2c8
+| | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | Date:   Sun Nov 21 13:45:58 2021 +0800
+| | |
+| | |     Merge branch 'master' of https://github.com/ramesesinc/etracs255-server-municipality
+| | |
+| * | commit 5bca2c8515dff400b4658aae15d595804e0e89f7
+| |\| Merge: 991fc29 08bf1a1
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Nov 16 11:01:40 2021 +0800
+| | |
+| | |     Merge branch 'master' of file:///o/gitrepo/etracs255-server-main
+| | |
+| | * commit 08bf1a1b9294f969cbc1cc1b0ae3a64fda84dbee
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Nov 16 11:00:14 2021 +0800
+| | |
+
+Administrator@WIN-15PA8KNTPD7 MINGW64 /c/etracs255-server-municipality (master)
+$

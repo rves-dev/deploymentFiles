@@ -95,3 +95,21 @@ Progress Tracker
 
    <ServerIP>   - IP address of your ubuntu server
                     ip:192.168.11.18
+
+* Kapalong, Davao del Norte
+
+		Server IP: 192.168.3.251
+		Server user: Administrator
+		Server password: EtracsServer.2019 
+
+* Duero, Bohol
+
+		Hyper-V Dockerized
+		Host IP: 192.168.254.123
+					192.168.254.200
+		Gateway: 192.168.254.254
+
+		Server IP: 192.168.254.100/24
+			etracsduero@dueroserver
+			p@ssw0rd
+		

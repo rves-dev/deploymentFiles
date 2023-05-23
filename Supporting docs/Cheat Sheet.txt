@@ -112,3 +112,15 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 * ERROR ON MYSQL PATCH
 	(________(255))
 	
+
+* To Copy
+
+		* bin
+		* workspace/services
+		* workspace/web/resources/downloadss
+
+* How to solve gpg: no valid OpenPGP data found error
+
+	https://linuxhint.com/solve-gpg-no-valid-openpgp-data-found-error/
+
+	
