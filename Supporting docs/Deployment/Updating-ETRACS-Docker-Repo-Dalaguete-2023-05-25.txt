@@ -1,0 +1,138 @@
+===================================
+ Updating ETRACS Docker Repository
+===================================
+
+THIS UPGRADE involves only the 
+upgrading of the RPT and LandTax module.
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+
+   <ServerIP>   - IP address of your ubuntu server
+
+   <Samba-Pass> - Samba Share password. 
+                  The default value is  p@ssw0rd
+
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as your main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+
+03. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+04. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-05-25
+
+
+05. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+
+The "docker" repo folder is now ready but before running it, 
+we will execute the upgrade scripts for your etracs database.
+
+But first, let us mount the docker folder to your windows drive, 
+specifically to Drive Z, but you can change the drive letter 
+if your Z drive is already in used. 
+
+
+06. Open a Command Prompt console and execute the command:
+
+    net use z: \\<ServerIP>\<User>  /user:<User> <Samba-Pass>
+
+
+07. Open your Navicat client and do the following:  
+
+    07.01  Open your etracs main database 
+    
+    07.02  Open a new Query window 
+    
+    07.03  Click "Load" or press "CTRL + O" 
+    
+    07.04  Browse to folder "z:/docker/_res/_upgrade" 
+    
+    07.05  Select the file "10-patch-etracs-rptis-2.5.05.02.sql"
+    
+    07.06  Proceed to the next step if successful
+
+
+Now the database has been upgraded, 
+we will now start the docker containers.
+
+
+08. Switched back to your Git Bash session
+
+09. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+10. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+11. Monitor the status and logs via Portainer
+
+12. Inform everyone that they can now open 
+    an ETRACS client and login.
+
+
+13. Inform their IT to try the RPT Collection
+
+
+DONE !!!

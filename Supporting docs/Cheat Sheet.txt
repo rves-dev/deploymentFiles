@@ -124,3 +124,7 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 	https://linuxhint.com/solve-gpg-no-valid-openpgp-data-found-error/
 
 	
+* SHOW DOCKER ETRACS_SERVER STATUS
+
+	$ docker logs etracs-server
+
