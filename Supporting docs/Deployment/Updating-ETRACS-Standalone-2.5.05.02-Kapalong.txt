@@ -6,6 +6,8 @@
 Keywords:
   {etracs-server-dir} = ETRACS Server Folder Location 
 
+    Administrator@192.168.3.251
+    EtracsServer.2019 
 
 
 01. Open the Git Bash console 

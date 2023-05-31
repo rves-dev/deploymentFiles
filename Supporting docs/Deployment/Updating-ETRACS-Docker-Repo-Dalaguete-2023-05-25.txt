@@ -9,8 +9,13 @@ upgrading of the RPT and LandTax module.
 Keywords: 
 
    <User>       - User name of your ubuntu server 
+                    usr:itsm
+                    pwd:dalaguete
+
 
    <ServerIP>   - IP address of your ubuntu server
+                    ip:192.168.11.18
+
 
    <Samba-Pass> - Samba Share password. 
                   The default value is  p@ssw0rd
