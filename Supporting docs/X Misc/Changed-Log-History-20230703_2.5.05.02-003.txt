@@ -1,0 +1,251 @@
+=================
+ Changed Logs    
+
+ From: Jan 2023  
+ To  : Jul 2023  
+=================
+
+commit 2bddc7b5bb586ca787c3aa03c272dd220e4d17a1
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Jul 3 22:57:38 2023 +0800
+
+    added patch script
+
+
+
+commit 7fb786a9cf1a23133d99b2eb9cff34669327a351
+Merge: 4414839b f0d164b6
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Jul 3 22:56:00 2023 +0800
+
+    Merge remote-tracking branch 'origin/2.5.05.02-003' into cebu-dalaguete
+
+
+
+commit f0d164b6224aee357d3ab6dbd90fb16a329ca317
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Jul 3 15:32:09 2023 +0800
+
+    updated config files
+
+
+
+commit a9b4dca00005393f615db9d80d60b5702dcd4c2a
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Jul 3 15:05:03 2023 +0800
+
+    etracs: bug fixes on entity schemas particularly when using lookup
+
+
+
+commit 293a81fdb1d93f822053b8789f42e24aedbf6839
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jun 29 11:53:14 2023 +0800
+
+    etracs: updates
+
+    bpls:
+    - bug fixed on voiding of business payment receipt
+    - business payment receipt can be voided with no
+      restriction only if the receipt date is greater
+      than the date of the permit issuance.
+
+    entity:
+    - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+    - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+
+
+
+commit 4414839b09ed842952c338265e2231d6d67ebd2a
+Author: wflores <wflores@gmail.com>
+Date:   Tue Jun 27 03:47:44 2023 +0000
+
+    bpls:
+
+    - bug fixed on voiding of business payment receipt
+    - business payment receipt can be voided with no
+      restriction only if the receipt date is greater
+      than the date of the permit issuance.
+
+
+
+commit a787b0d648b37b3a7603416da9b806e2d6df6ccf
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu May 25 16:10:58 2023 +0800
+
+    etracs: removed the mounted rptis old client and services
+
+
+
+commit efda4616a0cef57baf9bf1a5771b419dc10a4df3
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu May 25 14:32:09 2023 +0800
+
+    remove scripts that were already executed
+
+
+
+commit 2079747d4ca0f19d32c7464dea3246c3f45fc528
+Author: Jessie S. Zamora <jzamss@gmail.com>
+Date:   Thu May 25 14:25:08 2023 +0800
+
+    UPGRADE: rptis: 2.5.05.02 script
+
+
+
+commit 2eded3457332789c90e27da50d30402dd301990a
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed May 17 13:46:45 2023 +0800
+
+    added upgrade scripts for 2.5.05.02
+
+
+
+commit 86b2a5c941049cdb5551db977eb00cd488415374
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed May 17 13:34:59 2023 +0800
+
+    refactored CTC plugin
+
+
+
+commit 398c75ef646b0beabe9f2f8b1837c126dd674a70
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed May 17 13:30:06 2023 +0800
+
+    etracs: rptis: mounted 255.02.007
+
+
+
+commit 85f4816b45592b20da60d7fd3c0d063a4567f3e3
+Merge: d7b65567 2dc410de
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed May 17 13:23:48 2023 +0800
+
+    Merge remote-tracking branch 'origin/2.5.05.02' into cebu-dalaguete
+
+
+
+commit 2dc410de393234840c393184d1a782d3b4d706ac
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Apr 11 11:05:22 2023 +0800
+
+    etracs: updated the compose file
+
+
+
+commit 6eede3980dab19e09f18e8d1f8267c2694cc9272
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Apr 11 10:19:21 2023 +0800
+
+    bin: updated
+
+
+
+commit 05ea84c0e9de5e19ee99af3999d6705caa78893f
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Apr 11 10:16:50 2023 +0800
+
+    etracs upgraded to 2.5.05.02
+
+
+
+commit e733aad7178ae595a3b1b7f38a1d9598ec92bd03
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Mar 16 14:59:45 2023 +0800
+
+    updated the report facility
+
+
+
+commit 796e6b07aabe785a5eaf7dcac43ef882742e094d
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Mar 14 16:51:32 2023 +0800
+
+    admin: updated the client lib
+
+
+
+commit f994cf5f1764ea459f8348543c397da0b72da5dc
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Mar 14 15:21:37 2023 +0800
+
+    updated etrac255 platform
+
+
+
+commit 515d3f2e8695da783f7af2108748c43336b3161a
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Mar 2 12:09:48 2023 +0800
+
+    updated etracs client
+
+
+
+commit 6d5f0f9e8ba98d20b721941517d75557f65b7242
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed Mar 1 15:37:10 2023 +0800
+
+    etracs: bug fixes on RemoteServer Data feature
+
+
+
+commit eda58fc416f12f458d708e919198bec6fb653d15
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Feb 27 16:11:08 2023 +0800
+
+    etracs: upgraded to 2.5.05.01-007
+
+
+
+commit 20b8253be53508764a1a0595037b561f2a6f896c
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Feb 27 16:01:09 2023 +0800
+
+    bpls: updated the billing drl files
+
+
+
+commit 13dd7c9651c17a96846b616855b9c6142e7e5697
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Feb 13 14:07:29 2023 +0800
+
+    rptis: mounted 05.01.03 services
+
+
+
+commit 4700a82776f38b5e6adf3e63dd40a7cf5841e7fe
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Feb 13 12:26:22 2023 +0800
+
+    upgraded to 2.5.05.01-006
+
+
+
+commit 2e0e72b42335c622958109f082fc49b78a276654
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Feb 2 21:50:49 2023 +0800
+
+    updates:
+    - updated the client libs
+    - bug fixed on ReportModel
+    - bug fixed on Fund lookup
+
+
+
+commit a21a8725fa506097e6297b15dd1d5ed0b4e84f9f
+Author: worgflores <worgflores@gmail.com>
+Date:   Mon Jan 30 15:21:20 2023 +0800
+
+    epayment:
+    - added sendEmail method to EORService
+
+    etracs:
+    - mounted updates folder for admin
+    - mounted updates folder for bpls
+    - mounted updates folder for etracs
+    - mounted updates folder for jasper
+    - mounted updates folder for notification
+    - mounted updates folder for treasury
+    - mounted updates folder for workflow
+    - updated the client download libs

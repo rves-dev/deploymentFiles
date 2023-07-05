@@ -1,0 +1,128 @@
+=========================================
+ Updating ETRACS Docker Repo - 2.5.05.02
+=========================================
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh administrator@192.168.69.100
+    
+        N11t47mu38
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+03. Pull updates from DockerHub
+
+    $  cd ~/docker-new/bin
+    
+    $  sh update-docker-images.sh
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as your main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+04. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+05. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-06-02
+
+
+06. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+07. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+08. Open Navicat and login to the NEW database server
+
+09. Open a "New Query" window and do the following:
+
+    09.01  Press CTRL + O to show the open dialog
+    
+    09.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    09.03  Open files sequentially starting from 01  
+    
+    09.04  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    09.05  Repeat Step-09.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+10. Switch back to your Git Bash session
+
+11. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+12. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+13. Monitor the status and logs via Portainer
+
+14. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

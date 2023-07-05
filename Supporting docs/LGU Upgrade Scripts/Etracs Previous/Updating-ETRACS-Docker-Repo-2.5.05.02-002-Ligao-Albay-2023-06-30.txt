@@ -1,0 +1,182 @@
+=============================================
+ Updating ETRACS Docker Repo - 2.5.05.02-002 
+=============================================
+
+
+Paki lagay nlng po yung credentials ng server,
+
+Server IP: 192.168.2.202
+Server user:lguligao
+Server pass:p@ssw0rd
+
+eto po sir ung sa app server
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh lguligao@192.168.2.202
+    
+    p@ssw0rd
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+03. Pull updates from DockerHub
+
+    $  cd ~/docker-new/bin
+    
+    $  sh update-docker-images.sh
+
+
+04. Create the additional custom files and folders
+
+    $  cd ~/docker-new/_custom
+
+    $  mkdir -p mail
+
+    $  touch mail/primary.conf
+    
+    $  touch mail/bpls.conf
+
+    $  mkdir -p report-files/enterprise
+    
+    $  mkdir -p report-files/epayment
+
+    $  mkdir -p report-files/vrs
+
+
+05. Create a new datasource file "vrsds"
+
+    $  cd  datasources
+
+    $  cp  etracsds  vrsds
+
+    $  nano  vrsds
+
+
+    And change the database name mapping to "vrs" 
+
+
+06. Save and close the text editor. 
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as the main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+07. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+08. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-06-30
+
+
+09. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+10. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+
+11. Inform the IT to restore the initial db of VRS 
+    (Vehicle Registration System) using the SQL Management Studio. 
+
+    Location of the backup file: 
+
+    Z:/docker/appserver/vrs/db/vrs-db-initial-mssql2008.bak
+
+
+
+12. Open Navicat and login to the database server
+
+
+13. Open a "New Query" window and do the following:
+
+    13.01  Press CTRL + O to show the open dialog
+    
+    13.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    13.03  Open files sequentially starting from 01  
+    
+    13.04  Select the etracs main database first 
+
+    13.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    13.06  Repeat Step-13.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+14. Switch back to your Git Bash session
+
+15. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+16. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+17. Monitor the status and logs via Portainer
+
+18. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

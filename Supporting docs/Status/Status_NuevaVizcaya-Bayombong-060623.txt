@@ -1,0 +1,196 @@
+
+ETRACS-MIS05+SandAccess@eTRACS-MIS05 MINGW64 ~/Desktop
+$ ssh adminetracs@192.168.11.50
+adminetracs@192.168.11.50's password:
+Permission denied, please try again.
+adminetracs@192.168.11.50's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-197-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Jun  6 10:51:02 PST 2023
+
+  System load:                    0.3
+  Usage of /:                     8.4% of 195.80GB
+  Memory usage:                   7%
+  Swap usage:                     0%
+  Processes:                      315
+  Users logged in:                1
+  IP address for eno1:            192.168.11.50
+  IP address for eno2:            192.168.71.176
+  IP address for docker0:         172.17.0.1
+  IP address for br-a7465317c662: 172.18.0.1
+  IP address for br-a1b495aeeeef: 172.19.0.1
+  IP address for br-b15ae8e4e72b: 172.20.0.1
+  IP address for br-2216de37ebea: 172.21.0.1
+  IP address for br-590be321cf6b: 172.22.0.1
+  IP address for br-644b9dba0031: 172.23.0.1
+  IP address for br-40cf719211bf: 172.24.0.1
+  IP address for br-edc70488ed89: 172.25.0.1
+  IP address for br-257ffa57f290: 172.26.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+227 packages can be updated.
+95 updates are security updates.
+
+
+Last login: Tue Jun  6 07:52:42 2023 from 192.168.11.111
+adminetracs@mto_server:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            31G        2.0G         27G        3.3M        1.4G         28G
+Swap:          8.0G          0B        8.0G
+adminetracs@mto_server:~$ cd docker
+adminetracs@mto_server:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+adminetracs@mto_server:~/docker$ git branch
+* nuevavizcaya-bayombong
+adminetracs@mto_server:~/docker$ git log --graph | head -100
+* commit 3de6c16a5ac6ed2aa0456fb6e8dc7c60fa8a6050
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Nov 28 23:24:44 2022 +0800
+|
+|     etracs: mounted plugins
+|
+*   commit 6b54c59cef52f4d781fdba62454ccb45ebad11a0
+|\  Merge: a7668f05 ca004d7d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 28 23:21:13 2022 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.01' into nuevavizcaya-bayombong
+| |
+| |     # Conflicts:
+| |     #       custom-template.tar.gz
+| |
+| * commit ca004d7d0d678ff60451e44ed3587221f231d523
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Nov 25 11:10:17 2022 +0800
+| |
+| |     rptis: updated download modules
+| |
+| * commit 8c58d81e96fffd6a0ccee606c86155b89076bf77
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 14 11:24:21 2022 +0800
+| |
+| |     bin: updated
+| |
+| * commit db63e1c2d03b5591aa73b2eedfedc3b28c2b929a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 14 11:22:20 2022 +0800
+| |
+| |     download: updated the client libs
+| |
+| * commit a7a459b074d6dd6c823bed1aded8583777ee770f
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 14 11:21:35 2022 +0800
+| |
+| |     download: updated the etracs client platform
+| |
+| * commit 220c11b0bb118b2d039185f56168b8905d99ac71
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 14 11:15:31 2022 +0800
+| |
+| |     epayment updates:
+| |     - bug fixed on EPaymentService regarding cloud notification
+| |     - client updated
+| |
+| * commit fddec1ec711811c140706b3998f3060936f15825
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Nov 14 00:05:00 2022 +0800
+| |
+| |     lib: added mysql connection 5.1.49
+| |
+| *   commit 7f882555ee43f204b32ba7d2f42c60d51f150d81
+| |\  Merge: 46d1be46 c0f42a69
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Oct 18 13:30:17 2022 +0800
+| | |
+| | |     Merge branch '_staging' into 2.5.05.01
+| | |
+| | * commit c0f42a6982941c2785f5bcc5dde829d43d1556ef
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Oct 18 13:29:36 2022 +0800
+| | |
+| | |     etracs: upgraded to 2.5.05.01
+| | |
+| * | commit 46d1be463ca9f3502ede8e662e8e3e922457aecb
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Oct 18 12:35:09 2022 +0800
+| | |
+| | |     download: modules: updated
+| | |
+| * | commit f067237cfee9132599923dadb168e148e2e04f02
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sun Oct 16 19:26:38 2022 +0800
+| | |
+| | |     downloads: updated
+| | |
+| * | commit 74d4b7d61687f79a722af693caca83d846aeffec
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Sun Oct 16 19:23:49 2022 +0800
+| |
+| |       first build for this branch
+| |
+| * commit b74de40052b38e095b72b8c6e75dc335d80e6a89
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Oct 7 15:14:58 2022 +0800
+| |
+| |     _res: updated initial scripts
+| |
+| * commit 4ca0d0aef830b7243b4db25816e6b1d5c0cf2640
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Oct 6 13:39:31 2022 +0800
+| |
+| |     rptis: bug fixed on RPTBillingService in handling barcode
+| |
+| * commit 73c6d1d1709af154d1b46a0970936091a4b4c497
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Oct 5 15:00:56 2022 +0800
+adminetracs@mto_server:~/docker$ git status
+On branch nuevavizcaya-bayombong
+Your branch is up to date with 'origin/nuevavizcaya-bayombong'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/modules/ext/v254-vehicle/services/rameses-gov-etracs-vehicle-services.jar/enterprise/actions/PrintTest.groovy
+
+nothing added to commit but untracked files present (use "git add" to track)
+adminetracs@mto_server:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS       PORTS
+                   NAMES
+1ce5b166b42a   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   3 hours ago     Up 3 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp
+                   gdx-client
+21fceb7a830e   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   3 hours ago     Up 3 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp
+                   gdx-proxy-server
+9b3f992cf28e   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   3 hours ago     Up 3 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp
+                   epayment-server
+e16b048d9c47   ramesesinc/etracs-server-municipality:2.5.05.01   "/bin/bash /apps/sta…"   3 hours ago     Up 3 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+b250422de11a   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   3 hours ago     Up 3 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp
+                   etracs-web
+de38d9abf609   nginx:latest                                      "/docker-entrypoint.…"   3 hours ago     Up 3 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp
+                   queue-proxy
+7ef6be781ccf   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   3 hours ago     Up 3 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+6f7387e1afbe   nginx:latest                                      "/docker-entrypoint.…"   3 hours ago     Up 3 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp
+                   download-nginx-server
+fd25b26b6d78   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   3 hours ago     Up 3 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp
+                   download-node-server
+c37fa9f64e59   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   3 hours ago     Up 3 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp
+                   rameses-notification-server
+eea3651c1dcd   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   3 hours ago     Up 3 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp
+                   mail-bpls
+33d6638a8837   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   3 hours ago     Up 3 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp
+                   mail-primary
+176f99fbc532   portainer/portainer-ce                            "/portainer"             22 months ago   Up 3 hours   8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp
+                   portainer
+adminetracs@mto_server:~/docker$
