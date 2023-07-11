@@ -62,3 +62,10 @@ $  exit
 ##  - Open your NotePad app and paste what you've copied earlier.
 ##  - Save the file and send it to the messenger.
 ##
+
+
+STANDALONE
+
+* bin
+* workspace/services
+* workspace/web/resources/download
