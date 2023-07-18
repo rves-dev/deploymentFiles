@@ -1,0 +1,13 @@
+<schema adapter="violation">
+  <element tablename="violation_payment">
+    <field name="objid" primary="true" prefix="VP" />
+    <field name="state" caption="state" required="true" />
+    <field name="ticket_objid" required="true" />
+    <field name="receiptno" caption="Receipt No." required="true" searchable="true" />
+    <field name="receiptdate" caption="Receipt Date" required="true" />
+    <field name="amount" caption="Amount" type="decimal" required="true" />
+    <complex name="ticket" ref="violation_ticket" jointype="many-to-one">
+      <key field="ticket_objid" target="objid" />
+    </complex>
+  </element>
+</schema>

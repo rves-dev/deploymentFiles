@@ -1,0 +1,107 @@
+======================================================
+ Updating ETRACS Docker Repo - 2.5.05.02-003 Phase-02
+======================================================
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as the main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+01. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+02. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-07-11
+
+
+03. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+04. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+
+05. Open Navicat and login to the database server
+
+
+06. Open a "New Query" window and do the following:
+
+    06.01  Press CTRL + O to show the open dialog
+    
+    06.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    06.03  Open files sequentially starting from 01  
+    
+    06.04  Select the etracs main database first 
+
+    06.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    06.06  Repeat Step-06.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+07. Switch back to your Git Bash session
+
+
+08. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+09. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+10. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+11. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

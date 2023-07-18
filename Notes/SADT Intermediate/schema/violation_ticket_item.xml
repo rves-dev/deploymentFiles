@@ -1,0 +1,14 @@
+<schema adapter="violation">
+  <element tablename="violation_ticket_item">
+    <field name="objid" primary="true" prefix="VTI" />
+    <field name="parent_objid" required="true" />
+    <field name="item_objid" required="true" />
+    <field name="item_code" required="true" />
+    <field name="item_title" required="true" />
+    <field name="item_fund_objid" required="true" />
+    <field name="amount" required="true" type="decimal" />
+    <complex name="parent" ref="violation_ticket" jointype="many-to-one">
+      <key field="parent_objid" target="objid" />
+    </complex>
+  </element>
+</schema>

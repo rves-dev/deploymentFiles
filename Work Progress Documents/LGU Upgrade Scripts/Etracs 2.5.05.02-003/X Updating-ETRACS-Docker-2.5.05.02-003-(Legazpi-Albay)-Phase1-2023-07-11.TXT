@@ -1,0 +1,63 @@
+======================================================
+ Updating ETRACS Docker Repo - 2.5.05.02-003 Phase-01
+======================================================
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+03. Pull updates from DockerHub
+
+    $  cd ~/docker-new/bin
+    
+    $  sh update-docker-images.sh
+
+
+04. Create the additional custom files and folders
+
+    $  cd ~/docker-new/_custom
+
+    $  mkdir -p mail
+
+    $  touch mail/primary.conf
+    
+    $  touch mail/bpls.conf
+
+    $  mkdir -p report-files/enterprise
+    
+    $  mkdir -p report-files/epayment
+
+
+
+DONE! 
+Phase 2 will be executed later.

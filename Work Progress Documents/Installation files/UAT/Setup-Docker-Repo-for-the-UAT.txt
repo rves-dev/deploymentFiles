@@ -1,0 +1,136 @@
+===============================
+ Setup Docker Repo for the UAT
+ Build Version: 2.5.05.02-003
+===============================
+
+01. Login to the Ubuntu server via SSH
+
+    $  ssh  <User>@<ServerIP>
+
+
+02. Clone repo from GitHub
+
+    $  cd
+
+    $  git clone -b 2.5.05.02-003  https://github.com/ramesesinc/etracs-municipality-deployments.git  docker
+
+
+03. Unpack the custom template
+
+    $  cd docker
+
+    $  tar -xvf custom-template.tar.gz
+
+
+04. Open the env file 
+
+    $  nano _custom/env.conf
+
+
+05. Modify the existing settings
+
+
+lgu_name=TRAINING
+
+sms_acctname=000
+sms_apikey=1234567890123456789
+
+app_server_ip=
+
+dbserver_host=
+dbserver_user=
+dbserver_pass=
+
+db_etracs=
+
+
+
+06. Save and close the text editor.
+
+
+07. Set the primary-mail settings
+
+    07.01  Open the mail primary conf
+
+           $  nano _custom/mail/primary.conf
+
+
+    07.02  Set the following content with no spaces
+
+
+MAIL_RELAY_HOST=smtp.gmail.com
+MAIL_RELAY_PORT=587
+MAIL_RELAY_USER=test.gdxapp.dev@gmail.com
+MAIL_RELAY_PASS=feutuckmmniebfqh
+
+
+    07.03  Save and close the text editor
+
+
+08. Copy the contents of the primary.conf 
+    and load into the bpls.conf
+
+    $  cd _custom/mail
+
+    $  cat primary.conf > bpls.conf
+
+
+09. Download the docker images
+
+    $  cd ~/docker/bin
+
+    $  sh update-docker-images.sh
+
+
+10. Restore the initial database 
+    from "docker/_res/_initial" directory 
+
+
+11. Override your "gdx-client" folder
+
+    11.01  Open a web browser and download the file 
+           "gdx-client-dev.tar.gz" from the link below:
+
+           https://drive.google.com/file/d/1vntOa2J4Ng8c6Aejdkxrf3NpQ4Pd6WKM/view?usp=sharing
+
+
+    11.02  Upload the downloaded file "gdx-client-dev.tar.gz" 
+           to your docker folder "docker/system"
+
+
+    11.03  Switch back to your Git Bash console
+           and replace the "gdx-client" folder
+
+           $  cd ~/docker/system
+
+           $  rm -rf gdx-client
+
+           $  tar -xvf gdx-client-dev.tar.gz
+
+           $  rm  gdx-client-dev.tar.gz 
+
+
+12. Run only the applicable containers
+
+    $  cd ~/docker/bin
+
+    $  sh email-start.sh
+
+    $  sh restart-download.sh
+
+    $  sh restart-notification.sh
+
+    $  sh restart-etracs.sh
+
+    $  sh restart-epayment.sh
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from 
+          the blocking session mode.
+
+
+DONE!

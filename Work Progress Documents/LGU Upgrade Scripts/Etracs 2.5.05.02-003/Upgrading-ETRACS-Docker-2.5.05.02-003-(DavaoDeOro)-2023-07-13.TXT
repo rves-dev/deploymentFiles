@@ -1,0 +1,170 @@
+=============================================
+ Updating ETRACS Docker Repo - 2.5.05.02-003 
+=============================================
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+
+Requirements:
+- Git
+- Navicat
+- Samba sharing
+- Internet
+
+username: etracuser
+password: etracuser123
+IP: 192.168.10.11
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+
+01. Clone repo from GitHub
+
+    $  cd 
+    
+    $  git clone -b davaodeoro https://github.com/ramesesinc/etracs-province-deployments.git docker
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+02. Pull images from DockerHub
+
+    $  cd ~/docker/bin
+    
+    $  sh update-docker-images.sh
+
+
+03. Unpack the custom template
+
+    $  cd ~/docker
+
+    $  tar -xvf custom-template.tar.gz
+
+
+04. Open the file "env.conf"
+
+    $  nano _custom/env.conf
+
+
+05. Modify the following settings:
+
+
+app_server_ip=
+
+dbserver_host=
+dbserver_user=
+dbserver_pass=
+
+
+06. Save and close the text editor
+
+
+
+Now the "docker" repo folder is fully updated.
+We will now about to start the docker containers.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+
+07. Stop the old ETRACS standalone server
+
+
+
+08. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+
+09. Open Navicat and login to the database server
+
+
+10. Open a "New Query" window and 
+    do the following to replace their old "eor" database:
+
+    10.01  Execute the command:
+
+           DROP DATABASE IF EXISTS eor;
+
+    
+    10.02  Press CTRL + O to show the open dialog
+
+    10.03  Go to folder "Z:/docker/_res/_initial/00-eor.sql"
+
+    10.04  Press CTRL + R  to execute the scripts
+
+
+11. Apply upgrade patches to their etracs main db:
+
+    11.01  Press CTRL + O to show the open dialog
+    
+    11.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    11.03  Open files sequentially starting from 01  
+    
+    11.04  Select the etracs main database first 
+
+    11.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    11.06  Repeat Step-11.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+12. Switch back to your Git Bash session
+
+
+13. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+14. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+15. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+16. Inform their IT to download a new ETRACS client platform 
+    to matched the libraries used in the new system. 
+
+    http://YourServerIP:8000/platform/
+
+
+16. Open the ETRACS client then perform the following: 
+
+    - Recover Existing Terminal 
+    - Login
+
+
+DONE!

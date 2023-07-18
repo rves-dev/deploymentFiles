@@ -1,0 +1,20 @@
+<schema adapter="violation">
+  <element tablename="violation_ticket">
+    <field name="objid" primary="true" prefix="VT"/>
+    <field name="state" caption="State" required="true" searchable="true" defaultValue="DRAFT" />
+    <field name="txnno" caption="Txn No." required="true" searchable="true" />
+    <field name="txndate" caption="Txn Date" type="date" required="true"  />
+    <field name="violationtype_objid" required="true" />
+    <field name="issuedto_objid" required="true" />
+    <field name="issuedto_name" caption="Issued To" required="true" searchable="true" />
+    <field name="issuedto_address" required="true" />
+    <field name="remarks" />
+    <field name="amount" caption="Amount" type="decimal" required="true" />
+    <complex name="violationtype" ref="violationtype" jointype="many-to-one">
+      <key field="violationtype_objid" target="objid" />
+    </complex>
+    <complex name="items" ref="violation_ticket_item" jointype="one-to-many" required='false'>
+      <key field="objid" target="parent_objid" />
+    </complex>
+  </element>
+</schema>

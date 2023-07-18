@@ -126,5 +126,20 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 	
 * SHOW DOCKER ETRACS_SERVER STATUS
 
-	$ docker logs etracs-server
+	$ docker -f logs etracs-server
 
+* TEST FILIPIZEN
+
+	107.21.113.74:90
+
+* Windows Terminal Monitoring 
+
+	// LGU
+		etracs
+		download
+		notification
+
+	// GDX
+		epayment
+		gdx
+		email
