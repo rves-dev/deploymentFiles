@@ -1,0 +1,157 @@
+  IP address for br-3795f96c39a6: 172.20.0.1
+  IP address for br-724781379e0f: 172.22.0.1
+  IP address for br-a7afd04b6ee8: 172.19.0.1
+  IP address for br-b207ef10ef39: 172.23.0.1
+  IP address for br-d37ee1b8d6af: 172.27.0.1
+  IP address for br-eddaae59dbf2: 192.168.16.1
+  IP address for br-01090ea3afae: 172.18.0.1
+  IP address for br-27d5c77de833: 172.25.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+128 packages can be updated.
+2 updates are security updates.
+
+
+Last login: Fri Jun  9 20:52:03 2023 from 192.168.2.12
+plgusipocot@lgusipocot-svr:~$ clear
+lgusipocot@lgusipocot-svr:~$ cd docker
+lgusipocot@lgusipocot-svr:~/docker$ ls
+appserver  _custom                 email  system
+bin        custom-template.tar.gz  _res
+lgusipocot@lgusipocot-svr:~/docker$ git remote -v
+origin  https://etracslgurepo@github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://etracslgurepo@github.com/ramesesinc/etracs-municipality-deployments.git (push)
+lgusipocot@lgusipocot-svr:~/docker$ git branch
+* camsur-sipocot
+lgusipocot@lgusipocot-svr:~/docker$ git log --graph | head -100
+* commit c5518f3aff61e4db9a9a408ae1d968061c6ef860
+| Author: elmonazareno <elmonazareno@gmail.com>
+| Date:   Tue Mar 14 17:33:39 2023 +0800
+|
+|     updated fx
+|
+* commit 960b67e988ac236cc0b82d82c28b87d15ec127eb
+| Author: elmonazareno <elmonazareno@gmail.com>
+| Date:   Tue Mar 14 16:23:57 2023 +0800
+|
+|     added vrs myml
+|
+*   commit 51ae50e542736507fcd60a3f85a9c1ef513dd43d
+|\  Merge: 1dd0596c c9908254
+| | Author: elmonazareno <elmonazareno@gmail.com>
+| | Date:   Tue Mar 14 16:18:11 2023 +0800
+| |
+| |     Merge branch 'camsur-sipocot' of github.com:ramesesinc/etracs-municipality-deployments into camsur-sipocot
+| |
+| * commit c9908254488bf65dfeea6b45a041520e178380cc
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 14 16:12:05 2023 +0800
+| |
+| |     admin plugin updated
+| |
+| * commit b1f0a272f9ea245fffb29d13ab535e4ce2cbc252
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 14 15:55:36 2023 +0800
+| |
+| |     bin: updated
+| |
+| * commit a379a640d495fba9c7d5a40a7de74b59db9c1247
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 14 15:43:34 2023 +0800
+| |
+| |     added upgrade scripts
+| |
+| *   commit 485fcb6a5b36c99c7182afe96606ad0c510aae66
+| |\  Merge: 72175ea2 f994cf5f
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Mar 14 15:35:05 2023 +0800
+| | |
+| | |     Merge remote-tracking branch 'origin/2.5.05.01-007' into camsur_sipocot_staging
+| | |
+| | |     # Conflicts:
+| | |     #       appserver/etracs/docker-compose-ext.yml
+| | |     #       system/download/node/resources/downloads/modules/core/osiris2-report.jar
+| | |     #       system/download/node/resources/downloads/modules/core/rameses-common2.jar
+| | |     #       system/download/node/resources/downloads/modules/shared/rameses-jasper-client.jar
+| | |
+| | * commit f994cf5f1764ea459f8348543c397da0b72da5dc
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Mar 14 15:21:37 2023 +0800
+| | |
+| | |     updated etrac255 platform
+| | |
+| | * commit 515d3f2e8695da783f7af2108748c43336b3161a
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Mar 2 12:09:48 2023 +0800
+| | |
+| | |     updated etracs client
+| | |
+| | * commit 6d5f0f9e8ba98d20b721941517d75557f65b7242
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Wed Mar 1 15:37:10 2023 +0800
+| | |
+| | |     etracs: bug fixes on RemoteServer Data feature
+| | |
+| | * commit eda58fc416f12f458d708e919198bec6fb653d15
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Feb 27 16:11:08 2023 +0800
+| | |
+| | |     etracs: upgraded to 2.5.05.01-007
+| | |
+| | * commit 20b8253be53508764a1a0595037b561f2a6f896c
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Feb 27 16:01:09 2023 +0800
+| | |
+| | |     bpls: updated the billing drl files
+| | |
+| | * commit 13dd7c9651c17a96846b616855b9c6142e7e5697
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Feb 13 14:07:29 2023 +0800
+| | |
+| | |     rptis: mounted 05.01.03 services
+| | |
+| | * commit 4700a82776f38b5e6adf3e63dd40a7cf5841e7fe
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Feb 13 12:26:22 2023 +0800
+| | |
+| | |     upgraded to 2.5.05.01-006
+| | |
+| | * commit 2e0e72b42335c622958109f082fc49b78a276654
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Feb 2 21:50:49 2023 +0800
+| | |
+| | |     updates:
+| | |     - updated the client libs
+| | |     - bug fixed on ReportModel
+| | |     - bug fixed on Fund lookup
+lgusipocot@lgusipocot-svr:~/docker$ git status
+On branch camsur-sipocot
+Your branch is up to date with 'origin/camsur-sipocot'.
+
+nothing to commit, working tree clean
+lgusipocot@lgusipocot-svr:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED        STATUS        PORTS                                                                                                                                       NAMES
+509455c1bad7   ramesesinc/etracs-server-municipality:2.5.05.01   "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+8862fea41cff   ramesesinc/enterprise-common-server:255.05.001    "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   0.0.0.0:8077->8070/tcp, :::8077->8070/tcp                                                                                                   local-vrs-server
+2b722c8cc85d   ramesesinc/enterprise-common-server:255.05.001    "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   0.0.0.0:8074->8070/tcp, :::8074->8070/tcp                                                                                                   market-server
+1589a8a5f663   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+0298b061f91b   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+2a2469e16fcd   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   2 months ago   Up 19 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+f1cbc97d8f84   nginx:latest                                      "/docker-entrypoint.…"   2 months ago   Up 19 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+19d7659c3088   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   2 months ago   Up 19 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+d8403d92275e   nginx:latest                                      "/docker-entrypoint.…"   2 months ago   Up 19 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+12312633b6e0   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   2 months ago   Up 19 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+9d7151019451   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   2 months ago   Up 19 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+f9b3e0efa5c1   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   2 months ago   Up 19 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+b78667f6914f   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   4 months ago   Up 19 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+dc01c72b5af2   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   4 months ago   Up 19 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+ce5e9393a322   portainer/portainer-ce                            "/portainer"             2 years ago    Up 19 hours   8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                                         portainer
+lgusipocot@lgusipocot-svr:~/docker$

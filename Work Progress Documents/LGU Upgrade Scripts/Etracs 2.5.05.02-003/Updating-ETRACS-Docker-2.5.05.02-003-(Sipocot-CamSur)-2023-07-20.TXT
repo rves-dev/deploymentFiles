@@ -1,0 +1,202 @@
+=============================================
+ Updating ETRACS Docker Repo - 2.5.05.02-003 
+=============================================
+
+About:
+
+- Upgrade ETRACS to build 2.5.05.02-003
+- Install OVS plugin
+- Install VRS plugin
+
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+03. Pull updates from DockerHub
+
+    $  cd ~/docker-new/bin
+    
+    $  sh update-docker-images.sh
+
+
+04. Remove docker cached files 
+
+    $  docker system prune -f
+
+    $  docker volume prune -f
+
+
+05. Create the additional custom files and folders
+
+    $  cd ~/docker-new/_custom
+
+    $  mkdir -p mail
+
+    $  touch mail/primary.conf
+    
+    $  touch mail/bpls.conf
+
+    $  mkdir -p report-files/enterprise
+    
+    $  mkdir -p report-files/epayment
+
+    $  mkdir -p report-files/vrs
+
+
+06. Create a datasource file "ovsds"
+
+    $  nano datasources/ovsds
+
+
+07. Add the following content with no spaces:
+
+dialect=mysql
+driverClass=com.mysql.jdbc.Driver
+url=jdbc:mysql://${dbserver_host}/ovs
+user=${dbserver_user}
+pwd=${dbserver_pass}
+
+
+08. Save and close the text editor
+
+09. Create a datasource file "vrsds"
+
+    $  nano datasources/ovsds
+
+
+10. Add the following content with no spaces:
+
+dialect=mysql
+driverClass=com.mysql.jdbc.Driver
+url=jdbc:mysql://${dbserver_host}/vrs
+user=${dbserver_user}
+pwd=${dbserver_pass}
+
+
+11. Save and close the text editor
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as the main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+
+12. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+13. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-07-20
+
+
+14. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+15. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+
+16. Open Navicat and login to the database server
+
+
+17. Open a "New Query" window and do the following:
+
+    17.01  Press CTRL + O to show the open dialog
+    
+    17.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    17.03  Open files sequentially starting from 01  
+    
+    17.04  Select the etracs main database first 
+
+    17.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    17.06  Repeat Step-17.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+18. Switch back to your Git Bash session
+
+
+19. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+20. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+21. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+22. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!
