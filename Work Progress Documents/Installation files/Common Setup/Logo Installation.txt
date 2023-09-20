@@ -1,0 +1,49 @@
+==================================
+LOGO INSTALLATION GUIDE DOCKERIZED
+==================================
+
+1.) Log-in to ETRACS
+
+2.) Log-in to the Main Menu.
+ 
+3.) Then click Reports  -> BPLS -> Line of Business Listing. You will change the default logo of Rameses Systems to the LGU’s logo. Ask the LGU to give you their logo or if not, you can search in the internet.
+
+4.) Go to Samba. Type in the IP (\\xxx.xxx.xxx.xxx)  in the search menu to go to your Samba folder.
+
+5.) Go to Docker -> _custom -> module_client -> etracs.
+
+6.) Open the updates pyml file and change the line “version: 1.01” to “version: 1.02”
+
+7.) Right click on gov-lgu-etracs-main and click Extract Here. Open images folder.
+
+8.) Delete the lgu-logo in the folder and change it to the LGU logo. Make sure the image file saved in the folder is PNG. If you have a JPEG image, open the image in Paint 3D and save it as PNG file. Make sure the filename is still ‘lgu-logo’.
+
+9.) Delete the gov-lgu-etracs-main java file.
+
+10.) Highlight both com and images folder and click right click. Select ‘Add Archive’.
+
+11.) Edit first the file type to ZIP. Then rename the filename to ‘gov-lgu-etracs-main.jar’.
+
+12.) Go back to your ETRACS, and check if the logo was changed in the Reports  -> BPLS -> Line of Business Listing section.
+
+==================================
+LOGO INSTALLATION GUIDE STANDALONE
+==================================
+
+1.) Go to the Samba Folder (\\192.168.xxx.xxx)
+
+2.) Go to etracsxxx-server-municipality -> web -> resources -> downloads -> modules -> custom
+
+3.) Update the pxml file by changing he line "version 1.00" to "version 1.01" (by incrementing the version)
+
+4.) Right click on gov-lgu-etracs-main and click Extract Here. Open images folder.
+
+5.) Delete the lgu-logo in the folder and change it to the LGU logo. Make sure the image file saved in the folder is PNG. If you have a JPEG image, open the image in Paint 3D and save it as PNG file. Make sure the filename is still ‘lgu-logo’.
+
+6.) Delete the gov-lgu-etracs-main java file.
+
+7.) Highlight both com and images folder and click right click. Select ‘Add Archive’.
+
+8.) Edit first the file type to ZIP. Then rename the filename to ‘gov-lgu-etracs-main.jar’.
+
+9.) Go back to your ETRACS, and check if the logo was changed in the Reports  -> BPLS -> Line of Business Listing section.

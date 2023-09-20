@@ -1,0 +1,186 @@
+
+pcuser@LITO MINGW64 ~
+$ ssh etracsmabini@192.168.7.24
+The authenticity of host '192.168.7.24 (192.168.7.24)' can't be established.
+ED25519 key fingerprint is SHA256:UEazTmwCTo+GDWc45e73JpXMYZDfgObN0u0ze196Mww.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.7.24' (ED25519) to the list of known hosts.
+etracsmabini@192.168.7.24's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-136-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jul 27 16:39:11 PST 2023
+
+  System load:                    0.01
+  Usage of /:                     7.0% of 195.86GB
+  Memory usage:                   15%
+  Swap usage:                     0%
+  Processes:                      181
+  Users logged in:                1
+  IP address for eno1:            192.168.7.24
+  IP address for docker0:         172.17.0.1
+  IP address for br-52026fa40ff4: 172.24.0.1
+  IP address for br-6749b2fd49b4: 172.25.0.1
+  IP address for br-e82765ec4add: 172.26.0.1
+  IP address for br-c09c8f49597a: 172.27.0.1
+  IP address for br-339dc049a5de: 172.28.0.1
+  IP address for br-04725d0a70e2: 172.29.0.1
+  IP address for br-8f540f2388f4: 172.30.0.1
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+63 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Wed Jul 26 08:53:42 2023
+etracsmabini@etracsmabini:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        2.1G         10G        3.6M        3.1G         13G
+Swap:          4.0G          0B        4.0G
+etracsmabini@etracsmabini:~$ cd docker
+etracsmabini@etracsmabini:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/lgu-ddo-mabini-deployments.git (fetch)
+origin  https://github.com/ramesesinc/lgu-ddo-mabini-deployments.git (push)
+etracsmabini@etracsmabini:~/docker$ git branch
+* master
+etracsmabini@etracsmabini:~/docker$ git log --graph | head -100
+* commit 27036b3d5e519d4bacb30312ddf20caabcbbe9da
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Feb 24 13:02:11 2021 +0800
+|
+|     res: patch: rptis updates (25503026)
+|
+* commit 4987e5d879fa4f39756309c5bded3256443eb486
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 24 12:18:42 2021 +0800
+|
+|     _res: patches: updated
+|
+* commit 366671388d5be6e06b2725b475d26b21acb70249
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 24 08:51:58 2021 +0800
+|
+|     _res: updated
+|
+* commit 0bae6c2b83a6f3d9cdbd0a966d10a302d9e567bb
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 24 08:44:57 2021 +0800
+|
+|     appserver: etracs: updated
+|
+* commit 91cefeb577d21796dc1df6cca6eb88d332c34a89
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 24 08:44:44 2021 +0800
+|
+|     _res: updated
+|
+* commit 69c2f750b15947a48db29d89b9075f6992e37e98
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 24 08:33:35 2021 +0800
+|
+|     system: download: updated
+|
+*   commit 6642303061df51f96e1169f711bd89f968feacfb
+|\  Merge: 314b39e e86ac1e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Feb 24 08:24:39 2021 +0800
+| |
+| |     Merge branch 'master' of file:///home/ramesesinc/gitrepo/lgu-ddo-mabini-deployments
+| |
+| * commit e86ac1e8d0041f2e0889b20205014aa1ffde7a23
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Feb 17 16:15:09 2021 +0800
+| |
+| |     _res: patches: added
+| |
+* | commit 314b39ec7b3a64ce6dca1a64cecab8d6ca5df07d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Feb 24 08:24:31 2021 +0800
+| |
+| |     email: updated
+| |
+* | commit d6483ede7f58af69124d3c5df5574bbaea0d7681
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Wed Feb 24 08:24:13 2021 +0800
+|
+|       appserver: etracs: updated
+|
+* commit 0f3c4c049a1573b5fe2ee611993117fb5553bf78
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:52:38 2021 +0800
+|
+|     _res: updated
+|
+* commit 3fcb089623e66408e93667383d088b2607979a45
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:45:55 2021 +0800
+|
+|     email: updated
+|
+* commit 830c3e7d4b6a36c2504606b1796d2c682dfa2bc5
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:45:33 2021 +0800
+|
+|     _res: added
+|
+* commit 5fed5f58f5926a948f4151c35f010f8bc5cb0b70
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:40:23 2021 +0800
+|
+|     appserver: added
+|
+* commit c91b8c76192b06c294e9fd4878f93b02e67729d5
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:39:48 2021 +0800
+|
+|     bin: added
+|
+* commit dfa365998e67c20e6c4033a185589d0f33c23400
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:38:19 2021 +0800
+|
+|     email: added
+|
+* commit 2ef2e75c73fa35ded01b5ae5791283249bcfb6ab
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 17 15:37:57 2021 +0800
+etracsmabini@etracsmabini:~/docker$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-municipality.jar
+        modified:   system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis.jar
+        modified:   system/download/node/resources/downloads/modules/rptis/updates.pyml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bin/etracs25_mabini.sql
+        bin/server.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracsmabini@etracsmabini:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED        STATUS        PORTS                                                                              NAMES
+d98e5d0c368c   ramesesinc/local-epayment-server:2.5.01.02.04        "/bin/bash /apps/sta…"   32 hours ago   Up 32 hours   0.0.0.0:8095->8070/tcp                                                             epayment-server
+4cfc191ab970   ramesesinc/etracs-server-municipality:2.5.03.02.01   "/bin/bash /apps/sta…"   32 hours ago   Up 32 hours   0.0.0.0:8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, 8080/tcp                 etracs-server
+a162e8ae6443   ramesesinc/etracs-web:2.5.01.01                      "/bin/bash /apps/sta…"   32 hours ago   Up 32 hours   0.0.0.0:8080->8080/tcp                                                             etracs-web
+49499997f05d   nginx:latest                                         "/docker-entrypoint.…"   32 hours ago   Up 32 hours   0.0.0.0:9999->80/tcp                                                               queue-proxy
+7b4c4948a34a   ramesesinc/queue-server:255.02.002                   "/bin/bash /apps/sta…"   32 hours ago   Up 32 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, 0.0.0.0:9970->8070/tcp, 0.0.0.0:9980->8080/tcp   queue-server
+ad2fede3fada   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   32 hours ago   Up 32 hours   0.0.0.0:8001->8000/tcp                                                             download-node-server
+b4e05d3e1dd3   nginx:latest                                         "/docker-entrypoint.…"   32 hours ago   Up 32 hours   0.0.0.0:8000->80/tcp                                                               download-nginx-server
+b3a717b1a1ff   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   32 hours ago   Up 32 hours   0.0.0.0:7080->8080/tcp                                                             rameses-notification-server
+a169cb28212d   ramesesinc/mail-server:latest                        "/usr/local/bin/dumb…"   32 hours ago   Up 32 hours   0.0.0.0:2525->25/tcp                                                               mail-primary
+7e33f45f6654   portainer/portainer                                  "/portainer"             2 years ago    Up 46 hours   0.0.0.0:9000->9000/tcp                                                             portainer
+etracsmabini@etracsmabini:~/docker$

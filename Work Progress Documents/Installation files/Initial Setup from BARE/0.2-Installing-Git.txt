@@ -1,0 +1,40 @@
+---------------
+Installing Git
+---------------
+
+NOTE: We will use Git application using its "Git Bash" terminal 
+      to remotely login to your ubuntu server. 
+
+      Before executing the steps below, your ubuntu server must 
+      have OpenSSH Server installed and allow port 22 in case 
+      your firewall is enabled. 
+
+
+1. On your windows machine, open a Chrome web browser 
+   and go to the following link below to download Git.
+
+   https://git-scm.com/download/win
+
+
+2. Install Git and just follow the on-screen instructions 
+   without changing any settings until its done. 
+
+
+-----------------------
+Remote Login using SSH
+-----------------------
+1. To login to your remote ubuntu server, on your desktop 
+   right-click to open the context menu and then select 
+   "Git Bash Here" to open the bash terminal 
+
+2. Execute the command below to login 
+
+   # Syntax: ssh <Login-Name>@<Server-IP>
+
+
+   $  ssh  administrator@192.168.1.2
+
+
+   NOTE: To exit from your login session just type "exit" 
+         and press ENTER 
+

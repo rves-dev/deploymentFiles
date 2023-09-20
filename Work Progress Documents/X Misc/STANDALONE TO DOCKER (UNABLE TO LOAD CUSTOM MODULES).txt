@@ -1,0 +1,22 @@
+=======================================================
+STANDALONE TO DOCKER (UNABLE TO LOAD CUSTOM MODULES)
+=======================================================
+
+
+* 	
+	Check old server updates.pxml file and copy each module entry with corresponding order into the updates.pyml file in the docker server. 
+	(location: docker/_custom/module-client/etracs/updates.pyml)
+
+
+
+* 	
+	Check for custom report in the env section in the old updates.pxml file and copy into the env section of the new updates.pyml file in the docker server. 
+
+	Enclose the data in double quotation marks `" "` and change the `=` (equals sign) into `:` (colon sign) or copy the syntax of the updates.myml file located in docker/system/download/node/resources/downloads/updates.myml
+
+
+*
+	Go to your browser and input http://{SERVER IP}:8000/downloads/modules/updates.xml in the address bar.
+
+	Check if the report.custom is already loaded in the updates.
+

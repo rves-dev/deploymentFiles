@@ -1,0 +1,140 @@
+==================================================
+CLOUD SERVER MAINTENANCE GUIDE
+==================================================
+
+
+------ TEST SERVER --------
+
+* Login to Test Server 
+	
+	Login to the cloud test server via SSH and provide the password you store in your id_rsa file
+
+
+		$ ssh ubuntu@107.21.113.74
+
+
+* Backup Databases
+
+	User: root
+	Pass: 12lqsym34
+
+	Execute the following commands to backup the important databases:
+
+
+		$ cd /volume2/temp
+
+		$ mkdir db-backup
+
+		$ cd db-backup
+
+
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f test_cloud_epayment > test_cloud_epayment.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f test_cloud_partner > test_cloud_partner.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f test_cloud_obo > test_cloud_obo.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f cloud_obo2 > cloud_obo2.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f etracs > etracs.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f etracs_system > etracs_system.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f sms > sms.sql
+
+
+
+		$ cd ..
+
+		$ tar -czvf db-backup-20230918-test-server.tar.gz db-backup
+
+		$ rm -rf db-backup
+
+		$ exit
+
+
+	Download the backup file:
+
+		$ scp ubuntu@107.21.113.74:/volume2/temp/db-backup-20230918-test-server.tar.gz ~/Desktop/Cloud-Backup/.
+
+
+
+	After downloading the backup file, transfer the file to \\NAS-Rameses
+
+
+*Docker Maintenance 
+
+	Clear/Remove cached files, orphan files and other resources that are no longer in used.
+
+
+		$ docker system prune -f
+
+		$ docker volume prune -f
+
+
+
+
+
+------ PRODUCTION SERVER --------
+
+* Login to Production Server 
+	
+	Login to the cloud production server via SSH and provide the password you store in your id_rsa file
+
+
+		$ ssh ubuntu@18.213.42.30
+
+
+* Backup Databases
+
+	User: root
+	Pass: 12lqsym34
+
+	Execute the following commands to backup the important databases:
+
+
+		$ cd temp
+
+		$ mkdir db-backup
+
+		$ cd db-backup
+
+
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f cloud_epayment > cloud_epayment.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f cloud_partner > cloud_partner.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f cloud_obo > cloud_obo.sql
+
+		$ mysqldump --max-allowed-packet=16M -u root -p -f cloud_obo2 > cloud_obo2.sql
+
+
+
+		$ cd ..
+
+		$ tar -czvf db-backup-20230918-prod-server.tar.gz db-backup
+
+		$ rm -rf db-backup
+
+		$ exit
+
+
+	Download the backup file:
+
+		$ scp ubuntu@18.213.42.30:temp/db-backup-20230918-prod-server.tar.gz ~/Desktop/Cloud-Backup/.
+
+
+	After downloading the backup file, transfer the file to \\NAS-Rameses
+
+
+*Docker Maintenance 
+
+	Clear/Remove cached files, orphan files and other resources that are no longer in used.
+
+
+		$ docker system prune -f
+
+		$ docker volume prune -f
+

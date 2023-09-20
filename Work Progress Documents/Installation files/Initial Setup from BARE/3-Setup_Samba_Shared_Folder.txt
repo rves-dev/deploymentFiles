@@ -1,0 +1,66 @@
+
+Login to your ubuntu server and execute the following steps below 
+and use "Git Bash" to login remotely to the server.
+
+
+------------------------------------------
+Step-01: Installing Samba 
+------------------------------------------
+$ sudo apt-get update 
+
+$ sudo apt-get install samba
+
+$ sudo systemctl status nmbd
+
+$ sudo smbpasswd -a $USER
+
+   //add password: 1234
+
+------------------------------------------
+Step-02: Configure Shared Folder 
+------------------------------------------
+$ cd /etc/samba
+
+$ sudo cp smb.conf smb.conf.backup
+
+$ sudo nano smb.conf 
+
+#
+# Go to the bottom of the file and add the following lines below 
+# Change the "root" to the actual user account that you are using
+# 
+[root]
+   path = /home/root
+   browseable = yes
+   read only = no
+   valid users = @root root
+
+# 
+# Press Ctrl X then press Y then press ENTER to save changes or 
+# Press Ctrl X then press N to exit and discard changes  
+# 
+
+$ sudo systemctl restart nmbd
+
+# 
+# If firewall is enabled
+# 
+$ sudo ufw allow 'Samba'
+
+
+-------------------------------------------
+Step-03: Test Connect to your Shared Folder
+-------------------------------------------
+
+NOTE: Do this steps in your windows machine. 
+
+1. Press WINDOWS logo + R  to open the RUN dialog box 
+
+2. In the Open text field type the following and press ENTER key.
+
+   \\{SERVER_IP}
+
+3. You should be able to see the "root" folder or the folder you setup 
+   from Step#2 and when you go inside the folder, a login screen should appear. 
+
+4. Done.

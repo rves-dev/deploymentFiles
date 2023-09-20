@@ -1,0 +1,78 @@
+##
+## How to Check your repository status
+## 
+
+## 1. On your Windows machine, open a "Git Bash" terminal 
+##    and login remotely to the server using SSH
+## 
+
+
+Server IP: 192.168.7.24
+Server login: etracsmabini
+Server pass: etracsmabini123
+
+
+
+$  ssh  User@Server-IP-Address
+
+## 2. Check the repo origin 
+##
+
+$  free -h
+
+$  cd  docker
+
+$  git remote -v 
+
+
+
+## 3. Check the repo branch used 
+##
+
+$  git branch
+
+
+
+## 4. Check the last logs pulled
+##
+
+$  git log --graph | head -100
+
+
+
+## 5. Inspect the tampered files or 
+##    modified files that where uncommited 
+##
+
+$  git status
+
+
+
+## 6. Check the running processes
+##
+
+$  docker ps -a
+
+
+
+## 7. Exit from your session
+##
+
+$  exit
+
+
+
+##  Copy all info and results of your Git Bash terminal 
+## 
+##  - Right-click your mouse and choose "Select All" 
+##  - Right-click your mouse again and choose "Copy"
+##  - Open your NotePad app and paste what you've copied earlier.
+##  - Save the file and send it to the messenger.
+##
+
+
+STANDALONE
+
+* bin
+* workspace/services
+* workspace/web/resources/download

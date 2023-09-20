@@ -1,0 +1,207 @@
+
+USER@DESKTOP-2IFEF6A MINGW64 ~
+$ ssh lgubaclayon@192.168.0.142
+The authenticity of host '192.168.0.142 (192.168.0.142)' can't be established.
+ED25519 key fingerprint is SHA256:ot/43dEfkpIaGGflw8l1HJpRfnVJRGJJdblTGkgkSHs.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.0.142' (ED25519) to the list of known hosts.
+lgubaclayon@192.168.0.142's password:
+Permission denied, please try again.
+lgubaclayon@192.168.0.142's password:
+Permission denied, please try again.
+lgubaclayon@192.168.0.142's password:
+
+
+USER@DESKTOP-2IFEF6A MINGW64 ~
+$ ssh lgubaclayon@192.168.0.125
+The authenticity of host '192.168.0.125 (192.168.0.125)' can't be established.
+ED25519 key fingerprint is SHA256:FFhgHCxHX7GcFoZh95tl+ouWIpXgqu8O4kQIehBesVM.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.0.125' (ED25519) to the list of known hosts.
+lgubaclayon@192.168.0.125's password:
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-180-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Sep 18 15:07:16 PST 2023
+
+  System load:                    0.02
+  Usage of /:                     22.3% of 97.93GB
+  Memory usage:                   7%
+  Swap usage:                     0%
+  Processes:                      227
+  Users logged in:                1
+  IP address for eno1:            192.168.0.125
+  IP address for br-605b1d502a74: 172.20.0.1
+  IP address for br-9d7b03a34a8f: 172.25.0.1
+  IP address for br-b3e56df046e5: 172.21.0.1
+  IP address for br-f5d14aa15a0a: 172.22.0.1
+  IP address for br-096e4fdee8f4: 172.23.0.1
+  IP address for br-0ec6f80d0154: 172.18.0.1
+  IP address for br-8b6e6a2b1917: 172.19.0.1
+  IP address for docker0:         172.17.0.1
+  IP address for br-fae9d0e52611: 172.26.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+205 updates can be applied immediately.
+146 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+New release '20.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Sep 18 14:52:36 2023
+lgubaclayon@etracs:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            31G        2.3G         27G        3.4M        1.3G         28G
+Swap:          8.0G          0B        8.0G
+lgubaclayon@etracs:~$ ls
+docker  etracs255_baclayon0815203.sql  snap
+lgubaclayon@etracs:~$ cd docker
+lgubaclayon@etracs:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+lgubaclayon@etracs:~/docker$ git branch
+* bohol-baclayon
+lgubaclayon@etracs:~/docker$ got log --graph | head -100
+
+Command 'got' not found, but there are 17 similar ones.
+
+lgubaclayon@etracs:~/docker$ git log --graph | head -100
+*   commit 553b9edee5e04d93d7bed9a002a57e5eb62a4ca4
+|\  Merge: f408ce9b b74de400
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Oct 10 16:30:36 2022 +0800
+| |
+| |     Merge branch '2.5.04.05.01' of file:///o/gitrepo/etracs-municipality-deployments into bohol-baclayon
+| |
+| |     # Conflicts:
+| |     #       custom-template.tar.gz
+| |
+| * commit b74de40052b38e095b72b8c6e75dc335d80e6a89
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Oct 7 15:14:58 2022 +0800
+| |
+| |     _res: updated initial scripts
+| |
+| * commit 4ca0d0aef830b7243b4db25816e6b1d5c0cf2640
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Oct 6 13:39:31 2022 +0800
+| |
+| |     rptis: bug fixed on RPTBillingService in handling barcode
+| |
+| * commit 73c6d1d1709af154d1b46a0970936091a4b4c497
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Oct 5 15:00:56 2022 +0800
+| |
+| |     _res: add-on intial scripts
+| |
+| * commit 975951899cbc262283618ec59d90e3b92141d3e5
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 28 15:49:18 2022 +0800
+| |
+| |     rptis: bug fixed on RPTBillingService
+| |
+| * commit 8245167036411b525bb2735b1f138a2d87902693
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 28 13:34:01 2022 +0800
+| |
+| |     updated initial databases
+| |
+| * commit 5d3af2b6c7145a89cb251778c57e5a3e58f02602
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 28 13:11:24 2022 +0800
+| |
+| |     updates:
+| |     - bpls tool services updated
+| |     - download client jars updated
+| |
+| * commit 42f87d87e87a014475f4257ea44ed1bb1568227d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Sep 23 11:53:54 2022 +0800
+| |
+| |     client: downloads: updated
+| |
+| * commit c181c5375c3bc7edac86e86624a1c0dd30d3c452
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Sep 23 11:52:49 2022 +0800
+| |
+| |     etracs: bug fixes on notification services
+| |
+| * commit e534774ed7a5264ec72d482d1b9d9fa1bb937a64
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 20 15:11:26 2022 +0800
+| |
+| |     bpls:
+| |     - added list feature for migrated businesses
+| |     - added button to approve migrated data
+| |
+| * commit 1375bde805fe8d5a1a59f5ee7bef631d99e9321e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 14 17:30:49 2022 +0800
+| |
+| |     rptis: updated the RPTBillingService
+| |
+| * commit 9bb57622afd400b8002ba952f03f8e0a0a156fba
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 12:39:39 2022 +0800
+| |
+| |     custom template
+| |
+| * commit 3159312784f82279e2c0c128464a9566736b0eb3
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 12:06:47 2022 +0800
+| |
+| |     etracs: patches for 2.5.04.05.01
+| |
+| |     epayment: patches for 2.5.01.02.06
+| |
+* | commit f408ce9b877981caccdb714e24e658631112bc33
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Mon Jun 13 13:28:55 2022 +0800
+|
+|       lgu specific settings
+|
+* commit 6039155e619515cdd224878b7de86000e030993a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Jun 1 13:21:33 2022 +0800
+|
+|     bpls: fixed sql files for reserved keywords
+|
+lgubaclayon@etracs:~/docker$ git status
+On branch bohol-baclayon
+Your branch is up to date with 'origin/bohol-baclayon'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        system/download/nginx/resources/platform/jdk-8u271-windows-i586.exe
+        system/download/nginx/resources/platform/jdk-8u271-windows-x64.exe
+
+nothing added to commit but untracked files present (use "git add" to track)
+lgubaclayon@etracs:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED         STATUS          PORTS                                                                                                                                       NAMES
+678fc5ffc4b1   ramesesinc/etracs-server-municipality:2.5.04.05.01   "/bin/bash /apps/sta…"   11 months ago   Up 16 minutes   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+c17e9bfa0983   ramesesinc/local-epayment-server:2.5.01.02.06        "/bin/bash /apps/sta…"   11 months ago   Up 16 minutes   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+c05584ae9a1d   ramesesinc/etracs-web:2.5.02.01                      "/bin/bash /apps/sta…"   11 months ago   Up 16 minutes   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+2f8ab357bbc4   ramesesinc/queue-server:2.5.02.01                    "/bin/bash /apps/sta…"   11 months ago   Up 16 minutes   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+3714952dd296   nginx:latest                                         "/docker-entrypoint.…"   11 months ago   Up 16 minutes   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+3384cd19beee   nginx:latest                                         "/docker-entrypoint.…"   11 months ago   Up 16 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+5fc285afc29e   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   11 months ago   Up 16 minutes   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+428fe6ebe923   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   11 months ago   Up 16 minutes   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+3acc4dcdeaaf   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   11 months ago   Up 16 minutes   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+36c4814dcbad   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   11 months ago   Up 16 minutes   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+b31ee5797302   portainer/portainer-ce                               "/portainer"             15 months ago   Up 16 minutes   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+lgubaclayon@etracs:~/docker$

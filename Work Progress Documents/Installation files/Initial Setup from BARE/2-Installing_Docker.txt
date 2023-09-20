@@ -1,0 +1,73 @@
+
+Login to your ubuntu server and execute the following steps below 
+and use "Git Bash" to login remotely to the server.
+
+
+------------------------------------------
+Step-01: Installing Docker 
+------------------------------------------
+$ sudo apt remove docker docker-engine docker.io
+
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+$ sudo apt-key fingerprint 0EBFCD88
+
+$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+$ sudo apt update
+
+$ sudo apt install docker-ce
+
+$ sudo usermod -aG docker $USER
+
+$ exit
+
+
+NOTE: Relogin to terminal for the permission to take effect 
+
+$ docker -v 
+
+
+--------------------------------------------------
+Step-02: Installing Docker Compose
+--------------------------------------------------
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+$ sudo chmod +x /usr/local/bin/docker-compose
+
+$ docker-compose --version
+
+
+--------------------------------------------------
+Step-03: Installing Portainer
+--------------------------------------------------
+
+We will use Portainer to manage stacks from Docker Compose 
+and containers from the Docker engine
+
+
+$ docker volume create portainer_data
+
+$ docker run --name portainer --restart always -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+
+
+--------------------------------------------------
+Step-04: Configure Portainer
+--------------------------------------------------
+1. Open a Chrome browser and use the following link: 
+
+   http://{SERVER_IP}:9000
+
+
+2. Setup the admin user by providing a password 
+
+   User     :  admin
+   Password :  p@ssw0rd1234
+   Confirm  :  p@ssw0rd1234
+
+
+3. Logout from portainer 
+

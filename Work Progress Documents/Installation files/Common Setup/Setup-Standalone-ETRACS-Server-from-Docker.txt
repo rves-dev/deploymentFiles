@@ -1,0 +1,164 @@
+==============================================
+ Setup a Standalone ETRACS Server from Docker 
+==============================================
+
+This guide will teach you on how to create a 
+Standalone ETRACS server with the same services
+and client libs, that is running on your Docker.
+
+In this way, you make sure that the Standalone 
+and Docker are using the same services to avoid 
+conflicts and mismatches when running it.
+
+
+01. Login to your Docker server using Git Bash
+
+    $  ssh User@Server-IP
+
+
+02. Extract a copy of the "services" folder 
+    from the "etracs-server" docker container.
+
+    In this step you have make sure that 
+    "etracs-server" container is running.
+
+
+    $  cd 
+
+    $  mkdir -p  zzz
+
+    $  cd  zzz 
+
+    $  docker  cp  etracs-server:/apps/server/services  etracs-services/
+
+
+03. Compress the "etracs-services" folder 
+
+    $  tar  -czvf  etracs-docker-services.tar.gz  etracs-services
+
+
+04. Extract a copy of the client modules 
+    from the "download-node-server" docker container.
+
+    In this step you have make sure that 
+    "download-node-server" container is running.
+
+    $  docker  cp  download-node-server://apps/server/public/resources/downloads  etracs-download-modules/
+
+
+05. Compress the "etracs-download-modules" folder 
+
+    $  tar  -czvf  etracs-download-modules.tar.gz  etracs-download-modules
+
+
+06. Exit from SSH session
+
+    $  exit
+
+
+07. Download the compressed files to your Windows Desktop
+
+    $  scp  User@Server-IP:zzz/etracs-docker-services.tar.gz  ~/Desktop/.
+
+    $  scp  User@Server-IP:zzz/etracs-download-modules.tar.gz  ~/Desktop/.
+
+
+08. Unpack the compressed files
+
+    $  cd  ~/Desktop
+
+    $  tar  -xvf  etracs-docker-services.tar.gz
+
+    $  tar  -xvf  etracs-download-modules.tar.gz
+
+
+09. Using the Windows File Manager, 
+    create a folder "C:/Apps" and 
+    that would be placed under C drive 
+
+
+10. Going back to your Git Bash console, 
+    Let's clone a repo from GitHub and 
+    have it place under the "C:/Apps" folder 
+
+    $  cd  /c/Apps
+
+    $  git clone -b latest https://github.com/ramesesinc/etracs255-server-municipality.git
+
+
+11. Unpack the custom template
+
+    $  cd  etracs255-server-municipality
+
+    $  tar  -xvf  custom-template.tar.gz
+
+
+12. Replace the folder "services/datasources"
+
+    $  rm -rf services/datasources
+
+    $  cp -rvf ~/Desktop/etracs-services/datasources   services/
+
+
+13. Replace the folder "services/modules"
+
+    $  rm -rf services/modules
+
+    $  cp -rvf ~/Desktop/etracs-services/modules   services/
+
+
+14. Replace the folder "services/apps/etracs25"
+
+    $  rm -rf services/apps/etracs25
+
+    $  cp -rvf ~/Desktop/etracs-services/apps/etracs25   services/apps/
+
+
+15. Merge the download modules for the client
+
+    $  cp -rvf ~/Desktop/etracs-download-modules/modules   web/resources/downloads/
+
+
+16. Delete all pyml files
+
+    $  find  .  -name  "*.pyml"  -type  f  -delete
+
+
+17. Open the file "bin/env.conf" using your favorite text editor.
+
+18. Update the values of the following variables:
+
+
+    lgu_name=
+
+	app_server_ip=
+
+	dbserver_host=
+	dbserver_user=
+	dbserver_pass=
+
+	db_etracs=
+	db_image=
+	db_notification=
+
+
+19. Save and close the text editor.
+
+20. Open the file "web/resources/downloads/modules/custom/updates.pxml"
+
+21. Register all your custom jar files 
+    and save the file after the editing is done.
+
+-------------------------------------
+Check Initial MySQL DB before running
+--------------------------------------
+
+22. Create a Desktop shortcut of the following ".bat" files:
+
+    - run.bat
+    - shutdown.bat
+
+23. On your Windows Desktop, run the Standalone etracs server
+
+
+DONE.

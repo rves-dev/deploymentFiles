@@ -1,5 +1,5 @@
 =============================================
- Updating ETRACS Docker Repo - 2.5.05.02-003 
+ Updating Sipocot-CamSur ETRACS Docker Repo - 2.5.05.02-003 
 =============================================
 
 About:
@@ -20,6 +20,10 @@ Keywords:
 Open "Git Bash" terminal and login to the server via SSH
 
 $  ssh <User>@<ServerIP>
+
+        ssh lgusipocot@192.168.2.10
+
+        p@ssword#
 
 
 01. Duplicate the docker folder 

@@ -1,0 +1,32 @@
+MERGE DATA FROM PROVINCE TO MUNICIPALITY
+=====================================================
+
+IMPORTANT: 
+Replace the following parameters with the correct values
+
+* zzz_formerge_province_municipality - actual name of the merge database e.g. zzz_formerge_palawan_dumaran
+* productiondbname - actual etracs production dbname e.g. etracs255_dumaran
+
+=====================================================
+
+1. Backup production db before merge
+
+      $ mysqldump -u root -p -f etracs255_ > etracs255_backup.sql
+
+2. Restore zzz_formerge_province_municipality to production db, issue command 
+
+      $ mysql -uroot -p -f etracs255_roxas < 01-etracs255 schema update.sql
+      $ mysql -uroot -p -f etracs255_roxas < 02-zzz_formerge_palawan_roxas.sql
+      $ mysql -uroot -p -f etracs255_roxas < 03-reset-merge-org.sql
+
+3. Login to ETRACS Client 
+
+4. Open Home - Assessor - Management - View FAAS List
+
+5. Verify that FAAS records are available
+
+6. Open a "current" FAAS
+
+7. Preview tax declaration and FAAS reports. 
+   There should be no errors
+
