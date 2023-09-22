@@ -1,0 +1,50 @@
+============================================================
+DOWNLOAD LINKS
+============================================================
+
+
+* GIT
+
+		https://git-scm.com/download/win
+
+
+* Java
+
+	Java 1.8 (x64-Executable) For Windows 10 
+	
+		https://drive.google.com/file/d/12YTrfCw0rEmLpoXq5wptpi3BhcIT0Ynm/view?usp=sharing
+
+	Java 1.8 (x32-Executable) For Windows 10
+
+		https://drive.google.com/file/d/1mdofKF8vMWPpGVgI_gzx0petjM_eC3wA/view?usp=sharing
+
+	Java 1.8 (x64-Portable) For Windows 7 
+
+		https://drive.google.com/file/d/1eWKqMON8GnwShtt6XacFRQ4WM-coC9lw/view?usp=sharing
+
+	Java 1.8 (x32-Portable) For Windows 7 
+
+		https://drive.google.com/file/d/1RLDa21mSb7WEBQyNI5-62rDLANHMIMb9/view?usp=sharing
+
+
+* Ubuntu 18.04
+
+		https://releases.ubuntu.com/18.04/ubuntu-18.04.6-live-server-amd64.iso
+
+
+* MySQL 5.7.39 Community
+
+		https://cdn.mysql.com/archives/mysql-installer/mysql-installer-community-5.7.39.0.msi
+
+		https://downloads.mysql.com/archives/installer/
+
+
+* Etcher.io
+
+		https://www.balena.io/etcher/
+
+
+* Navicat Premium (Cracked)
+
+		https://drive.google.com/drive/folders/1HX9_J-EpQdaDFLumL4ND5jjCRyC3CxC4?usp=drive_link
+
