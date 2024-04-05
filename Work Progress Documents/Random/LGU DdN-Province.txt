@@ -1,0 +1,31 @@
+Host Machine:
+IPv4 Address     172.16.14.147
+Subnet Mask      255.255.255.0
+Default Gateway  172.16.14.1
+
+VM - Ubuntu Server 10.04
+SUBNET -         172.16.14.0/24
+Address-static   172.16.14.94
+Default Gateway  172.16.14.1
+
+Server 
+Username: etracsddn
+Password: 3tr@csddn67
+
+Webmin:
+Username: etracsddn
+Password: 3tr@csddn67
+
+Portainer
+Username: admin
+Password: p@ssw0rd
+
+Samba:
+Username: etracsddn
+Password: p@ssw0rd
+
+
+
+Server IP: etracsddn@172.16.14.5
+Server login: 
+Server pass: 3tr@csddn67

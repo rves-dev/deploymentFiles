@@ -1,0 +1,129 @@
+
+commit 93bccc97cb427e0bddfd5d7d6322b42f175a1b33
+Merge: 2d7ba7ca c5cc95e4
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 10:48:57 2024 +0800
+
+    Merge remote-tracking branch 'origin/2.5.05.03-11' into negoc-sancarlos
+
+    # Conflicts:
+    #       appserver/etracs/docker-compose-ext.yml
+
+commit c5cc95e45ddf02bfc01433cb681ad47c83e9a903
+Merge: 356afc68 5f6d143d
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:35:27 2024 +0800
+
+    Merge remote-tracking branch 'template-main/master' into 2.5.05.03-11
+
+commit 5f6d143dee98af910a6b29a450111ba3a5c93140
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:30:56 2024 +0800
+
+    mounted the rule services
+
+commit c02cff1b4fc940ec5d36e160bbb222e708377d61
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:28:58 2024 +0800
+
+    upgraded to 2.5.05.03-11
+
+commit 8cb3b8879737d7502f6ec13f9bad4583c214716b
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:27:36 2024 +0800
+
+    rules: bug fixed on rule_constraint_lookup
+
+commit 356afc68ed9486a813bd956df99e7afd1bcd89c7
+Merge: 88f23ba1 d6c7b63f
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:12:00 2024 +0800
+
+    Merge remote-tracking branch 'template-main/master' into 2.5.05.03-10
+
+    # Conflicts:
+    #       _res/env.conf
+    #       appserver/etracs/dev_modules/pub-updates.myml
+    #       appserver/etracs/dev_modules/updates.myml
+
+commit d6c7b63f531932bc0d47da24162b5c786082216b
+Author: worgflores <worgflores@gmail.com>
+Date:   Thu Jan 25 09:07:08 2024 +0800
+
+    upgraded to 2.5.05.03-10 to matched the build version
+    of the standalone repo since there are changes on the
+    treasury module
+
+commit 2d7ba7ca0c3a28d5e09ba1ea6f566da548c4ce68
+Merge: 8e1fc902 88f23ba1
+Author: worgflores <worgflores@gmail.com>
+Date:   Wed Jan 24 12:32:23 2024 +0800
+
+    Merge remote-tracking branch 'origin/2.5.05.03-09b' into negoc-sancarlos
+
+commit 88f23ba1a8a24468e12e857d7850313cbc68a3e4
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Jan 16 08:43:15 2024 +0800
+
+    etracs: upgraded to 2.5.05.03-09b
+
+commit b4496e695f0dc768e546c26eb6c2fbae88a23bb9
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Jan 16 08:33:33 2024 +0800
+
+    etracs: upgraded to 2.5.05.03-10
+
+commit 69b46d85b40e415af4be3d6d8eaf92a3268b1063
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Jan 16 08:32:13 2024 +0800
+
+    bpls: bug fixed on BusinessApplicationRenewInterceptor
+
+commit 8e1fc9026a787f1726b37db75ee36b087b01dbdf
+Author: worgflores <worgflores@gmail.com>
+Date:   Fri Jan 12 15:14:45 2024 +0800
+
+    added patch script
+
+commit 8f495e4d5eaabb251c5d27fea8a53f2cd096bfc4
+Merge: 4347533c 48709dc9
+Author: worgflores <worgflores@gmail.com>
+Date:   Fri Jan 12 15:13:19 2024 +0800
+
+    Merge remote-tracking branch 'origin/2.5.05.03-09' into negoc-sancarlos
+
+    # Conflicts:
+    #       appserver/etracs/docker-compose-ext.yml
+
+commit 48709dc913a2898cc5425af6dc15a1804503c711
+Merge: 110f1610 c25ad360
+Author: worgflores <worgflores@gmail.com>
+Date:   Fri Jan 12 12:39:43 2024 +0800
+
+    Merge remote-tracking branch 'template-main/master' into 2.5.05.03-09
+
+    # Conflicts:
+    #       _res/env.conf
+    #       appserver/etracs/dev_modules/pub-updates.myml
+    #       appserver/etracs/dev_modules/updates.myml
+
+commit c25ad3606d1d4975f6fe9840ffbfa6d4a1ae140d
+Author: worgflores <worgflores@gmail.com>
+Date:   Fri Jan 12 12:11:56 2024 +0800
+
+    - The gdx proxy server is upgraded to build v006
+    - The repo is upgraded to 2.5.05.03-09
+
+commit 110f1610ccbcc07b8e58fad681c9fc8b75b771e7
+Author: worgflores <worgflores@gmail.com>
+Date:   Fri Jan 12 11:30:31 2024 +0800
+
+    - The send back feature is added and working
+    - upgraded the build to 2.5.05.03-08c
+
+commit 7222bb4c9dba67fc65e964f392d86ef264ae182d
+Author: worgflores <worgflores@gmail.com>
+Date:   Tue Jan 9 09:16:18 2024 +0800
+
+    - updated the bpls module
+    - upgraded to build 2.5.05.03-08c

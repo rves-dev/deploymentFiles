@@ -1,0 +1,130 @@
+==========================================
+ Updating ETRACS Docker Repo - 2.5.05.02 
+==========================================
+
+Changed Logs:
+ 
+ - Bug fixed on lookup entity
+ - Relocate the paid plugins to the main docker-compose file
+  
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+
+01. Duplicate the working docker folder
+
+    $  cd 
+
+    $  cp  -rvfp  docker  docker-new
+
+
+02. Pull updates from GitHub
+
+    $  cd  ~/docker-new
+
+    $  git reset --hard
+
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as your main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+03. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+
+
+04. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-06-23
+
+
+05. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+06. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+07. Open Navicat or SQL Management Studio 
+    and login to the database server
+
+08. Open a "New Query" window and do the following:
+
+    08.01  Press CTRL + O to show the open dialog
+    
+    08.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    08.03  Open files sequentially starting from 01  
+    
+    08.04  Select the etracs main database first 
+
+    08.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    08.06  Repeat Step-08.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+09. Switch back to your Git Bash session
+
+10. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+11. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+12. Monitor the status and logs via Portainer
+
+13. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

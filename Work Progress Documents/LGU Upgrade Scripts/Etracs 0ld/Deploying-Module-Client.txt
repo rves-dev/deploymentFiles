@@ -1,0 +1,47 @@
+=============================
+ Deploying the Module-Client
+=============================
+
+1. Download the file "{LGU-Name}/module-client.tar.gz" 
+   from this link: 
+
+   https://drive.google.com/drive/folders/1mJRJr2pTmPF-zlGuxO2qOwOKvZqYt0pd?usp=share_link
+
+
+2. Copy the file "module-client.tar.gz"
+   and place it under the directory "docker/_custom"
+
+
+3. Open Git Bash and login to the server
+
+4. Unpack the file "module-client.tar.gz" 
+
+   $  cd ~/docker/_custom
+
+   $  tar -xvf module-client.tar.gz
+
+
+5. Remove the tar file after unpacking
+
+   $  rm module-client.tar.gz
+
+
+6. Restart the "download" container
+
+   $  cd ~/docker/bin
+
+   $  sh restart-download.sh
+
+
+7. Inform everyone to close their ETRACS client 
+   and open a new one to download all updates
+
+
+8. Login to ETRACS and try to generate a report 
+   to check if the LGU LOGO is now reflected 
+   in the report.
+
+   If not, go back to Step-4. 
+
+
+9. DONE!

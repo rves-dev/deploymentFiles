@@ -1,0 +1,218 @@
+
+ETRACS@ETRACSserver MINGW64 ~/Desktop
+$ ssh lguasuncion@192.168.1.51
+lguasuncion@192.168.1.51's password:
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jan 26 08:23:10 UTC 2024
+
+  System load:                    0.0
+  Usage of /:                     7.6% of 195.80GB
+  Memory usage:                   7%
+  Swap usage:                     0%
+  Processes:                      233
+  Users logged in:                1
+  IP address for eno2:            192.168.1.51
+  IP address for docker0:         172.17.0.1
+  IP address for br-8c9de8a40cac: 192.168.64.1
+  IP address for br-e00c4ed1110c: 172.18.0.1
+  IP address for br-e106dfe2bc98: 172.19.0.1
+  IP address for br-af65935673d9: 172.20.0.1
+  IP address for br-908b6428dd21: 172.21.0.1
+  IP address for br-b2423669e21b: 172.22.0.1
+  IP address for br-ff11a5316d12: 172.23.0.1
+  IP address for br-8523b5b7ebb2: 172.24.0.1
+  IP address for br-5198f5e247e2: 172.25.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+49 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+New release '20.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Fri Jan 26 08:01:39 2024 from 192.168.1.19
+lguasuncion@etracs-server-asuncion:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.6 LTS
+Release:        18.04
+Codename:       bionic
+lguasuncion@etracs-server-asuncion:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            31G        2.2G         27G        3.3M        1.4G         28G
+Swap:          8.0G          0B        8.0G
+lguasuncion@etracs-server-asuncion:~$ ls
+docker  docker-old-2023-07-04  docker-old-2023-07-14
+lguasuncion@etracs-server-asuncion:~$ cd docker
+lguasuncion@etracs-server-asuncion:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+lguasuncion@etracs-server-asuncion:~/docker$ git branch
+* ddn-asuncion
+lguasuncion@etracs-server-asuncion:~/docker$ git log --graph | head -100
+* commit c78926c27cf4d8bff067e185c1b7c14fda71f945
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Jul 14 10:19:38 2023 +0800
+|
+|     removed patch script
+|
+* commit cbc1d02c2b75419934a17877d746e98d5b2859f8
+| Author: wflores <wflores@gmail.com>
+| Date:   Fri Jul 14 02:10:24 2023 +0000
+|
+|     rptis: mounted services
+|
+* commit e65e9bc21c710c7ee7ef982cce0cd0e401c61019
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Jul 4 10:44:24 2023 +0800
+|
+|     removed
+|
+*   commit 1aec67dd40f5ba32565682dcba80216cc3dec032
+|\  Merge: 0e5b1a19 f0d164b6
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jul 4 10:42:27 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02-003' into ddn-asuncion
+| |
+| * commit f0d164b6224aee357d3ab6dbd90fb16a329ca317
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:32:09 2023 +0800
+| |
+| |     updated config files
+| |
+| * commit a9b4dca00005393f615db9d80d60b5702dcd4c2a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:05:03 2023 +0800
+| |
+| |     etracs: bug fixes on entity schemas particularly when using lookup
+| |
+* | commit 0e5b1a19ef1f9437f35595e3e59e8ef6be2f8008
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 15:37:40 2023 +0800
+| |
+| |     updated the custom template
+| |
+* | commit fc03a67f1b3a70672d7006c777d5d4381c306785
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 15:20:59 2023 +0800
+| |
+| |     added paid plugins
+| |
+* | commit 13c2bb99fd0358b08af587958b02d41bbdf9d29e
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Thu Jun 29 15:19:06 2023 +0800
+|
+|       added patch script for 2.5.05.02-002
+|
+* commit 293a81fdb1d93f822053b8789f42e24aedbf6839
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jun 29 11:53:14 2023 +0800
+|
+|     etracs: updates
+|
+|     bpls:
+|     - bug fixed on voiding of business payment receipt
+|     - business payment receipt can be voided with no
+|       restriction only if the receipt date is greater
+|       than the date of the permit issuance.
+|
+|     entity:
+|     - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+|     - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+|
+* commit 2dc410de393234840c393184d1a782d3b4d706ac
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 11:05:22 2023 +0800
+|
+|     etracs: updated the compose file
+|
+* commit 6eede3980dab19e09f18e8d1f8267c2694cc9272
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 10:19:21 2023 +0800
+|
+|     bin: updated
+|
+* commit 05ea84c0e9de5e19ee99af3999d6705caa78893f
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 10:16:50 2023 +0800
+|
+|     etracs upgraded to 2.5.05.02
+|
+* commit e733aad7178ae595a3b1b7f38a1d9598ec92bd03
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Mar 16 14:59:45 2023 +0800
+|
+|     updated the report facility
+|
+* commit 796e6b07aabe785a5eaf7dcac43ef882742e094d
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Mar 14 16:51:32 2023 +0800
+|
+|     admin: updated the client lib
+lguasuncion@etracs-server-asuncion:~/docker$ git status
+On branch ddn-asuncion
+Your branch is up to date with 'origin/ddn-asuncion'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/FAASReportService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/RPTReportTMCRService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/TDReportService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASBldgReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASLandReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASMachReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASMiscReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASPlantTreeReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_bldg.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_land.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_mach.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_misc.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/rptreport_cancelled_properties.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/rptreport_tmcr.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/tdreport.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/rulesets/landassessment/rules/default.drl
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/BldgRYSettingService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/LandRYSettingService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/MachRYSettingService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/MiscRYSettingService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/sql/cancelledfaas.sql
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        system/download/nginx/resources/platform/etracs255-platform/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+lguasuncion@etracs-server-asuncion:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED        STATUS       PORTS                                                                                                                                       NAMES
+f030797c19a3   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   8 hours ago    Up 8 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+6fbc3338cf8a   ramesesinc/etracs-server-municipality:2.5.05.02   "/bin/bash /apps/sta…"   8 hours ago    Up 8 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+cac5283f04a7   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   8 hours ago    Up 8 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+c2b3bd5e087d   nginx:latest                                      "/docker-entrypoint.…"   8 hours ago    Up 8 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+682970c569e5   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   8 hours ago    Up 8 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+9e85127c541f   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   8 hours ago    Up 8 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+56e9b20105ab   nginx:latest                                      "/docker-entrypoint.…"   8 hours ago    Up 8 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+72fec0957e1f   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   8 hours ago    Up 8 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+b2d54de8034a   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   8 hours ago    Up 8 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+ab1e0662d26f   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   8 hours ago    Up 8 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+d05ed234093c   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   6 months ago   Up 8 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+390e51a99c57   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   6 months ago   Up 8 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+c992e95d28f3   portainer/portainer-ce                            "/portainer"             7 months ago   Up 8 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+lguasuncion@etracs-server-asuncion:~/docker$

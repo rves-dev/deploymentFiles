@@ -1,0 +1,45 @@
+TRANSFER DATABASE DATA
+--------------------------------
+    WORKFLOW & RULES
+
+
+[workflow-table-sequence]
+
+ sys_wf
+ sys_node
+ sys_transition
+
+ sys_wf_eventaction
+
+
+[ruleset-table-sequence]
+
+ sys_ruleset
+
+ sys_rulegroup
+
+ sys_rule_fact
+ sys_rule_fact_field
+
+ sys_rule_actiondef
+ sys_rule_actiondef_param
+ sys_ruleset_actiondef
+ sys_ruleset_fact
+
+
+[rule-table-sequence]
+
+ sys_rule
+ sys_rule_condition
+ sys_rule_condition_var
+
+ sys_rule_condition_constraint
+
+ sys_rule_action
+ sys_rule_action_param
+ sys_rule_deployed
+
+
+
+Execute:
+    sh restart-market.sh

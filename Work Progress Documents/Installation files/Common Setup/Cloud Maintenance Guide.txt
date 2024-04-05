@@ -47,16 +47,14 @@ CLOUD SERVER MAINTENANCE GUIDE
 
 		$ cd ..
 
-		$ tar -czvf db-backup-20230918-test-server.tar.gz db-backup
+		$ tar -czvf db-backup-20240305-test-server.tar.gz db-backup
 
 		$ rm -rf db-backup
-
-		$ exit
 
 
 	Download the backup file:
 
-		$ scp ubuntu@107.21.113.74:/volume2/temp/db-backup-20230918-test-server.tar.gz ~/Desktop/Cloud-Backup/.
+		$ scp ubuntu@107.21.113.74:/volume2/temp/db-backup-20240305-test-server.tar.gz ~/Desktop/Cloud-Backup/.
 
 
 
@@ -71,6 +69,8 @@ CLOUD SERVER MAINTENANCE GUIDE
 		$ docker system prune -f
 
 		$ docker volume prune -f
+
+		$ exit
 
 
 
@@ -114,16 +114,14 @@ CLOUD SERVER MAINTENANCE GUIDE
 
 		$ cd ..
 
-		$ tar -czvf db-backup-20230918-prod-server.tar.gz db-backup
+		$ tar -czvf db-backup-20240305-prod-server.tar.gz db-backup
 
 		$ rm -rf db-backup
-
-		$ exit
 
 
 	Download the backup file:
 
-		$ scp ubuntu@18.213.42.30:temp/db-backup-20230918-prod-server.tar.gz ~/Desktop/Cloud-Backup/.
+		$ scp ubuntu@18.213.42.30:temp/db-backup-20240305-prod-server.tar.gz ~/Desktop/Cloud-Backup/.
 
 
 	After downloading the backup file, transfer the file to \\NAS-Rameses
@@ -138,3 +136,8 @@ CLOUD SERVER MAINTENANCE GUIDE
 
 		$ docker volume prune -f
 
+		$ exit
+
+
+
+mv db-backup20240305-test-server.tar.gz db-backup-20240305-test-server.tar.gz

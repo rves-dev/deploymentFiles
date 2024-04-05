@@ -1,0 +1,219 @@
+
+Yants@DESKTOP-UFMUP8U MINGW64 ~
+$ ssh lguzamboanga@192.168.1.190
+lguzamboanga@192.168.1.190's password:
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Mar  6 06:29:12 UTC 2024
+
+  System load:                    0.13
+  Usage of /:                     8.6% of 491.08GB
+  Memory usage:                   19%
+  Swap usage:                     0%
+  Processes:                      281
+  Users logged in:                0
+  IP address for ens18:           192.168.1.190
+  IP address for br-2380ab996a59: 172.20.0.1
+  IP address for br-4e1b7a80695c: 172.26.0.1
+  IP address for br-7e86429cd4c9: 172.21.0.1
+  IP address for br-9e2b4c11dee6: 172.28.0.1
+  IP address for br-87283c09262a: 172.25.0.1
+  IP address for br-b08251499e8e: 172.22.0.1
+  IP address for br-0d907d8e492e: 172.29.0.1
+  IP address for br-130099fc9c13: 172.23.0.1
+  IP address for br-24852fdfd12b: 172.18.0.1
+  IP address for br-5ea289f4b4d9: 172.27.0.1
+  IP address for docker0:         172.17.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+186 packages can be updated.
+1 update is a security update.
+
+
+Last login: Mon Mar  4 02:03:32 2024 from 192.168.19.136
+lguzamboanga@etracsserver:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            62G         11G         49G        9.3M        1.9G         50G
+Swap:          4.0G          0B        4.0G
+lguzamboanga@etracsserver:~$ ls
+apps  docker  docker-new-bak1  docker-old-2022-12-13  docker-old-2023-01-01  gitrepo  jcameron-key.asc  shared  temp  zzz_backup
+lguzamboanga@etracsserver:~$ cd docker
+lguzamboanga@etracsserver:~/docker$ remote -v
+
+Command 'remote' not found, but can be installed with:
+
+sudo snap install remote
+
+lguzamboanga@etracsserver:~/docker$ git remote -v
+localserver     file:///home/lguzamboanga/gitrepo/etracs-city-deployments.git (fetch)
+localserver     file:///home/lguzamboanga/gitrepo/etracs-city-deployments.git (push)
+origin  https://github.com/ramesesinc/etracs-city-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-city-deployments.git (push)
+lguzamboanga@etracsserver:~/docker$ git branch
+  20221108
+* zamboanga
+  zamboanga20220927
+  zamboanga20230107
+  zamboanga20230117
+lguzamboanga@etracsserver:~/docker$ git log --graph | head -100
+* commit a764f5af6fdf320c1bbff1cc71144f5f9308ce2e
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Mon Jan 30 21:15:51 2023 +0800
+|
+|     RPTIS: increment version
+|
+* commit 65ed892681d5846cae433c4a5b5b281ffb366253
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Mon Jan 30 21:08:13 2023 +0800
+|
+|     LANDTAX: rptdelinquency: reload ledgers support
+|
+* commit ee96a44f5ae7c50b5ed799d1e41d19ef821f1919
+| Author: wflores <wflores@gmail.com>
+| Date:   Mon Jan 30 06:43:38 2023 +0000
+|
+|     bpls: bug fixes during release of application
+|
+* commit d2eac23620147f81aad4ddf2d555fd3d9dbc5c71
+| Author: wflores <wflores@gmail.com>
+| Date:   Mon Jan 30 05:22:02 2023 +0000
+|
+|     etracs: bpls: updated BusinessBillingService
+|
+* commit 65d90106757041230eac25aee6bf57e92ce1229b
+| Author: wflores <wflores@gmail.com>
+| Date:   Mon Jan 30 03:26:21 2023 +0000
+|
+|     updated the rameses-common2.jar lib
+|
+* commit 2330afab821fc2d6407afa7f9f4e60d57751ada7
+| Author: wflores <wflores@gmail.com>
+| Date:   Mon Jan 30 02:17:42 2023 +0000
+|
+|     etracs: bug fixed on SysFileService in handling of the items removal
+|
+* commit 466999cedb46484f306a41ba5bb6c7a6a140b7d4
+| Author: wflores <wflores@gmail.com>
+| Date:   Sun Jan 29 16:01:33 2023 +0000
+|
+|     download: updated the treasury libs
+|
+* commit f5c8a77b58df99ad15fda5b598a1984833859031
+| Author: wflores <wflores@gmail.com>
+| Date:   Sun Jan 29 16:01:08 2023 +0000
+|
+|     treasury: updated the depositvoucher sql scripts
+|
+*   commit c2a420be2d2e79517fb7591b8c57d7b91027e770
+|\  Merge: f186ac5 69cd15c
+| | Author: wflores <wflores@gmail.com>
+| | Date:   Sun Jan 29 10:17:50 2023 +0000
+| |
+| |     Merge branch 'zamboanga' of 192.168.0.10:gitrepo/etracs-city-deployments into zamboanga
+| |
+| * commit 69cd15cfcf155cfc17e54b3b8638c95ca96269b4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Jan 27 15:08:18 2023 +0800
+| |
+| |     - updated the rameses-common2.jar file
+| |     - updated the rameses-file-mgmt.jar file
+| |
+* | commit f186ac5e8d71166a6f13324c2c71c6928a503e66
+|/  Author: wflores <wflores@gmail.com>
+|   Date:   Sun Jan 29 10:16:52 2023 +0000
+|
+|       bpls:
+|       - added totalav property in BillItem
+|       - updated the BusinessCashReceiptService
+|
+* commit 4dfc1678b2a6a83bf7d6d9de8331b33fc66b7403
+| Author: wflores <wflores@gmail.com>
+| Date:   Fri Jan 27 07:00:02 2023 +0000
+|
+|     filemgmt: added filedir field
+|
+* commit 9ca99df284a47e80c84e5bdda89478bcd4b0a04b
+| Author: wflores <wflores@gmail.com>
+| Date:   Fri Jan 20 15:47:52 2023 +0000
+|
+|     download: updated the treasury client
+|
+* commit 640077dec198aee47b924a6381fd6df8f0f6c9ca
+| Author: wflores <wflores@gmail.com>
+| Date:   Fri Jan 20 03:55:30 2023 +0000
+|
+|     etracs: custom: bug fixed on penalty
+|
+* commit 425e78e7aa8b9024885e8dcf3bd29172eab58c85
+| Author: wflores <wflores@gmail.com>
+| Date:   Thu Jan 19 13:45:59 2023 +0000
+|
+|     bpls: updated the BusinessBillingService
+|
+* commit 9a5103e662f79351abc53eeac7ddcd6575c8ca0d
+| Author: wflores <wflores@gmail.com>
+| Date:   Thu Jan 19 04:04:49 2023 +0000
+|
+|     epayment: bug fixed on EORService
+|
+lguzamboanga@etracsserver:~/docker$ git status
+On branch zamboanga
+Your branch is up to date with 'origin/zamboanga'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_taxclearance.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-services.jar/scripts/RPTBillingService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-services.jar/sql/rptbill.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-services.jar/sql/rptbilling_report.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-services.jar/sql/rptbilling_report_mssql.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/rptreport_idle_land.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/BatchGRService
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/sql/batchgr.sql
+        modified:   appserver/etracs/dev_modules/treasury/rameses-gov-treasury-report-services.jar/sql/itemaccount_liquidation_report.sql
+        modified:   appserver/etracs/dev_modules/treasury/rameses-gov-treasury-report-services.jar/sql/itemaccount_liquidation_report_mssql.sql
+        modified:   appserver/etracs/env.conf
+        modified:   appserver/etracs/modules/ext/zamboanga/services/gov-zamboanga-treasury-services.jar/scripts/ZamboangaCollectionMtopService
+        modified:   appserver/etracs/modules/ext/zamboanga/services/gov-zamboanga-treasury-services.jar/sql/zamboanga_collection_mtop.sql
+        modified:   system/download/node/resources/downloads/modules/rptis/pub-updates.pyml
+        modified:   system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis.jar
+        modified:   system/download/node/resources/downloads/modules/rptis/updates.pyml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/modules/ext/zamboanga/services/gov-zamboanga-treasury-bpls-services.jar/scripts/interceptors/ZamboangaTestInterceptor
+        system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-old.jar
+
+no changes added to commit (use "git add" and/or "git commit -a")
+lguzamboanga@etracsserver:~/docker$ docker ps -a
+CONTAINER ID        IMAGE                                            COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
+7fe367ff9a84        ramesesinc/etracs-server-city:2.5.05.01          "/bin/bash /apps/sta…"   2 months ago        Up 2 days           0.0.0.0:8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, 8080/tcp                 etracs-server
+d247710f7087        ramesesinc/mail-server:1.01                      "/usr/local/bin/dumb…"   9 months ago        Up 2 days           0.0.0.0:2527->25/tcp                                                               mail-bpls
+1ea66ea23c4c        ramesesinc/mail-server:1.01                      "/usr/local/bin/dumb…"   9 months ago        Up 2 days           0.0.0.0:2525->25/tcp                                                               mail-primary
+32985239f0dc        ramesesinc/gdx-proxy-server:v004                 "/docker-entrypoint.…"   9 months ago        Up 2 days           0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp                                         gdx-proxy-server
+b5987db5d4cb        ramesesinc/gdx-client:1.04.03                    "/bin/bash /apps/sta…"   9 months ago        Up 2 days           0.0.0.0:8571->8571/tcp                                                             gdx-client
+43218fd1c2b3        ramesesinc/node-download-server:0.0.3            "docker-entrypoint.s…"   13 months ago       Up 2 days           0.0.0.0:8001->8000/tcp                                                             download-node-server
+c882fd725389        nginx:latest                                     "/docker-entrypoint.…"   13 months ago       Up 2 days           0.0.0.0:80->80/tcp, 0.0.0.0:8000->80/tcp                                           download-nginx-server
+69f88cecc191        ramesesinc/local-epayment-server:2.5.01.02.06    "/bin/bash /apps/sta…"   14 months ago       Up 2 days           0.0.0.0:8095->8070/tcp                                                             epayment-server
+f42e03ffa3c5        ramesesinc/enterprise-common-server:255.05.001   "/bin/bash /apps/sta…"   14 months ago       Up 2 days           0.0.0.0:8074->8070/tcp                                                             market-server
+05a99d0b8ea0        ramesesinc/etracs-web:2.5.02.01                  "/bin/bash /apps/sta…"   14 months ago       Up 2 days           0.0.0.0:8080->8080/tcp                                                             etracs-web
+caf7ed54d5da        ramesesinc/queue-server:2.5.02.01                "/bin/bash /apps/sta…"   14 months ago       Up 2 days           8061/tcp, 0.0.0.0:9960->8060/tcp, 0.0.0.0:9970->8070/tcp, 0.0.0.0:9980->8080/tcp   queue-server
+1659a8469ce1        nginx:latest                                     "/docker-entrypoint.…"   14 months ago       Up 2 days           0.0.0.0:9999->80/tcp                                                               queue-proxy
+24fbb8adbac0        ramesesinc/notification-server:1.0               "docker-entrypoint.s…"   14 months ago       Up 2 days           0.0.0.0:7080->8080/tcp                                                             rameses-notification-server
+e09ca506f456        portainer/portainer                              "/portainer"             4 years ago         Up 2 days           0.0.0.0:9000->9000/tcp                                                             portainer
+lguzamboanga@etracsserver:~/docker$

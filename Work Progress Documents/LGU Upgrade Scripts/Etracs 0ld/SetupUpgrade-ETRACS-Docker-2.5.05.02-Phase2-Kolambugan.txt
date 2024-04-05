@@ -1,0 +1,180 @@
+=============================================
+ Upgrade ETRACS Docker To 2.5.05.02 PHASE-02
+=============================================
+
+First things first, install the following 
+required apps on your Windows PC:
+
+- Navicat for MySQL 
+- Sublime Text Editor
+- Java 1.8
+
+
+01. Inform everyone to close their ETRACS client
+
+02. Shutdown the old ETRACS App Server
+
+    02.01  Login to the Old Machine via Git Bash
+
+    02.02  Stop ETRACS App Server
+
+           $  cd  ~/apps/etracs255-server-municipality/bin
+
+           $  sh  shutdown.sh
+
+
+    02.03  Stop GDX App Server
+
+           $  cd  ~/apps/gdx-client-connector/bin
+
+           $  sh  shutdown.sh
+
+
+    02.04  Check the java processes if both apps are no longer visibled. 
+           If they are still visible then go back again to Step-02.02
+
+
+03. Backup the Old ETRACS databases
+
+    03.01  Create a backup target folder     
+
+           $ mkdir -p  ~/dbbackup-20230505
+
+           $ cd ~/dbbackup-20230505
+
+
+    03.02  Backup the etracs main db
+
+           $ mysqldump --max-allowed-packet=16M -u root -p -f etracs255_kolambugan > etracs255_kolambugan.sql
+
+
+    03.03  Backup the image db
+
+           $ mysqldump -u root -p -f etracs255_kolambugan_image > etracs255_kolambugan_image.sql
+
+
+    03.04  Backup the notification db
+
+           $ mysqldump -u root -p -f etracs255_kolambugan_notification > etracs255_kolambugan_notification.sql
+
+
+    03.05  Compress the backup files
+
+           $  cd ..
+
+           $  tar -czvf  dbbackup-20230505.tar.gz  dbbackup-20230505
+
+    03.06  Exit from your SSH session
+
+           $  exit
+
+
+    03.07  Download the compressed backup file on your Windows Desktop
+
+           $  cd ~/Desktop
+
+           $  scp  kolambugan@192.168.5.102:dbbackup-20230505.tar.gz  . 
+
+
+04. Upload the backup file to the New Server
+
+    $  scp dbbackup-20230505.tar.gz  kolambugan@192.168.5.162:.
+
+
+05. Unpack the compressed backup file
+
+    $  ssh kolambugan@192.168.5.162
+
+    $  tar -xvf dbbackup-20230505.tar.gz
+    
+    $  cd dbbackup-20230505
+
+
+06. Create the needed target databases
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs255_kolambugan CHARACTER SET utf8'
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs_image CHARACTER SET utf8'
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs_notification CHARACTER SET utf8'
+
+
+07. Restore the etracs main db
+
+    $  mysql -u root -p -f -D etracs255_kolambugan < etracs255_kolambugan.sql
+
+
+08. Restore the image db
+
+    $  mysql -u root -p -f -D etracs_image < etracs255_kolambugan_image.sql
+    
+
+09. Restore the notification db
+
+    $  mysql -u root -p -f -D etracs_notification < etracs255_kolambugan_notification.sql
+    
+
+10. Update the "docker" folder 
+
+    $  cd ~/docker
+
+    $  git pull
+
+
+11. Exit from session
+
+    $ exit
+
+
+After successfully restored all databases on the NEW server machine
+We will now proceed with the database upgrade process.
+
+
+12. On your Windows PC, open the Samba shared folder of the NEW machine
+    and mount it to drive Z but be sure to uncheck the option "Reconnect"
+
+13. Open Navicat and login to the NEW database server
+
+14. Open a "New Query" window and do the following:
+
+    14.01  Press CTRL + O to show the open dialog
+    
+    14.02  Go to folder "Z:/docker/_res/_upgrade"
+    
+    14.03  Open files sequentially starting from 00 to 05 
+    
+    14.04  Press CTRL + R for each file to execute 
+           and applies the update.
+
+    14.05  Exit Navicat as soon as everything is successful.
+
+
+15. RAMESES ETRACS Developer will now check further 
+    the upgrades and check for errors before running it 
+    and ensure that their previous custom jar files 
+    and services are also loaded in the docker environment 
+
+
+16. After successful checking and verification. 
+    You may now login back to the NEW server via Git Bash
+
+17. Start the docker containers
+
+    $  cd ~/docker/bin
+
+    $  sh start.sh
+
+
+18. Start the GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press  CTRL + C  as soon as 
+          you see colored text messages on 
+          the console log.  
+
+
+19. Monitoring the status and logs via Portainer
+
+20. Done.

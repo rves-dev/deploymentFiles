@@ -23,12 +23,17 @@ Configure ETRACS Docker Repo
 
 05. Change the value of the following settings:
 
+
 	lgu_name=MUNICIPALITY OF TESTER {LGU_NAME}
 	app_server_ip=192.168.0.26 {SERVER IP}
+	server_ip=192.168.0.26 {SERVER IP}
+
 	dbserver_host=192.168.0.1 {DATABASE IP}
 	dbserver_user=root
 	dbserver_pass=P@ssw0rd#
+	
 	db_etracs=etracs255_tester {LGU_NAME}
+
 
 NOTE: To save, press CTRL + X, then press Y, then press ENTER
 To cancel, press CTRL + X, then press N
@@ -43,10 +48,9 @@ To cancel, press CTRL + X, then press N
 	$ mysql -u root -p -f < 00-eor.sql
 	$ mysql -u root -p -f -D etracs255_tester < 01-etracs255-schema.sql
 	$ mysql -u root -p -f -D etracs255_tester < 02-etracs255-data.sql
-	$ mysql -u root -p -f -D etracs255_tester < 03-etracs255-patches.sql
-	$ mysql -u root -p -f < 04-etracs_notification.sql
-	$ mysql -u root -p -f < 05-etracs_image.sql
-	$ mysql -u root -p -f < 06-queue.sql
+	$ mysql -u root -p -f < 03-etracs_notification.sql
+	$ mysql -u root -p -f < 04-etracs_image.sql
+	$ mysql -u root -p -f < 05-queue.sql
 
 08. Open the file "ext/set-{LGU-Type}-data.sql"
 
@@ -55,7 +59,7 @@ Close the text editor to proceed to the next step.
 
 10. Patch the extended script to the etracs main database.
 
-	mysql -u root -p -f -D etracs255_{LGU_NAME} < ext/set-{LGU-Type}-data.sql
+	mysql -u root -p -f -D etracs255_{LGU_NAME} < 06-set-lgu-data.sql
 
 11. Run the default containers
 

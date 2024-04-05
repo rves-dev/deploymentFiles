@@ -1,0 +1,171 @@
+etracs@etracs_docker:~$ cd docker
+etracs@etracs_docker:~/docker$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        3.6G IP: command not found
+       5.9G        4.0M        6.1G         11G
+etracs@etracs_docker:~/docker$   IP address for br-8d8261a7c15e: 172.24.0.1
+Swap:          4.0G          0B        4.0G
+etracs@etracs_docker:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs@etracs_docker:~/docker$ git branch
+IP: command not found
+* bohol-trinidad
+etracs@etracs_docker:~/docker$   IP address for br-9fe36917ed48: 172.25.0.1
+etracs@etracs_docker:~/docker$ git log --graph | head -100
+*   commit e0eba21096c302e62e2aab553a69d51d9eb120a0
+|\  Merge: f01e0193 c3546ec4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 27 10:23:32 2022 +0800
+| |
+| |     Merge branch 'bohol-trinIP: command not found
+idad' of https://github.com/ramesesinc/etracs-municipality-deployments into bohol-trinidad
+etracs@etracs_docker:~/docker$   IP address for br-bbd535b56470: 172.20.0.1
+| |
+| * commit c3546ec4af2c7c7caa12fcde2b0c3a630791eac9
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Mon Sep 19 15:22:47 2022 +0800
+IP: command not found
+| |
+| |     RES: patch: rptis: v2.05.04.05.07
+etracs@etracs_docker:~/docker$   IP address for br-df7201abdf55: 172.19.0.1
+| |
+| * commit 7ae6a56eee3da9b385791e8dd7c0c96b60fb8a29
+^C
+etracs@etracs_docker:~/docker$ clear
+etracs@etracs_docker:~/docker$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        3.6G        5.9G        4.0M        6.1G         11G
+Swap:          4.0G          0B        4.0G
+etracs@etracs_docker:~/docker$ cd docker
+-bash: cd: docker: No such file or directory
+etracs@etracs_docker:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs@etracs_docker:~/docker$ git branch
+* bohol-trinidad
+etracs@etracs_docker:~/docker$ git log --graph | head -100
+*   commit e0eba21096c302e62e2aab553a69d51d9eb120a0
+|\  Merge: f01e0193 c3546ec4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 27 10:23:32 2022 +0800
+| |
+| |     Merge branch 'bohol-trinidad' of https://github.com/ramesesinc/etracs-municipality-deployments into bohol-trinidad
+| |
+| * commit c3546ec4af2c7c7caa12fcde2b0c3a630791eac9
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Mon Sep 19 15:22:47 2022 +0800
+| |
+| |     RES: patch: rptis: v2.05.04.05.07
+| |
+| * commit 7ae6a56eee3da9b385791e8dd7c0c96b60fb8a29
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Mon Sep 19 14:57:08 2022 +0800
+| |
+| |     DEV: rptis: fix server.conf
+| |
+| * commit 61320fe5087ad1a69663a87c8ffeb03230917613
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Mon Sep 19 14:42:53 2022 +0800
+| |
+| |     DEV: rptis: fix server.conf
+| |
+| * commit b8c23a12b4ad511a63f0c4f5e7f081dfb4b47ebc
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Mon Sep 19 13:51:50 2022 +0800
+| |
+| |     DEV: rptis: v2.5.04.05.07 update
+| |
+* | commit f01e01934a9cfc47a7b5274b2b0faccb2e4e595e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Sep 26 08:43:45 2022 +0000
+| |
+| |     waterworks: added proxy services
+| |
+* | commit 27d4dca43719106bb04016bfa3aba6f4bf498c6a
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Mon Sep 26 08:42:45 2022 +0000
+|
+|       removed
+|
+* commit 837853835d8eaf027ac2db8f019e542c92065152
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sun Sep 18 22:28:10 2022 +0800
+|
+|     rptis: mounted old services and client
+|
+* commit 071084de2e8bdfc53585d60416930175744c9572
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Sep 16 12:14:54 2022 +0800
+|
+|     upgrade patch scripts
+|
+* commit e03b1ee8556582cd432956cbf5ec30621a0d144a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Sep 16 12:14:31 2022 +0800
+|
+|     removed
+|
+* commit 5816ee4f435cb0479f5588b3ce2c175c3c0030cc
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Sep 16 11:59:14 2022 +0800
+|
+|     waterworks module added
+|
+*   commit a26a3fd75fd92046e1b807f85984619c3f0ca745
+|\  Merge: 620249c7 1375bde8
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Sep 16 11:26:26 2022 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.04.05.01' into bohol-trinidad
+| |
+| * commit 1375bde805fe8d5a1a59f5ee7bef631d99e9321e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 14 17:30:49 2022 +0800
+| |
+| |     rptis: updated the RPTBillingService
+| |
+| * commit 9bb57622afd400b8002ba952f03f8e0a0a156fba
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 12:39:39 2022 +0800
+| |
+| |     custom template
+| |
+| * commit 3159312784f82279e2c0c128464a9566736b0eb3
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 12:06:47 2022 +0800
+| |
+| |     etracs: patches for 2.5.04.05.01
+| |
+| |     epayment: patches for 2.5.01.02.06
+| |
+* |   commit 620249c7ec30f2511602d60935280d2c9a3ba219
+|\ \  Merge: e5844915 6039155e
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Wed Jun 1 13:30:10 2022 +0800
+| |
+| |       Merge branch 'master' into bohol-trinidad
+etracs@etracs_docker:~/docker$ git status
+On branch bohol-trinidad
+Your branch is up to date with 'origin/bohol-trinidad'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/dev_modules/rptis/server/dev_modules - Shortcut.lnk
+
+nothing added to commit but untracked files present (use "git add" to track)
+etracs@etracs_docker:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED         STATUS       PORTS                                                           NAMES
+bcba8f27ee49   ramesesinc/local-epayment-server:2.5.01.02.06        "/bin/bash /apps/sta…"   13 days ago     Created                                                                      epayment-server
+4040de6932f5   ramesesinc/etracs-server-municipality:2.5.04.05.01   "/bin/bash /apps/sta…"   13 days ago     Created                                                                      etracs-server
+4de89fa93d56   ramesesinc/etracs-web:2.5.02.01                      "/bin/bash /apps/sta…"   13 days ago     Created                                                                      etracs-web
+6e4b07c9edce   ramesesinc/queue-server:2.5.02.01                    "/bin/bash /apps/sta…"   13 days ago     Created                                                                      queue-server
+0622e37032ed   nginx:latest                                         "/docker-entrypoint.…"   13 days ago     Created                                                                      queue-proxy
+d1ad9044774f   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   13 days ago     Created                                                                      download-node-server
+0223b9dcd67f   nginx:latest                                         "/docker-entrypoint.…"   13 days ago     Created                                                                      download-nginx-server
+b7a81f13ca59   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   13 days ago     Created                                                                      rameses-notification-server
+92899b6d1ad4   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   13 days ago     Created                                                                      mail-bpls
+ec59cd363b06   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   13 days ago     Created                                                                      mail-primary
+3f6b47936a64   portainer/portainer-ce                               "/portainer"             14 months ago   Up 2 weeks   8000/tcp, 9443/tcp, 0.0.0.0:9001->9000/tcp, :::9001->9000/tcp   portainer
+etracs@etracs_docker:~/docker$

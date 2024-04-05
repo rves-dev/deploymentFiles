@@ -1,0 +1,153 @@
+
+BlueDemon@DESKTOP-G5CQTOD MINGW64 ~
+$ ssh lhanyx@192.168.100.44
+lhanyx@192.168.100.44's password:
+Permission denied, please try again.
+lhanyx@192.168.100.44's password:
+Web console: https://packer:9090/ or https://192.168.100.44:9090/
+
+Last failed login: Tue Oct  3 08:23:05 PST 2023 from 192.168.25.93 on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Thu Oct 13 09:26:15 2022
+[lhanyx@packer ~]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:          187Gi       7.2Gi       178Gi        47Mi       1.2Gi       178Gi
+Swap:         7.7Gi          0B       7.7Gi
+[lhanyx@packer ~]$ cd docker
+[lhanyx@packer docker]$ remote -v
+-bash: remote: command not found
+[lhanyx@packer docker]$ ls
+appserver  bin  _custom  custom-template.tar.gz  email  _res  system
+[lhanyx@packer docker]$ git remote -v
+origin  https://github.com/ramesesinc/etracs-province-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-province-deployments.git (push)
+[lhanyx@packer docker]$ git branch
+* bohol
+[lhanyx@packer docker]$ git log --graph | head -100
+* commit bd244c498c63d891a535a60bd5f0e27c0a566712
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Sep 17 14:22:41 2022 +0800
+|
+|     updated
+|
+* commit 6f9436269d171f04df0cc5e20b6c75bc3a04ffd5
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Sep 17 14:16:20 2022 +0800
+|
+|     epayment: updated
+|
+* commit 2c2218ae762b5214313720351d8ce4ec23130ea0
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Sep 17 13:21:10 2022 +0800
+|
+|     added patch script
+|
+* commit 3f0f254cdf78e2366f32e4dd6eb46f7e5a577382
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Sep 17 10:59:45 2022 +0800
+|
+|     etracs: mounted rptis build 255.02.007
+|
+*   commit b33e2b97530a3ec2510f42e6503ec7bb2cf7e627
+|\  Merge: 90c949e fd9ab4a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Sat Sep 17 10:44:44 2022 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.04.05.01' into bohol
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_abstractofcollection.sql
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-landtax-services.jar/scripts/RPTBillingService
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/RPTCertificationService
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/RPTReportFieldInspectionDataService
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/rptreport_fieldinspection.sql
+| |     #       appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/RPTUtil
+| |     #       appserver/etracs/docker-compose-ext.yml
+| |     #       system/download/node/resources/downloads/modules/core/pub-updates.pyml
+| |     #       system/download/node/resources/downloads/modules/core/updates.pyml
+| |     #       system/download/node/resources/downloads/modules/rptis/pub-updates.pyml
+| |     #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax.jar
+| |     #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-report.jar
+| |     #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis.jar
+| |     #       system/download/node/resources/downloads/modules/rptis/updates.pyml
+| |     #       system/download/node/resources/downloads/modules/shared/pub-updates.pyml
+| |     #       system/download/node/resources/downloads/modules/shared/updates.pyml
+| |     #       system/download/node/resources/downloads/modules/treasury/pub-updates.pyml
+| |     #       system/download/node/resources/downloads/modules/treasury/updates.pyml
+| |
+| * commit fd9ab4a2f25a08f3547cf908c98ce92f8b865f85
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Sep 14 17:33:55 2022 +0800
+| |
+| |     rptis: updated the RPTBillingService
+| |
+| * commit ac6e1718500a0b194bfdf4672eb1934fafecadc4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 13:33:19 2022 +0800
+| |
+| |     custom template
+| |
+| * commit 20c8a6590c39aaf0269919b20ae4105dbbabf9df
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Sep 13 13:30:38 2022 +0800
+| |
+| |     etracs: 2.5.04.05.01: update patches
+| |
+| |     epayment: 2.5.01.02.06: update patches
+| |
+| * commit 69d935d8e3a52f39bba29d72735afe6ecd0dff6d
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Fri May 27 09:00:35 2022 +0800
+| |
+| |     DEV_MODULES: rptis: 2.5.04.05.01-01 (patch)
+| |
+* | commit 90c949e2ccbade2b38980a4cf7f9a8abe6f2a3f5
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Sun Sep 11 21:32:36 2022 +0800
+| |
+| |     download: updated the client platform
+| |
+* | commit e47d1f5a30bbf5ff829e7b71d0ea599c7bc7a718
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Sun Sep 11 21:30:24 2022 +0800
+| |
+| |     etracs: upgraded to 2.5.04.05.01
+| |
+* | commit 6a452ab973230d3784915b222d9e751b78f3c69b
+|\| Merge: 86e7440 a6f8805
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 15:46:38 2022 +0800
+| |
+| |     Merge branch 'master' into bohol
+| |
+| * commit a6f8805d8b64826fef929361286a2693ade4aa7e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 15:45:55 2022 +0800
+| |
+[lhanyx@packer docker]$ git status
+On branch bohol
+Your branch is up to date with 'origin/bohol'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        system/download/nginx/resources/platform/Java8u261-x32-Portable.zip
+        system/download/nginx/resources/platform/Java8u261-x64-Portable.zip
+        system/download/nginx/resources/platform/jdk-8u271-windows-i586.exe
+        system/download/nginx/resources/platform/jdk-8u271-windows-x64.exe
+
+nothing added to commit but untracked files present (use "git add" to track)
+[lhanyx@packer docker]$ docker ps -a
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED         STATUS        PORTS                                                                                                                                       NAMES
+efdb3c95006b   ramesesinc/local-epayment-server:2.5.01.02.06    "/bin/bash /apps/sta…"   12 months ago   Up 44 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+1ba90364ed07   ramesesinc/mail-server:1.01                      "/usr/local/bin/dumb…"   12 months ago   Up 44 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+4647f1af6d35   ramesesinc/gdx-client:1.04.03                    "/bin/bash /apps/sta…"   12 months ago   Up 44 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+70a0c992bcae   ramesesinc/gdx-proxy-server:v004                 "/docker-entrypoint.…"   12 months ago   Up 44 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+6c4110c41058   portainer/portainer-ce                           "/portainer"             12 months ago   Up 44 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+263500ecbb16   ramesesinc/etracs-server-province:2.5.04.05.01   "/bin/bash /apps/sta…"   12 months ago   Up 44 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+8e37be27ea92   ramesesinc/etracs-web:2.5.02.01                  "/bin/bash /apps/sta…"   12 months ago   Up 44 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+33a115341755   nginx:latest                                     "/docker-entrypoint.…"   12 months ago   Up 44 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+5884833590a6   ramesesinc/queue-server:2.5.02.01                "/bin/bash /apps/sta…"   12 months ago   Up 44 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+86c4e87f78dd   ramesesinc/node-download-server:0.0.3            "docker-entrypoint.s…"   12 months ago   Up 44 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+6c026a210ccd   nginx:latest                                     "/docker-entrypoint.…"   12 months ago   Up 44 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+748cd6707297   ramesesinc/notification-server:1.0               "docker-entrypoint.s…"   12 months ago   Up 44 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+[lhanyx@packer docker]$

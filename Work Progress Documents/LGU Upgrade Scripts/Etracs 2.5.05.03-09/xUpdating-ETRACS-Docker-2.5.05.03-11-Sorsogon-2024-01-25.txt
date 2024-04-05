@@ -1,0 +1,65 @@
+=========================================
+ Updating ETRACS Docker Repo - 2.5.05.03 
+=========================================
+
+About:
+
+   This document will guide you on how to 
+   update your ETRACS-Docker repo to the 
+   latest build 2.5.05.03-11
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh <User>@<ServerIP>
+
+    ssh etracs2@192.168.1.2
+
+
+01. Duplicate the "docker" folder
+
+    $  cd 
+
+    $  cp -rvfp  docker  docker-old-2024-01-25
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+          This is only valid until Jan-31-2024
+
+
+
+03. Restart the "etracs-server" container
+
+    $  cd ~/docker/bin
+
+    $  sh restart-etracs.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+04. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+DONE!

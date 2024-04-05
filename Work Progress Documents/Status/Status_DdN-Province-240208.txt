@@ -1,0 +1,215 @@
+
+Administrator@ETRACS-SERVER MINGW64 /
+$ ssh etracsddn@172.16.14.5
+etracsddn@172.16.14.5's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Feb  8 12:04:16 PST 2024
+
+  System load:                    0.0
+  Usage of /:                     48.7% of 30.83GB
+  Memory usage:                   33%
+  Swap usage:                     0%
+  Processes:                      214
+  Users logged in:                0
+  IP address for eth0:            192.168.14.5
+  IP address for eth1:            172.16.14.5
+  IP address for eth2:            192.168.0.5
+  IP address for br-0571cee2df19: 172.27.0.1
+  IP address for br-0984548bdcfc: 172.24.0.1
+  IP address for br-cdf5d7f7c619: 172.25.0.1
+  IP address for br-d8e153b4bf9f: 172.21.0.1
+  IP address for br-1681d62accd3: 172.28.0.1
+  IP address for br-474b65cadbb6: 172.26.0.1
+  IP address for br-55b213b7034f: 172.22.0.1
+  IP address for br-7d9a3dffceb3: 172.23.0.1
+  IP address for docker0:         172.17.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+143 packages can be updated.
+1 update is a security update.
+
+
+Last login: Mon Jul 24 11:59:41 2023 from 172.16.14.4
+etracsddn@etracs-ddn:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.5 LTS
+Release:        18.04
+Codename:       bionic
+etracsddn@etracs-ddn:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            19G        6.3G         11G        3.3M        1.9G         12G
+Swap:          2.0G          0B        2.0G
+etracsddn@etracs-ddn:~$ cd docker
+etracsddn@etracs-ddn:~/docker$ docker -v
+Docker version 20.10.8, build 3967b7d
+etracsddn@etracs-ddn:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-province-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-province-deployments.git (push)
+etracsddn@etracs-ddn:~/docker$ git branch
+* davaodelnorte
+  v2.5.04.03.01
+etracsddn@etracs-ddn:~/docker$ git log --graph | head -100
+* commit 49df00427c1ebc71d709b462dfad17db5dbe4222
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Wed Jul 26 10:58:47 2023 +0800
+|
+|     RPTIS: batchgr: edit tdno support
+|
+* commit effa17ebe7f3aba828fb0f775f39a051c63930ed
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Mon Jul 24 11:02:44 2023 +0800
+|
+|     DEV: rptis: 2.5.05.02.001
+|
+* commit ce6067a1dba947e79773c36c5c5b465d3f64e2ea
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Jul 4 13:19:32 2023 +0800
+|
+|     added critical patch script
+|
+*   commit 0e8ccf09e4cbe43ee1b52361110f4307ed43a6b0
+|\  Merge: 63a0e7f 991254d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jul 4 13:09:17 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02-003' into davaodelnorte
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/docker-compose-ext.yml
+| |
+| * commit 991254dc71980b79287fef850f4c6e82ecfee6fb
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:33:40 2023 +0800
+| |
+| |     updated config files
+| |
+| * commit 651491428d953221672d44db7e52aaead15e70fe
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:06:40 2023 +0800
+| |
+| |     etracs: bug fixes on entity schemas particularly when using lookup
+| |
+| * commit a13dc1cc294549ad4105aa113eec2f2865618961
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 12:31:05 2023 +0800
+| |
+| |     etracs: upgraded to 2.5.05.02-002
+| |
+| |     entity:
+| |     - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+| |     - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+| |
+* | commit 63a0e7f4f1c17de36ee3e7c487e78e547e445213
+| | Author: wflores <wflores@gmail.com>
+| | Date:   Tue Jun 6 06:41:59 2023 +0000
+| |
+| |     etracs: rptis: mounted services folder
+| |
+* | commit 485b77d6af8498e4d56cf8ab85b29b6bf472f943
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Jun 2 11:43:49 2023 +0800
+| |
+| |     added upgrade scripts for 2.5.05.02
+| |
+* | commit ab73defa0536a0c5e68a1ca2b298afcb0a429060
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Jun 2 11:42:25 2023 +0800
+| |
+| |     removed the mounted folders
+| |
+* | commit f2bf2fc4022a81e08edd45c15fc45e2f778d4fa9
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Fri Jun 2 11:41:32 2023 +0800
+| |
+| |     relocated the plugins folder
+| |
+* |   commit 25534453b19fa4a699871a7be7e846c55758d20a
+|\ \  Merge: 4af5df6 77be17a
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Fri Jun 2 11:33:51 2023 +0800
+| |
+| |       Merge remote-tracking branch 'origin/2.5.05.01-005' into _staging
+| |
+| |       # Conflicts:
+| |       #       appserver/etracs/docker-compose-ext.yml
+| |       #       system/download/node/resources/downloads/modules/rptis/pub-updates.pyml
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax-province.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax-report.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-province.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-report.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-sync2.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/updates.pyml
+| |
+| * commit 77be17a3de981b38ee76fdd3bbc56c12f1e0822f
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 11:51:50 2023 +0800
+| |
+| |     etracs upgraded to 2.5.05.02
+| |
+| * commit 451bfa5ce3cfcde8b2180c6074cd2fe6638d4f4d
+etracsddn@etracs-ddn:~/docker$ git status
+On branch davaodelnorte
+Your branch is up to date with 'origin/davaodelnorte'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/interceptors/FAASMiscReportInterceptor
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_land.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/rulesets/landassessment/rules/default.drl
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/dev_modules/rptis/New folder/
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/FAASReportService06062023
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/RPTReportTMCRService060620232
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/scripts/TDReportService06062023
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport~06062023.sql
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport~old.sql
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/tdreport06062023.sql
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/xxxxrptreport_cancelled_properties060620223.sql
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/BldgRYSettingService~old
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/CancelledFAASService~old
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/LandRYSettingService~old
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/MachRYSettingService~old
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/MiscRYSettingService~old
+        appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/ResectionService~old
+        system/download/nginx/resources/platform/etracs255-platform/
+        system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-report/
+        system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracsddn@etracs-ddn:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                           COMMAND                  CREATED        STATUS      PORTS                                                                                                                                       NAMES
+176eacad857e   ramesesinc/gdx-client:1.04.03                   "/bin/bash /apps/sta…"   7 months ago   Up 7 days   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+cbf96dcad969   ramesesinc/gdx-proxy-server:v004                "/docker-entrypoint.…"   7 months ago   Up 7 days   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+98d10db75422   ramesesinc/local-epayment-server:2.5.01.02.06   "/bin/bash /apps/sta…"   7 months ago   Up 7 days   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+4b0535b8f6b3   ramesesinc/etracs-server-province:2.5.05.02     "/bin/bash /apps/sta…"   7 months ago   Up 2 days   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+a7cb39d0be5d   ramesesinc/etracs-web:2.5.02.01                 "/bin/bash /apps/sta…"   7 months ago   Up 7 days   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+f7600b0185dd   ramesesinc/queue-server:2.5.02.01               "/bin/bash /apps/sta…"   7 months ago   Up 7 days   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+8bfccbb0c301   nginx:latest                                    "/docker-entrypoint.…"   7 months ago   Up 7 days   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+a515d51902c6   ramesesinc/node-download-server:0.0.3           "docker-entrypoint.s…"   7 months ago   Up 7 days   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+4da680f364a7   nginx:latest                                    "/docker-entrypoint.…"   7 months ago   Up 7 days   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+c81fff5f3d64   ramesesinc/notification-server:1.0              "docker-entrypoint.s…"   7 months ago   Up 7 days   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+d695aaa4b1ff   ramesesinc/mail-server:1.01                     "/usr/local/bin/dumb…"   7 months ago   Up 7 days   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+640bc7201e00   portainer/portainer-ce                          "/portainer"             2 years ago    Up 7 days   8000/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                                         portainer
+etracsddn@etracs-ddn:~/docker$

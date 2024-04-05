@@ -1,0 +1,165 @@
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-212-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jul  7 09:22:59 PST 2023
+
+  System load:  0.0                Processes:              118
+  Usage of /:   45.7% of 38.58GB   Users logged in:        1
+  Memory usage: 3%                 IP address for enp0s3:  192.168.10.11
+  Swap usage:   0%                 IP address for docker0: 172.17.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+142 packages can be updated.
+1 update is a security update.
+
+
+*** System restart required ***
+Last login: Thu Jul  6 08:24:27 2023 from 192.168.10.172
+etracuser@etracserver:~$ cd docker
+-bash: cd: docker: No such file or directory
+etracuser@etracserver:~$ ls
+etracs255-server-ddo  faas.sql  gdx-client-connector  zhylle
+etracuser@etracserver:~$ cd etracs255-server-ddo/
+etracuser@etracserver:~/etracs255-server-ddo$ ls
+bin  lib  _res  workspace
+etracuser@etracserver:~/etracs255-server-ddo$ git remote -v
+origin  https://github.com/ramesesinc/etracs255-server-ddo.git (fetch)
+origin  https://github.com/ramesesinc/etracs255-server-ddo.git (push)
+etracuser@etracserver:~/etracs255-server-ddo$ git branch
+* master
+etracuser@etracserver:~/etracs255-server-ddo$ git log --graph | head -100
+* commit 3403ac6d09ed31a3f5e932bd212d4113e555630c
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Fri Sep 10 20:36:24 2021 +0800
+|
+|     CONFIG: updates.xml: register rpt connection
+|
+* commit b48316f30a39dc8ba6078ee6a8c48fb24c85ef91
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Fri Sep 10 20:17:40 2021 +0800
+|
+|     CONNECTIONS: gdx connections
+|
+* commit f8608fec212be4df80eebf3f9fbb8192b94b38a6
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Fri Sep 10 20:13:33 2021 +0800
+|
+|     RPTIS: v255-03030
+|
+* commit 95ed7504a6136a9a1a36d100737fc9be503e85a2
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Tue May 25 09:25:47 2021 +0800
+|
+|     RPTIS: sync2: fix originlguid check
+|
+* commit f2f725ea846eb4904b1370d4c196061a3b338f03
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Mon May 24 16:32:25 2021 +0800
+|
+|     RPTIS: sync: debug remote txn
+|
+* commit 8eaf58c3c15d5a5374b5da74e783ab85e0a12397
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Mar 10 20:16:27 2021 +0800
+|
+|     RPTIS: sync2: reschedule errors
+|
+* commit d2eeca56897081c60a6a15b12f152bbea3ce2575
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Mar 10 16:06:07 2021 +0800
+|
+|     RPTIS: sync: remote newsync check
+|
+* commit 91249ac8077cb0a5f264ae7591f56cc8da06046c
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Fri Feb 12 10:49:55 2021 +0800
+|
+|     RPTIS: sync2: monitoring facility updates
+|
+* commit 75eb26cc6679b1eab5cef83a2fe438bb02aaa683
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Feb 11 09:25:46 2021 +0800
+|
+|     lib: updated
+|
+* commit af55799138719c00bf0fea91ce71fa3597127db1
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Feb 10 11:52:12 2021 +0800
+|
+|     apps: etracs25: connections: updated
+|
+* commit 97b09f27e9e732a7d4ce328b4938c95684e94de9
+| Author: lguddo <ddo@gmail.com>
+| Date:   Sat Feb 6 15:11:11 2021 +0800
+|
+|     updated
+|
+* commit 4fc48d6b5e60551ad950f97be80ada6e5afa06cd
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Fri Feb 5 12:08:21 2021 +0800
+|
+|     RPTIS: res: setting update
+|
+* commit 5aa3b7d2c76de1cd9c3d786f6ff722f85ac48923
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Fri Feb 5 11:58:30 2021 +0800
+|
+|     RPTIS: v255-03025
+|
+* commit f6bcc87d44e89126e0d4c24788525acfa73bd26c
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Feb 4 21:05:09 2021 +0800
+|
+|     rptis: updated
+|
+* commit 21de583872f8bf70b17b812dc19a42e9880cd478
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Feb 4 20:49:00 2021 +0800
+|
+|     bin: updated
+|
+* commit f397f76886b553d0482fd33b947b60e7b45ea027
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Feb 4 20:43:05 2021 +0800
+|
+|     upgraded to 2.5.02.07.01
+|
+* commit da357f5a60cd51a845052f7cf4816822f7ad9886
+  Author: worgflores <worgflores@gmail.com>
+  Date:   Thu Feb 4 19:49:15 2021 +0800
+
+etracuser@etracserver:~/etracs255-server-ddo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   workspace/web/resources/downloads/modules/updates.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bin/server.log
+        bin/start.sh
+        workspace/web/resources/downloads/modules/custom/gov-lgu-ddo-report-faasland.jar
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracuser@etracserver:~/etracs255-server-ddo$ docker ps -a
+CONTAINER ID   IMAGE                    COMMAND        CREATED        STATUS       PORTS                                                           NAMES
+5048862c5a26   portainer/portainer-ce   "/portainer"   7 months ago   Up 3 weeks   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp   portainer
+etracuser@etracserver:~/etracs255-server-ddo$ etracuser@etracserver:~/etracs255-server-ddo$
+-bash: etracuser@etracserver:~/etracs255-server-ddo$: No such file or directory
+etracuser@etracserver:~/etracs255-server-ddo$

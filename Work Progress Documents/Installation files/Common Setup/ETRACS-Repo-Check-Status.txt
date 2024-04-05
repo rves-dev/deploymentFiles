@@ -7,18 +7,25 @@
 ## 
 
 
-Server IP: 192.168.7.24
-Server login: etracsmabini
-Server pass: etracsmabini123
+Server IP: 
+Server login: 
+Server pass: 
 
 
 
 $  ssh  User@Server-IP-Address
 
+
+
+$  lsb_release -a
+
+$  free -h
+
+
+
 ## 2. Check the repo origin 
 ##
 
-$  free -h
 
 $  cd  docker
 
@@ -74,5 +81,5 @@ $  exit
 STANDALONE
 
 * bin
-* workspace/services
-* workspace/web/resources/download
+* services
+* web/resources/download

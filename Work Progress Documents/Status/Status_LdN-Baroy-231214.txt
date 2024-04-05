@@ -1,0 +1,225 @@
+
+user@Valers MINGW64 ~
+$ baroy@192.168.22.102
+bash: baroy@192.168.22.102: command not found
+
+user@Valers MINGW64 ~
+$ ssh baroy@192.168.22.102
+The authenticity of host '192.168.22.102 (192.168.22.102)' can't be established.
+ED25519 key fingerprint is SHA256:23UMfYyuhCr5hqcDD24SIUXg5zaINZFeNvlhhgsE8Fg.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.22.102' (ED25519) to the list of known hosts.
+baroy@192.168.22.102's password:
+Permission denied, please try again.
+baroy@192.168.22.102's password:
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-169-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu 14 Dec 2023 02:48:46 PM PST
+
+  System load:  0.02                Temperature:           35.0 C
+  Usage of /:   17.9% of 195.80GB   Processes:             162
+  Memory usage: 9%                  Users logged in:       0
+  Swap usage:   0%                  IPv4 address for eno1: 192.168.22.102
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+121 updates can be applied immediately.
+2 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+
+1 updates could not be installed automatically. For more details,
+see /var/log/unattended-upgrades/unattended-upgrades.log
+
+Last login: Wed Dec 13 15:02:27 2023 from 192.168.22.127
+baroy@baroy:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           15Gi       1.3Gi        11Gi       2.0Mi       2.5Gi        13Gi
+Swap:         4.0Gi          0B       4.0Gi
+baroy@baroy:~$ cd docker
+-bash: cd: docker: No such file or directory
+baroy@baroy:~$ ls
+ apps
+ backups
+ etracs255_baroy06132022.sql
+ etracs255_baroyBACKUP05222023.sql
+ etracs255_baroyBackup11092022.sql
+ etracs255_baroyBACKUP121323.sql
+ etracs_start.sh
+ etracs_stop.sh
+ gdx_start.sh
+ gdx_stop.sh
+'KexAlgorithms diffie-hellman-group1-sha1,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc'
+ start.sh
+ stop.sh
+baroy@baroy:~$ cd apps
+baroy@baroy:~/apps$ ls
+etracs255-server-municipality  gdx-client-connector  old-backups
+baroy@baroy:~/apps$ cd etracs255-server-municipality/
+baroy@baroy:~/apps/etracs255-server-municipality$ ls
+bin  custom-template.tar.gz  fileserver  lib  _res  services  web
+baroy@baroy:~/apps/etracs255-server-municipality$ cd bin
+baroy@baroy:~/apps/etracs255-server-municipality/bin$ ls
+env.conf  run.sh       server.log  shutdown.bat
+run.bat   server.conf  sh.tar.gz   shutdown.sh
+baroy@baroy:~/apps/etracs255-server-municipality/bin$ cat env.conf
+lgu_name=MUNICIPALITY OF BAROY
+
+blockingTimeout=300000
+
+app_server_ip=192.168.22.102
+
+dbserver_host=localhost
+dbserver_user=root
+dbserver_pass=masterkey
+
+db_etracs=etracs255_baroy
+db_image=etracs255_baroy_image
+db_notification=etracs255_baroy_notification
+
+
+channel=05703
+channelgroup=etracsldn
+channelgroup_enabled=true
+
+fileserver_ip=107.21.113.74
+fileserver_channel=${channel}
+fileserver_dir=${osiris.base.dir}/fileserver
+baroy@baroy:~/apps/etracs255-server-municipality/bin$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.3 LTS
+Release:        20.04
+Codename:       focal
+baroy@baroy:~/apps/etracs255-server-municipality/bin$ cd ..
+baroy@baroy:~/apps/etracs255-server-municipality$ git remote -v
+origin  https://github.com/ramesesinc/etracs255-server-municipality.git (fetch)
+origin  https://github.com/ramesesinc/etracs255-server-municipality.git (push)
+baroy@baroy:~/apps/etracs255-server-municipality$ git branch
+* ldn-baroy
+baroy@baroy:~/apps/etracs255-server-municipality$ git log --graph | head -100
+*   commit 68efcd540c0169f23b4dd55539fc3ae1645cd8a4
+|\  Merge: de2dadf 4063b7e
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Sun Nov 21 13:46:47 2021 +0800
+| |
+| |     Merge branch 'master' into ldn-baroy
+| |
+| *   commit 4063b7eb89770c78dc041aadf77cfebc174f9908
+| |\  Merge: 17c417e 5bca2c8
+| | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | Date:   Sun Nov 21 13:45:58 2021 +0800
+| | |
+| | |     Merge branch 'master' of https://github.com/ramesesinc/etracs255-server-municipality
+| | |
+| * | commit 17c417e4da66f9786359cd906e8f87bd279423b4
+| | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | Date:   Sun Nov 21 13:45:04 2021 +0800
+| | |
+| | |     RPTIS: sync2: remove non-alphanumeric chars in key
+| | |
+* | |   commit de2dadfd64cb5476ff54a86c77c388c15ecf78e4
+|\ \ \  Merge: f773d11 0142385
+| | | | Author: worgflores <worgflores@gmail.com>
+| | | | Date:   Wed Nov 17 10:37:45 2021 +0800
+| | | |
+| | | |     Merge branch 'ldn-baroy' of https://github.com/ramesesinc/etracs255-server-municipality into ldn-baroy
+| | | |
+| * | | commit 01423859dd8d6c9c507e525e622d43a9097edf63
+| | | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | | Date:   Wed Nov 17 10:29:13 2021 +0800
+| | | |
+| | | |     RPTIS: activate new rptis.conf
+| | | |
+| * | | commit f6e10494a5d587b273ff4ff2d534f8a76a07e737
+| | | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | | Date:   Wed Nov 17 10:20:57 2021 +0800
+| | | |
+| | | |     DOWNLOAD: updates.xml: modify version for v255
+| | | |
+| * | |   commit a35827871de7a25ca37aa50ce8da77c3bef0bbe3
+| |\ \ \  Merge: 5c1edeb 1882e58
+| | | | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | | | Date:   Tue Nov 16 15:18:00 2021 +0800
+| | | | |
+| | | | |     Merge branch 'ldn-baroy' of https://github.com/ramesesinc/etracs255-server-municipality into ldn-baroy
+| | | | |
+| * | | | commit 5c1edebb7139174c4c0381a7983df7a8fce261d5
+| | | | | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | | | | Date:   Tue Nov 16 15:17:50 2021 +0800
+| | | | |
+| | | | |     RES: upgrade: rptis patch 2.5.04.03.01
+| | | | |     Activate rptis new libs
+| | | | |
+* | | | |   commit f773d117126d415aa06292032b234d1c0eaef78b
+|\ \ \ \ \  Merge: 1882e58 5bca2c8
+| |_|/ / /  Author: worgflores <worgflores@gmail.com>
+|/| | | /   Date:   Tue Nov 16 11:03:09 2021 +0800
+| | |_|/
+| |/| |         Merge branch 'master' into ldn-baroy
+| | | |
+| * | |   commit 5bca2c8515dff400b4658aae15d595804e0e89f7
+| |\ \ \  Merge: 991fc29 08bf1a1
+| | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | Date:   Tue Nov 16 11:01:40 2021 +0800
+| | | | |
+| | | | |     Merge branch 'master' of file:///o/gitrepo/etracs255-server-main
+| | | | |
+| | * | | commit 08bf1a1b9294f969cbc1cc1b0ae3a64fda84dbee
+| | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | Date:   Tue Nov 16 11:00:14 2021 +0800
+| | | | |
+| | | | |     treasury: updated
+| | | | |
+* | | | | commit 1882e5872ee561f2d4fff65fe18c5b7c6491c86f
+|\| | | | Merge: 1419030 991fc29
+| | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | Date:   Sun Nov 14 20:55:15 2021 +0800
+| | | | |
+| | | | |     Merge branch 'master' into ldn-baroy
+| | | | |
+| * | | |   commit 991fc293cf0b52c5e3a835795bfbe8f2389e77b4
+| |\ \ \ \  Merge: e0d12c3 3d1758a
+| | | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | | Date:   Sun Nov 14 20:54:52 2021 +0800
+| | | | | |
+| | | | | |     Merge branch 'muni' of file:///o/gitrepo/template-etracs255-rptis
+| | | | | |
+| | * | | |   commit 3d1758afc7faa50dac0332d15f85ee697557a1e9
+| | |\ \ \ \  Merge: b8f4bba 1dc4410
+| | | | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | | | Date:   Sun Nov 14 20:52:52 2021 +0800
+| | | | | | |
+| | | | | | |     Merge branch 'master' into muni
+| | | | | | |
+| | | * | | | commit 1dc4410fda5bf04b70209564046e3142dd4f455b
+| | | | | | | Author: worgflores <worgflores@gmail.com>
+| | | | | | | Date:   Sun Nov 14 20:52:33 2021 +0800
+| | | | | | |
+| | | | | | |     rptis: landtax online updated
+| | | | | | |
+baroy@baroy:~/apps/etracs255-server-municipality$ git status
+On branch ldn-baroy
+Your branch is up to date with 'origin/ldn-baroy'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services/modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/LandRPUService
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bin/server.log
+        web/resources/platform/etracs255_old_platform.zip
+        web/resources/platform/jdk1.6.0_45/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+baroy@baroy:~/apps/etracs255-server-municipality$

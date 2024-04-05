@@ -1,0 +1,201 @@
+
+marlon.macua@LGU-WK-SVRM2 MINGW64 ~/Desktop
+$ ssh etracs@10.10.10.104
+etracs@10.10.10.104's password:
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Apr  1 14:22:11 PST 2024
+
+  System load:  0.17               Users logged in:                1
+  Usage of /:   29.2% of 97.38GB   IP address for ens33:           10.10.10.104
+  Memory usage: 29%                IP address for docker0:         172.17.0.1
+  Swap usage:   0%                 IP address for br-b26e7bb2bc4d: 172.19.0.1
+  Processes:    321                IP address for br-bccaaa0c7e26: 172.18.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Infrastructure is not enabled.
+
+7 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+108 additional security updates can be applied with ESM Infra.
+Learn more about enabling ESM Infra service for Ubuntu 18.04 at
+https://ubuntu.com/18-04
+
+
+Last login: Thu Mar 21 07:46:08 2024
+etracs@etracs_docker:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        4.2G        6.5G        4.0M        4.9G         11G
+Swap:          4.0G          0B        4.0G
+etracs@etracs_docker:~$ ls
+docker                                 jdk-8u211-linux-x64.tar
+docker-old-2023-12-05                  waterworks10122022.sql
+etracs255_trinidad101222.sql           waterworks-server
+etracs255_trinidad_backup11282023.sql  zzz
+etracs_trinidad10122022.sql
+etracs@etracs_docker:~$ cd docker
+etracs@etracs_docker:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs@etracs_docker:~/docker$ git branch
+* bohol-trinidad
+etracs@etracs_docker:~/docker$ git log --graph | head -100
+* commit 752bd760ac5acf309d44cec6d958cc6610b4c953
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Dec 5 12:04:06 2023 +0800
+|
+|     bin: updated
+|
+* commit 4ae7d159c8d6ead7f115384b107e83a885e250eb
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Dec 4 21:03:17 2023 +0800
+|
+|     download: updated the compose file
+|
+* commit 0a0b3946cd851a146161edc35a514ba426b8f785
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Dec 4 20:52:20 2023 +0800
+|
+|     added patch script for CTC
+|
+* commit 15156399107735dadf9fdeefcee1a0d3f3e4aeb7
+| Author: wflores <wflores@gmail.com>
+| Date:   Mon Dec 4 12:50:14 2023 +0000
+|
+|     modified patch script
+|
+* commit a09ba4e7c7441f671df8ed5f5e9142ba936cc757
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Dec 4 16:29:17 2023 +0800
+|
+|     added upgrade scripts
+|
+* commit 108d94c445a6dc00ea9dfb01672fea74b01cb1b4
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Dec 4 16:14:36 2023 +0800
+|
+|     organized the paid plugins
+|
+*   commit 8e1b5e211272bc9ec41337a6b80bbcb759b2454e
+|\  Merge: 56370f5f 1e1716a4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Dec 4 16:10:07 2023 +0800
+| |
+| |     Merge remote-tracking branch 'nas/2.5.05.03-02' into bohol-trinidad-staging
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/landtaxreport_rptdelinquency.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/report_rptdelinquency.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/report_rptdelinquency_barangay.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/report_rptdelinquency_error.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/report_rptdelinquency_forprocess.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/schema/report_rptdelinquency_item.xml
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxBatchBillingService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxBuildDelinquencyService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportAbstractTaxCollectionService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportBarangayCityShareService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportCertifiedCollectibleService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportCollectiblePaymentSummaryService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportCompromiseAgreementService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportCompromiseService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportConsolidatedCollectionService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportConsolidatedReportService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportDelinquencyService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportNewlyAssessedPropertyService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportNoticeOfDelinquencyService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportRealPropertyPaymentService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportRealtyTaxCollectibleService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportStatementOfShareService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportTaxClearanceService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportTopNDelinquentTaxpayerService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportTopNRealPropertyTaxpayerService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/RealtyTaxRegistryReportService
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/interceptors/LandTaxReportStatementOfShareInterceptor
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/interceptors/RPTLandtaxReportParameterInterceptor
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_abstractofcollection.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_batchbilling.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_brgycityshare.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_certified_collectible.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_collection.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_compromise.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_compromise_agreement.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_consolidated.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_consolidated_collection.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_newly_assessed_property.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_real_property_payment.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_realty_tax_collectible.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_realtytaxregistry.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_realtytaxregistry_mssql.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_remittance.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_rptdelinquency.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_statementofshare.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_taxclearance.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_taxclearance_mssql.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_topn_delinquent.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_topn_delinquent_mssql.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_topn_realty_taxpayer.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/report_rptdelinquency.sql
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-services.jar/lov/NATIONALITIES
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-services.jar/lov/RPT_BILLING_COMPUTATION_TYPES
+| |     #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-services.jar/lov/RPT_BILLING_LGU_TYPES
+etracs@etracs_docker:~/docker$ git status
+On branch bohol-trinidad
+Your branch is up to date with 'origin/bohol-trinidad'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/dev_modules/rptis/
+
+nothing added to commit but untracked files present (use "git add" to track)
+etracs@etracs_docker:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                              COMMAND                  CREATED         STATUS       PORTS                                                                          NAMES
+c860d193439d   ramesesinc/gdx-client:1.05         "/bin/bash /apps/sta…"   3 months ago    Up 11 days   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                      gdx-client
+db35face6fe8   ramesesinc/gdx-proxy-server:v005   "/docker-entrypoint.…"   3 months ago    Up 11 days   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp   gdx-proxy-server
+3f6b47936a64   portainer/portainer-ce             "/portainer"             18 months ago   Up 11 days   8000/tcp, 9443/tcp, 0.0.0.0:9001->9000/tcp, :::9001->9000/tcp                  portainer
+etracs@etracs_docker:~/docker$ cd _custom/
+etracs@etracs_docker:~/docker/_custom$ cat env.conf
+##
+## Git Pass: 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
+##
+
+lgu_name=MUNICIPALITY OF TRINIDAD
+
+channel=04743
+channelgroup=etracsbohol
+fileupload_channel=${channel}
+filipizen_group=bohol_trinidad
+
+sms_acctname=04743
+sms_apikey=e8bd52f639391fc2c9b59a1b9ec7aa27
+
+app_server_ip=10.10.10.104
+
+#pub_app_server_ip=180.193.216.219
+#pub_app_server_ip=124.6.128.25
+pub_app_server_ip=222.127.132.9
+
+dbserver_host=${app_server_ip}
+dbserver_user=root
+dbserver_pass=P@ssw0rd#
+
+db_etracs=etracs255_trinidad
+db_image=etracs_image
+db_notification=etracs_notification
+db_epayment=eor
+db_queue=queue
+db_waterworks=waterworks
+
+water_host=10.10.10.104
+etracs@etracs_docker:~/docker/_custom$

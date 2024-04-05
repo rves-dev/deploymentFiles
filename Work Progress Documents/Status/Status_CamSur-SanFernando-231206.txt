@@ -1,0 +1,184 @@
+
+
+IT-Department@DESKTOP-QUA7QJ7 MINGW64 ~/Desktop
+$ ssh etracs@192.168.1.6
+etracs@192.168.1.6's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Dec  6 14:50:31 PST 2023
+
+  System load:                    0.21
+  Usage of /:                     9.3% of 195.80GB
+  Memory usage:                   14%
+  Swap usage:                     0%
+  Processes:                      209
+  Users logged in:                1
+  IP address for eno1:            192.168.1.6
+  IP address for docker0:         172.17.0.1
+  IP address for br-4466da0c1e87: 172.21.0.1
+  IP address for br-53a9358c8584: 172.27.0.1
+  IP address for br-c2b479004e37: 172.28.0.1
+  IP address for br-1525f4635264: 172.19.0.1
+  IP address for br-bbd6397c0c1c: 172.25.0.1
+  IP address for br-f9b5b61e57ee: 172.20.0.1
+  IP address for br-44c48521653e: 172.23.0.1
+  IP address for br-28420cc22aaa: 172.18.0.1
+  IP address for br-589a64010685: 172.22.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+140 packages can be updated.
+1 update is a security update.
+
+
+Last login: Wed Dec  6 07:35:33 2023 from 192.168.1.103
+etracs@sfwss-server:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            23G        3.4G         18G        3.7M        1.3G         19G
+Swap:          4.0G          0B        4.0G
+etracs@sfwss-server:~$ cd docker
+etracs@sfwss-server:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs@sfwss-server:~/docker$ git branch
+* camsur-sanfernando
+etracs@sfwss-server:~/docker$ git log --graph | head -100
+* commit 36542f166846b054f652c9e6bf4877167ca45d1c
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Aug 4 14:29:11 2021 +0800
+|
+|     waterworks: updated
+|
+* commit 19ee7fef19d85a3d3a2e9757c3008434eaa27f96
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Aug 4 14:26:54 2021 +0800
+|
+|     download: shared: updated
+|
+* commit 7d149cb2185240a5507526f8c1f74db4c8a28602
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Aug 4 14:25:46 2021 +0800
+|
+|     waterworks: upgraded to enterprise-common-server:255.05.001
+|
+* commit ccbacd759fcd76529e19023ab01d0086601fc3af
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Aug 4 13:08:00 2021 +0800
+|
+|     waterworks: updated
+|
+* commit cf6f789bd30423fbe156b2565aa5de5d2141002a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Aug 4 10:05:25 2021 +0800
+|
+|     _res: updated
+|
+* commit 7bbafdc4ece7a7ab2d1f15933547b0931f94b3d7
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Aug 3 13:22:12 2021 +0800
+|
+|     updated
+|
+* commit 5dd000ce029e3ad4071f8de7009d0bf9f219e56f
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Aug 3 11:19:28 2021 +0800
+|
+|     updated
+|
+* commit 013a8f5ea36f584311afbbdbf92d9ab27845d34a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Jul 30 16:58:41 2021 +0800
+|
+|     etracs: mounted rule updates
+|
+* commit 38eb37e7699e3c2c812431d0578a6b95916cea2d
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jul 29 16:51:29 2021 +0800
+|
+|     etracs: mounted entity updates
+|
+* commit ae206d0ea511c348474de655ab2e744e88cb61ab
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jul 29 16:50:46 2021 +0800
+|
+|     etracs: mounted bpls updates
+|
+*   commit cf82427e5fab40fda6258479ca18c3748a36bfd5
+|\  Merge: 82e2c62 2a49683
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jul 29 10:55:37 2021 +0800
+| |
+| |     Merge branch 'master' of https://github.com/ramesesinc/etracs-municipality-deployments
+| |
+| *   commit 2a49683389abd19724013bb7d18ad1e45bfae2e4
+| |\  Merge: 3e99520 61ffb82
+| | | Author: Jessie Zamora <jzamss@gmail.com>
+| | | Date:   Wed Jul 28 09:49:05 2021 +0800
+| | |
+| | |     Merge branch 'master' of https://github.com/ramesesinc/etracs-municipality-deployments
+| | |
+| * | commit 3e99520f9a39cbace222af06d4159a09aa1df035
+| | | Author: Jessie Zamora <jzamss@gmail.com>
+| | | Date:   Wed Jul 28 09:48:44 2021 +0800
+| | |
+| | |     RES: gdx and fileupload settings
+| | |
+* | | commit 82e2c6259fd5182de969058b16af3fb23cff663a
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Jul 29 10:54:29 2021 +0800
+| | |
+| | |     etracs: mounted enterprise folder
+| | |
+* | | commit 3cb2af18d7c7feb362f29b0f581864839e635a1a
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Jul 29 10:52:03 2021 +0800
+| | |
+| | |     etracs: mounted enterprise folder
+| | |
+* | | commit c30ff5d43fffffdeabda76322e2e648ab6243eac
+| |/  Author: worgflores <worgflores@gmail.com>
+|/|   Date:   Thu Jul 29 10:51:01 2021 +0800
+| |
+| |       etracs: mounted treasury updates
+| |
+* | commit 61ffb8228c15a5f5bb448b35f738b7b287c1db37
+| | Author: worgflores <worgflores@gmail.com>
+etracs@sfwss-server:~/docker$ git status
+On branch camsur-sanfernando
+Your branch is up to date with 'origin/camsur-sanfernando'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        system/download/nginx/resources/platform/etracs25_platform-waterworks.zip
+        system/download/nginx/resources/platform/etracs25_platform-waterworks1.rar
+        system/download/nginx/resources/platform/etracs25_platform1.rar
+
+nothing added to commit but untracked files present (use "git add" to track)
+etracs@sfwss-server:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED       STATUS       PORTS                                                                              NAMES
+94a8e6b9f778   ramesesinc/enterprise-common-server:255.05.001       "/bin/bash /apps/sta…"   7 hours ago   Up 7 hours   0.0.0.0:8076->8070/tcp                                                             waterworks-server
+830fbd67b827   ramesesinc/etracs-server-municipality:2.5.04.01.01   "/bin/bash /apps/sta…"   7 hours ago   Up 7 hours   0.0.0.0:8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, 8080/tcp                 etracs-server
+34ad216cf449   ramesesinc/gdx-proxy-server:v002                     "nginx -g 'daemon of…"   2 years ago   Up 8 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp                                         gdx-proxy-server
+70aae6a9e01b   ramesesinc/gdx-client:1.03.01                        "/bin/bash /apps/sta…"   2 years ago   Up 7 hours   0.0.0.0:8571->8571/tcp                                                             gdx-client
+a6735beaa5ea   ramesesinc/queue-server:2.5.02.01                    "/bin/bash /apps/sta…"   2 years ago   Up 7 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, 0.0.0.0:9970->8070/tcp, 0.0.0.0:9980->8080/tcp   queue-server
+2db4df07b5f1   nginx:latest                                         "/docker-entrypoint.…"   2 years ago   Up 7 hours   0.0.0.0:9999->80/tcp                                                               queue-proxy
+380c9537f957   ramesesinc/local-epayment-server:2.5.01.02.06        "/bin/bash /apps/sta…"   2 years ago   Up 7 hours   0.0.0.0:8095->8070/tcp                                                             epayment-server
+81aadbf5b1ef   ramesesinc/etracs-web:2.5.02.01                      "/bin/bash /apps/sta…"   2 years ago   Up 7 hours   0.0.0.0:8080->8080/tcp                                                             etracs-web
+7af53d2fae50   nginx:latest                                         "/docker-entrypoint.…"   2 years ago   Up 7 hours   0.0.0.0:80->80/tcp, 0.0.0.0:8000->80/tcp                                           download-nginx-server
+9556f837a41f   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   2 years ago   Up 7 hours   0.0.0.0:8001->8000/tcp                                                             download-node-server
+989a9a43c182   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   2 years ago   Up 7 hours   0.0.0.0:7080->8080/tcp                                                             rameses-notification-server
+a57adcb94132   ramesesinc/mail-server:latest                        "/usr/local/bin/dumb…"   2 years ago   Up 7 hours   0.0.0.0:2525->25/tcp                                                               mail-primary
+88c716044b3c   portainer/portainer                                  "/portainer"             2 years ago   Up 8 hours   0.0.0.0:9000->9000/tcp                                                             portainer
+etracs@sfwss-server:~/docker$

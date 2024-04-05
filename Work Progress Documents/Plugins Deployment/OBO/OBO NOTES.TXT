@@ -1,0 +1,36 @@
+===========================
+OBO MODULE
+===========================
+
+
+APPLICATION ---> PAYMENT ---> RELEASING 
+
+
+COMMON ROLES:
+
+•	RECEIVER 
+	- 	Receives all the applications. Initializes the application from the web. Forward to Requirement Verifier.
+
+•	REQUIREMENT VERIFIER
+	-	Checks all of the requirements.
+
+•	COORDINATOR
+	-	Manages/Overlooks all the processes in the application process.
+
+•	ASSESSOR/BILLER
+	-	Generates/Computes bill.
+
+•	APPROVER
+	-	Approves the assessments/evaluations. Normally OBO Head
+
+•	RELEASER
+	-	Prepares/Releases the Documents.
+
+
+EVALUATOR ROLES:
+
+•	OBO REVIEWER
+	-	Reviews all the evaluations.
+
+• 	DIFFERENT FIELD EVALUATORS
+	-	Evaluates according to their corresponding field practices.

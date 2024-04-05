@@ -1,0 +1,82 @@
+=============================
+ Updating ETRACS Docker Repo 
+=============================
+
+THIS UPDATE will only remove the old Vehicle plugin 
+since the new plugin called VRS has already been installed.
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh lguligao@192.168.2.202
+    
+    p@ssw0rd
+
+01. Pull updates from GitHub
+
+    $  cd ~/docker
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+
+Now the "docker" repo folder is fully updated.
+We will now restart the affected containers only.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+
+02. Restart the download container 
+
+    $  cd ~/docker/bin
+    
+    $  sh restart-download.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+03. Restart the etracs container 
+
+    $  cd ~/docker/bin
+    
+    $  sh restart-etracs.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+04. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+05. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

@@ -1,0 +1,332 @@
+==========================================
+MARKET PLUGIN USER MANUAL
+==========================================
+
+
+•	Create a Market user account
+
+
+	Open Etracs Client and login as Administrator.
+
+	Navigate to Administration > Manage Users
+
+	Create a new acccount and fillout the corresponding required fields.
+
+	After saving the data, navigate to roles and permissions tab.
+
+	Select "MARKET" as domain.
+
+	Click on "Add Role" and select the roles needed for the market user account.
+
+	Close the pop-up window to save.
+
+
+
+
+•	Login as Market user account
+
+
+	Open Market Client and login with the market user account recently created.
+
+	Select "Market Rental" and check to see the corresponding features added in the roles/permission are available in your client.
+
+
+
+
+•	Initialize Schedule Group
+
+	
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Master > Market > Market Bill Schedule Group.
+
+	Click on the "New" icon to create a Market Bill Schedule Group.
+
+	Set "Default" as the Code and add "Default Schedule" in the Description.
+
+
+
+•	Setup Market Center
+
+	
+	Navigate to Home > Market Rental > Master - Market Centers.
+
+	Click on the "New" icon and a Market Center Page window will pop-out.
+
+	Provide the necessary field required.
+
+		*	Code - code used to identify the market center (5 characters only. Must be unique)
+
+		*	Org (Optional) - to assign Market Center to a specific org
+
+		*	Name - used to identify the market center
+
+		*	Title (Optional)
+
+		*	Address (Optional)
+
+		*	Contact Info (Optional)
+
+		*	Schedule Group - use the lookup (magnifying glass) icon and select "Default".
+
+		*	Logo (Optional)
+
+	Click on Save icon.
+
+
+
+
+•	Setup Market Section
+
+	
+	Navigate to Home > Market Rental > Master - Market Centers.
+
+	Open the recently created Market Center.
+
+	Click on the "Section" Tab.
+
+	Right-click on the folder with the Market Center Code recently created. Click on Add Group.
+
+	A New Market Section pop-out window will appear. Provide the name and description of the market section you want to create. Click on Save icon.
+
+	Create all Sections available in your Market Center.
+
+
+
+
+•	Setup Market Rental Units
+
+
+	Navigate to Home > Market Rental > Master - Market Rental Units.
+
+	Click on the "New" icon and a Market Rental Unit window will pop-out.
+
+	Provide the necessary field required.
+
+		*	Unit No - assign a unit number to a unit. Must be unique
+
+		*	Unit Type - select the type of unit
+
+			~ block
+			~ space
+			~ stall
+			~ table
+			~ tile
+
+		* Index no - used in indexing/sorting units
+
+		* Area (sqm) 
+
+		* Section - use the lookup (magnifying glass) icon and select the Section in which the Market Rental Unit belongs.
+
+	Click on Save icon.
+
+	Create all Market Rental Units available in each Market Section in your Market Center .
+
+
+
+•	Adding Rates/Batch Rate
+
+
+	After creating a Market Rental Unit, you can manually add a rental rate to each rental unit or use the Batch Rental Rate feature.
+
+	This feature allows the user to add a rate to a specific group of units/section within a Market Center.
+
+
+	Navigate to Home > Market Rental > Management - Batch Rental Rate.
+
+	Click on the "New" icon and a Market Batch Rental Rate (New) window will pop-out.
+
+	Provide the necessary field required.
+
+		*	Particulars - provide description for the Batch Rental Rate
+
+		*	Rate 
+
+			~ Fixed Rate - provide the fixed rate and select rate type of per day or per month.
+
+			~ Percentage - provide the rate increase in terms of percentage (for rental units with existing rates)
+
+		*	Frequency 
+
+			~ Run Once - Applies the new rate once, provide the start date for the batch rental rate to take effect.
+			~ Repeat Every - 
+
+		*	Market Center - Select the applicable Market Center
+
+			Batch Rental Rate can be applied to an entire Market Center or to a specific section(s)/unit(s) in a market center.
+
+	Deploy Batch Rate to take effect.
+
+
+
+•	Mapping Item Accounts and Collection Types
+
+
+	**ITEM ACCOUNTS
+
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Master > Market > Market Item Account.
+
+	Double-click on a Market Item Account to map. A Market Item Account window will pop-out.
+
+	Click on "Map Treasury Account". A Lookup Revenue window will pop-out. Select the corresponding Item Revenue Account to be mapped to.
+
+		(If the desired Item Account does not exist. Check the Item Accounts list in Etracs Client.)
+
+	Repeat steps for all Market Item Account.
+
+
+
+	**COLLECTION TYPE
+
+	Open Etracs Client and login as Admin.
+
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Master > Treasury > Collection Types.
+
+	Use the lookup/search icon on upper-right portion of the window and search for Market Collection.
+
+	Double-click on Market Collection. A Collection Type window will pop-out with several information. The Service Name under Service Handler should be MarketCashReceiptService.
+
+	Show in Online Mode and Show in Offline Mode must be checked in Display Options. Activate the Collection Type if it isn't already Activated.
+
+
+
+
+
+•	Setup Market Rules 
+
+		
+	**MARKET BILLING SCHEDULES
+
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Rule Management > Market > Market Billing Schedule.
+
+	Double-click on the Market Billing Schedule.
+
+	Review all Rules Applicable for the Market Billing Schedule and edit the parameters needed.
+
+	Deploy Rules to take effect.
+
+
+
+	**MARKET BILLING RULES
+
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Rule Management > Market > Market Billing Rules.
+
+	Double-click on the Market Billing Rules.
+
+	Review all Rules Applicable for the Market Billing Rules and edit the parameters needed.
+
+	Deploy Rules to take effect.
+
+
+
+	**MARKET PAYMENT RULES
+
+	Click on the Main Menu (icon with blue-orange-green boxes arranged like a pyramid).
+
+	Navigate to Main Menu > Rule Management > Market > Market Billing Rules.
+
+	Double-click on the Market Billing Rules.
+
+	Review all Rules Applicable for the Market Billing Rules and edit the parameters needed.
+
+	Deploy Rules to take effect.
+
+
+
+
+•	Capture Account/New Account
+
+
+	**CAPTURE ACCOUNT
+
+	Navigate to Home > Market Rental > Transactions - Capture Account
+
+	Click on the "New" icon and a Market Rental Unit window will pop-out.
+
+	Provide the necessary field required.
+
+		*	Acct No - account number is assigned to the rental unit and must be unique. 
+
+				1:1 Ratio of Acct No & Unit No
+
+		*	Account Owner (Optional) - can be looked up and linked to an existing or new entity.
+
+		*	Acct Name - must be provided to identify account name.
+
+		*	Market Center - select the approriate market center the account belongs.
+
+		*	Lookup Rental Unit - select the approriate rental unit the account belongs.
+
+		*	Payment Mode - Select payment mode from the drop-down list.
+
+	Click on Save icon.
+
+	If the user has the necessary roles/permissions to approve capture account, click on Assign To Me then Approve to complete Capture Account.
+
+
+	**NEW ACCOUNT
+
+	pending
+
+	create bill before activation
+
+
+
+
+•	Capture Billing
+
+
+	//Capture the latest bill hanging on the account.
+	
+	Navigate to Home > Market Rental > Management - View Account List
+
+	Under My Tasks/Pending, select the account to be billed by double-clicking on the account.
+
+	Click on Assign To Me.
+
+	Under Rental Billing Tab, Click on the "New" icon and a Market Rental Bill Info window will pop-out.
+
+	Select the Appropriate Year and Month for the Capture Bill and press OK.
+
+	A Market Rental Bill Info window will pop-out. This window will display all the billing information for this account.
+
+		*	Create Next Bill - system will automatically generate a bill for the following month.
+
+		*	Unpost Bill - Status will return to open.
+
+		*	Cancel Bill - cancels the bill
+
+		*	Add Item - manually add a specific bill item
+
+		*	Remove Item - remove an item from the Bill Items list
+
+		*	Clear Item - clear items in the Bill Items List
+
+		*	ReBill
+
+
+	After the capture of the lastest hanging bill, the system will now automatically generate a bill every month according to the billing rules set in Rule Management.
+
+
+
+
+•	Capture Payment
+
+
+	Navigate to Home > Market Rental > Management - View Account List
+
+	Select the account for the capture payment.
+
+	Under Rental Billing Tab, Click on a existing bill and a Market Rental Bill Info window will pop-out.
+
+	Under Payments Tab, click on Capture Payment. Provide the necessary field required and select Post Payment.
+

@@ -1,0 +1,120 @@
+=============================================
+DATABASE BACK-UP
+=============================================
+
+First things first, install the following 
+required apps on your Windows PC:
+
+- Navicat for MySQL 
+- Sublime Text Editor
+
+
+01. Inform everyone to close their ETRACS client
+
+02. Shutdown the old ETRACS App Server
+
+    02.01  Login to the Old Machine via Git Bash
+
+    02.02  Stop ETRACS App Server
+
+           $  cd  ~/apps/etracs255-server-municipality/bin
+
+           $  sh  shutdown.sh
+
+
+    02.03  Stop GDX App Server
+
+           $  cd  ~/apps/gdx-client-connector/bin
+
+           $  sh  shutdown.sh
+
+
+    02.04  Check the java processes if both apps are no longer visibled. 
+           If they are still visible then go back again to Step-02.02
+
+
+03. Backup the Old ETRACS databases
+
+    03.01  Create a backup target folder     
+
+           $ mkdir -p  ~/dbbackup-20231010
+
+           $ cd ~/dbbackup-20231010
+
+
+    03.02  Backup the etracs main db
+
+           $ mysqldump --max-allowed-packet=16M -u root -p -f etracs255_lguname > etracs255_lguname.sql
+
+
+    03.03  Backup the image db
+
+           $ mysqldump -u root -p -f etracs255_image > etracs255_lguname_image.sql
+
+
+    03.04  Backup the notification db
+
+           $ mysqldump -u root -p -f etracs255_notification > etracs255_lguname_notification.sql
+
+
+    03.05  Compress the backup files
+
+           $  cd ..
+
+           $  tar -czvf  dbbackup-20231010.tar.gz  dbbackup-20231010
+
+    03.06  Exit from your SSH session
+
+           $  exit
+
+
+    03.07  Download the compressed backup file on your Windows Desktop
+
+           $  cd ~/Desktop
+
+           $  scp  server@server-ip:dbbackup-20231010.tar.gz  . 
+
+
+04. Upload the backup file to the New Server
+
+    $  scp dbbackup-20231010.tar.gz  server@server-ip:.
+
+
+05. Unpack the compressed backup file
+
+    $  ssh server@server-ip
+
+    $  tar -xvf dbbackup-20231010.tar.gz
+    
+    $  cd dbbackup-20231010
+
+----------------------------------------------------------------------
+RESTORING DATABASE BACK-UPS
+----------------------------------------------------------------------
+
+
+06. Create the needed target databases
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs255_lguname CHARACTER SET utf8'
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs_image CHARACTER SET utf8'
+
+    $  mysql -u root -p -e 'CREATE DATABASE etracs_notification CHARACTER SET utf8'
+
+
+07. Restore the etracs main db
+
+    $  mysql -u root -p -f -D etracs255lguname < etracs255lguname.sql
+
+
+08. Restore the image db
+
+    $  mysql -u root -p -f -D etracs_image < etracs255lguname_image.sql
+    
+
+09. Restore the notification db
+
+    $  mysql -u root -p -f -D etracs_notification < etracs255lguname_notification.sql
+    
+
+10. Done.

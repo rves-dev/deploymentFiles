@@ -1,0 +1,130 @@
+etracsduero@dueroserver:~$ cd
+etracsduero@dueroserver:~$ clear
+etracsduero@dueroserver:~$ cd docker
+etracsduero@dueroserver:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracsduero@dueroserver:~/docker$ git branch
+* bohol-duero
+etracsduero@dueroserver:~/docker$ git log --graph | head -100
+* commit c0627a9ef91fc1d6f5089ad38cddfbbb62326d33
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Jul 3 22:06:37 2023 +0800
+|
+|     added patch script
+|
+*   commit 79b345836c00f0ffed80082a26aa14f603df73df
+|\  Merge: 634fea9e f0d164b6
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 22:03:16 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02-003' into bohol-duero
+| |
+| * commit f0d164b6224aee357d3ab6dbd90fb16a329ca317
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:32:09 2023 +0800
+| |
+| |     updated config files
+| |
+| * commit a9b4dca00005393f615db9d80d60b5702dcd4c2a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:05:03 2023 +0800
+| |
+| |     etracs: bug fixes on entity schemas particularly when using lookup
+| |
+| * commit 293a81fdb1d93f822053b8789f42e24aedbf6839
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 11:53:14 2023 +0800
+| |
+| |     etracs: updates
+| |
+| |     bpls:
+| |     - bug fixed on voiding of business payment receipt
+| |     - business payment receipt can be voided with no
+| |       restriction only if the receipt date is greater
+| |       than the date of the permit issuance.
+| |
+| |     entity:
+| |     - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+| |     - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+| |
+* | commit 634fea9e09a8238794f535eef70c785da5da4536
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Fri May 19 16:13:52 2023 +0800
+| |
+| |     UPGRADE: rptis: 2.5.05.02 update
+| |
+* | commit 5ccd779cc1f76f668018904341bc3a91d78ed513
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Fri May 19 15:56:21 2023 +0800
+| |
+| |     UPGRADE: rptis: 2.5.05.02
+| |
+* | commit e2b92f788039de40770a5e0f493799933708143a
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Fri May 19 13:54:43 2023 +0800
+|
+|       added upgrade scripts
+|
+* commit 2dc410de393234840c393184d1a782d3b4d706ac
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 11:05:22 2023 +0800
+|
+|     etracs: updated the compose file
+|
+* commit 6eede3980dab19e09f18e8d1f8267c2694cc9272
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 10:19:21 2023 +0800
+|
+|     bin: updated
+|
+* commit 05ea84c0e9de5e19ee99af3999d6705caa78893f
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Apr 11 10:16:50 2023 +0800
+|
+|     etracs upgraded to 2.5.05.02
+|
+* commit e733aad7178ae595a3b1b7f38a1d9598ec92bd03
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Mar 16 14:59:45 2023 +0800
+|
+|     updated the report facility
+|
+* commit 796e6b07aabe785a5eaf7dcac43ef882742e094d
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Mar 14 16:51:32 2023 +0800
+|
+|     admin: updated the client lib
+|
+* commit f994cf5f1764ea459f8348543c397da0b72da5dc
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Mar 14 15:21:37 2023 +0800
+|
+|     updated etrac255 platform
+|
+* commit 515d3f2e8695da783f7af2108748c43336b3161a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Mar 2 12:09:48 2023 +0800
+|
+|     updated etracs client
+etracsduero@dueroserver:~/docker$ git status
+On branch bohol-duero
+Your branch is up to date with 'origin/bohol-duero'.
+
+nothing to commit, working tree clean
+etracsduero@dueroserver:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED        STATUS        PORTS                                                                                                                                       NAMES
+29854bbb2507   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   6 months ago   Up 2 months   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+2c356d5cba33   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   6 months ago   Up 2 months   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+7bdc7b187afd   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   6 months ago   Up 2 months   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+673aa1a15538   ramesesinc/etracs-server-municipality:2.5.05.02   "/bin/bash /apps/sta…"   6 months ago   Up 2 months   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+07587aae502d   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   6 months ago   Up 2 months   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+8940974415d7   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   6 months ago   Up 2 months   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+ee8706170f8f   nginx:latest                                      "/docker-entrypoint.…"   6 months ago   Up 2 months   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+d97d7da9cd63   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   6 months ago   Up 2 months   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+752a0df544c9   nginx:latest                                      "/docker-entrypoint.…"   6 months ago   Up 2 months   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+920b01ed58ed   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   6 months ago   Up 2 months   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+0bbe787ecd3d   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   6 months ago   Up 2 months   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+b49c071e866b   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   6 months ago   Up 2 months   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+63da7244aeb2   portainer/portainer-ce                            "/portainer"             8 months ago   Up 2 months   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+etracsduero@dueroserver:~/docker$

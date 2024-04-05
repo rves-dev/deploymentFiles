@@ -1,0 +1,8 @@
+Market Checklist:
+
+*	_custom/datasources/marketds (file)
+*	_custom/report-files/market (directory)
+*	_res/connections/market (file)
+*	appserver/etracs/plugins/market (directory)
+* 	appserver/market (directory)
+*	system/download/plugins/market (file)

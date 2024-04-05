@@ -1,0 +1,168 @@
+
+Treasurer@MTO-PC-4 MINGW64 ~/Desktop
+$ ssh lgupanglao@192.168.2.31
+lgupanglao@192.168.2.31's password:
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Mar 19 10:30:45 PST 2024
+
+  System load:  0.0                Users logged in:                0
+  Usage of /:   5.2% of 915.81GB   IP address for eno1:            192.168.2.31
+  Memory usage: 31%                IP address for br-367df21de96f: 192.168.16.1
+  Swap usage:   0%                 IP address for br-49c6250e5300: 172.18.0.1
+  Processes:    255                IP address for docker0:         172.17.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+189 packages can be updated.
+2 updates are security updates.
+
+New release '20.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Mar 19 10:13:08 2024 from 192.168.2.85
+lgupanglao@lgupanglao:~$ cd docker
+lgupanglao@lgupanglao:~/docker$ git remote -v
+origin  http://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  http://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+lgupanglao@lgupanglao:~/docker$ git branch
+* bohol-panglao
+lgupanglao@lgupanglao:~/docker$ git log --graph | head -100
+* commit fc2e02b1479f179049f6abde6722705db226dd01
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Jan 2 10:23:32 2024 +0800
+|
+|     remove already executed scripts
+|
+*   commit 2563bd7faab3e2caff3c307806f347605b5744cb
+|\  Merge: 062dbbbc d24221cc
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jan 2 10:08:05 2024 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.03-08b' into bohol-panglao
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/dev_modules/pub-updates.myml
+| |     #       appserver/etracs/dev_modules/updates.myml
+| |
+| *   commit d24221cc3b398ef3348751279684112a148ae994
+| |\  Merge: 2647a621 718e18ed
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sat Dec 30 18:58:28 2023 +0800
+| | |
+| | |     Merge remote-tracking branch 'template-main/master' into 2.5.05.03-08b
+| | |
+| | * commit 718e18ede512e3097e12f5d421d2479fde43b835
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sat Dec 30 18:54:13 2023 +0800
+| | |
+| | |     treasury: bug fixed on CashbookReportService
+| | |
+| | * commit 75a82c6b5f4b1dba1a356da45e779c573094f2b3
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Fri Dec 29 12:04:13 2023 +0800
+| | |
+| | |     treasury: updated the paymentorder schema
+| | |
+| * | commit 2647a621242526b67d473c367edfe9016ffe5a6a
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sat Dec 30 13:08:53 2023 +0800
+| | |
+| | |     etracs: upgraded to 2.5.05.03-08b
+| | |
+| * | commit d60201dbe46c94ff12462e030fe0d0b3b2db2a2a
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sat Dec 30 13:07:47 2023 +0800
+| | |
+| | |     bpls: modify the email message
+| | |
+| * | commit ec233e1d52b0aa584c4d0bc1073c513cf5943157
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Fri Dec 29 10:19:10 2023 +0800
+| | |
+| | |     bpls: bug fixed on OnlineBusinessBillingService
+| | |
+| * |   commit b526c19cb041363d364a23718e02c8d8a220ff2e
+| |\ \  Merge: 84fc0ff5 9a77a985
+| | |/  Author: worgflores <worgflores@gmail.com>
+| | |   Date:   Fri Dec 29 10:17:18 2023 +0800
+| | |
+| | |       Merge remote-tracking branch 'template-main/master' into 2.5.05.03-08
+| | |
+| | * commit 9a77a9852bf1ffb3947e01fc37e754fcf985b6a8
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Fri Dec 29 10:16:02 2023 +0800
+| | |
+| | |     - updated the epayment services
+| | |     - upgraded to build 2.5.05.03-08
+| | |
+* | | commit 062dbbbc014a3f78c219fa84247f93d342db56ae
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Dec 28 13:15:36 2023 +0800
+| | |
+| | |     updated the client config
+| | |
+* | | commit 603c8c6c621b69e9e6122292e7b4266e27ac729d
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Dec 28 05:35:32 2023 +0800
+| | |
+| | |     obo: updated the compose file
+| | |
+* | | commit e4f7a783c320df273ceeff5c6ed26f4f1ac7af3f
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Thu Dec 28 05:34:00 2023 +0800
+| | |
+| | |     rptis: client config updated
+| | |
+* | | commit db0806eecb8b2cad0f780c76cafd489f7935d3e5
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Wed Dec 27 15:59:55 2023 +0800
+| | |
+| | |     etracs: config updated
+| | |
+* | |   commit 44030ee9a14f39423a37f12384f445544c939832
+|\ \ \  Merge: a8c7a727 84fc0ff5
+| |/ /  Author: worgflores <worgflores@gmail.com>
+| | |   Date:   Wed Dec 27 15:57:31 2023 +0800
+| | |
+| | |       Merge remote-tracking branch 'origin/2.5.05.03-07b' into staging-20231227
+| | |
+| | |       # Conflicts:
+lgupanglao@lgupanglao:~/docker$ git status
+On branch bohol-panglao
+Your branch is up to date with 'origin/bohol-panglao'.
+
+nothing to commit, working tree clean
+lgupanglao@lgupanglao:~/docker$ docker ps -a
+CONTAINER ID        IMAGE                                             COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
+749881e288c0        d453dd892d93                                      "/docker-entrypoint.…"   2 months ago        Up 3 hours          0.0.0.0:80->80/tcp, 0.0.0.0:8000->80/tcp                                           download-server
+d44f9687880c        ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8095->8070/tcp                                                             epayment-server
+8c990fd47092        ramesesinc/etracs-server-municipality:2.5.05.03   "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, 8080/tcp                 etracs-server
+e39df9b8a60b        ramesesinc/etracs-client-municipality:2.5.05.03   "docker-entrypoint.s…"   2 months ago        Up 3 hours          0.0.0.0:8170->8170/tcp                                                             etracs-client
+5bb26f402ef6        ramesesinc/gdx-client:1.05                        "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8571->8571/tcp                                                             gdx-client
+b52d2c9f99c3        ramesesinc/gdx-proxy-server:v005                  "/docker-entrypoint.…"   2 months ago        Up 3 hours          0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp                                         gdx-proxy-server
+f8ecf1bbc86f        ramesesinc/water-client:255.08.01.001             "docker-entrypoint.s…"   2 months ago        Up 3 hours          0.0.0.0:8140->8140/tcp                                                             water-client
+15c344a5371f        ramesesinc/water-server:255.08.01.001             "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8040->8040/tcp                                                             water-server
+a613d3c0ffe4        ramesesinc/local-obo-server:255.07.001.001        "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8073->8070/tcp                                                             obo-server
+1fc9f288b5b2        ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          0.0.0.0:8080->8080/tcp                                                             etracs-web
+a6b097e6dd4c        ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   2 months ago        Up 3 hours          8061/tcp, 0.0.0.0:9960->8060/tcp, 0.0.0.0:9970->8070/tcp, 0.0.0.0:9980->8080/tcp   queue-server
+ff81530950b3        d453dd892d93                                      "/docker-entrypoint.…"   2 months ago        Up 3 hours          0.0.0.0:9999->80/tcp                                                               queue-proxy
+a0b2fc037065        ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   2 months ago        Up 3 hours          0.0.0.0:7080->8080/tcp                                                             rameses-notification-server
+0004eb38948d        ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   2 months ago        Up 3 hours          0.0.0.0:2527->25/tcp                                                               mail-bpls
+a376b92447e9        ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   2 months ago        Up 3 hours          0.0.0.0:2525->25/tcp                                                               mail-primary
+bf9dcecb5742        448a08f1d2f9                                      "/docker-entrypoint.…"   10 months ago       Up 3 hours          0.0.0.0:2180->80/tcp                                                               ftp-www
+4a76de7d3afb        stilliard/pure-ftpd:latest                        "/bin/sh -c '/run.sh…"   10 months ago       Up 3 hours          0.0.0.0:21->21/tcp, 0.0.0.0:30000-30020->30000-30020/tcp                           ftpd
+16d440f06dfa        portainer/portainer                               "/portainer"             3 years ago         Up 3 hours          0.0.0.0:9000->9000/tcp                                                             portainer
+lgupanglao@lgupanglao:~/docker$

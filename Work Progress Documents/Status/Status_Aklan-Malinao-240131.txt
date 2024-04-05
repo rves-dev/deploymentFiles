@@ -1,0 +1,197 @@
+
+MTO - IT@MTO-IT MINGW64 ~/Desktop
+$ ssh etracs_malinao@192.168.0.100
+etracs_malinao@192.168.0.100's password:
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Jan 31 13:08:10 PST 2024
+
+  System load:                    0.0
+  Usage of /:                     18.4% of 195.80GB
+  Memory usage:                   20%
+  Swap usage:                     0%
+  Processes:                      242
+  Users logged in:                0
+  IP address for eno1:            192.168.254.130
+  IP address for eno2:            192.168.0.100
+  IP address for br-4bf63ea2c02d: 172.30.0.1
+  IP address for br-65ed3a0c3695: 172.19.0.1
+  IP address for br-13876ebc4174: 172.31.0.1
+  IP address for br-51fc807ca5c5: 192.168.16.1
+  IP address for br-5d6a31d1655f: 172.21.0.1
+  IP address for br-8da95aadd7b6: 192.168.32.1
+  IP address for docker0:         172.17.0.1
+  IP address for br-b6cc5b7826ff: 192.168.64.1
+  IP address for br-d9053c7885fa: 172.29.0.1
+  IP address for br-ddd5e0fd11cd: 172.18.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+125 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+New release '20.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Wed Jan 31 10:37:00 2024 from 192.168.0.104
+etracs_malinao@etracs_malinao:~$ ping google.com
+PING google.com (142.251.220.142) 56(84) bytes of data.
+64 bytes from mnl07s01-in-f14.1e100.net (142.251.220.142): icmp_seq=1 ttl=57 time=83.2 ms
+64 bytes from mnl07s01-in-f14.1e100.net (142.251.220.142): icmp_seq=2 ttl=57 time=105 ms
+64 bytes from mnl07s01-in-f14.1e100.net (142.251.220.142): icmp_seq=3 ttl=57 time=107 ms
+^C
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 83.257/98.943/107.941/11.138 ms
+etracs_malinao@etracs_malinao:~$ ls
+ BACKUP   docker   docker-old-2023-05-12   docker-old-2023-07-04   End-User  'PUBLIC SHARED'   User
+etracs_malinao@etracs_malinao:~$ cd docker
+etracs_malinao@etracs_malinao:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs_malinao@etracs_malinao:~/docker$ git branch
+* aklan-malinao
+etracs_malinao@etracs_malinao:~/docker$ git log --graph | head -100
+* commit 42814468b4f3f3f50cc32dffb4db08dd4ebc4d66
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Jul 3 22:18:48 2023 +0800
+|
+|     added patch script
+|
+*   commit 6867b6815bfea5bc9d6bd9c9d682c3810a3e87fe
+|\  Merge: 0be4b1bd f0d164b6
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 22:15:25 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02-003' into aklan-malinao
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/docker-compose-ext.yml
+| |
+| * commit f0d164b6224aee357d3ab6dbd90fb16a329ca317
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:32:09 2023 +0800
+| |
+| |     updated config files
+| |
+| * commit a9b4dca00005393f615db9d80d60b5702dcd4c2a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:05:03 2023 +0800
+| |
+| |     etracs: bug fixes on entity schemas particularly when using lookup
+| |
+| * commit 293a81fdb1d93f822053b8789f42e24aedbf6839
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 11:53:14 2023 +0800
+| |
+| |     etracs: updates
+| |
+| |     bpls:
+| |     - bug fixed on voiding of business payment receipt
+| |     - business payment receipt can be voided with no
+| |       restriction only if the receipt date is greater
+| |       than the date of the permit issuance.
+| |
+| |     entity:
+| |     - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+| |     - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+| |
+* | commit 0be4b1bd8027091a2b48acdb7e28c662de6bd36f
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Thu May 11 14:24:00 2023 +0800
+| |
+| |     UPGRADE: rptis: 2.5.05.02 script
+| |
+* | commit cbf65a8e9f6b91f64fb81a2ee778cd2eb1199417
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Thu May 11 13:44:06 2023 +0800
+| |
+| |     RES: patch: 2.5.05.02
+| |
+* | commit 986a2a07a630906b1b44f089b17ffacf5d7176dd
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu May 11 12:30:17 2023 +0800
+| |
+| |     added upgrade scripts
+| |
+* |   commit 233d43e528a5038c9567a6d47255a52e431187eb
+|\ \  Merge: 496fd372 2dc410de
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Thu May 11 12:29:32 2023 +0800
+| |
+| |       Merge remote-tracking branch 'origin/2.5.05.02' into aklan-malinao
+| |
+| |       # Conflicts:
+| |       #       appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-services.jar/schema/batchgr_task.xml
+| |       #       appserver/etracs/docker-compose-ext.yml
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax-municipality.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax-report.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-municipality.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-report.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-sync2.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-transmittal.jar
+| |       #       system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis.jar
+| |
+| * commit 2dc410de393234840c393184d1a782d3b4d706ac
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 11:05:22 2023 +0800
+| |
+| |     etracs: updated the compose file
+| |
+| * commit 6eede3980dab19e09f18e8d1f8267c2694cc9272
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 10:19:21 2023 +0800
+| |
+| |     bin: updated
+| |
+| * commit 05ea84c0e9de5e19ee99af3999d6705caa78893f
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 10:16:50 2023 +0800
+| |
+| |     etracs upgraded to 2.5.05.02
+| |
+| * commit e733aad7178ae595a3b1b7f38a1d9598ec92bd03
+etracs_malinao@etracs_malinao:~/docker$ git status
+On branch aklan-malinao
+Your branch is up to date with 'origin/aklan-malinao'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/etracs/dev_modules/rptis/server/rameses-gov-etracs-rptis-landtax-report-services.jar/sql/landtaxreport_abstractofcollection.sql
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bin/etracs255_malinao20230904.sql
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracs_malinao@etracs_malinao:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS       PORTS                                                                                                                                       NAMES
+00d338ee21a2   ramesesinc/etracs-server-municipality:2.5.05.02   "/bin/bash /apps/sta…"   5 hours ago     Up 5 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+7d4961edd262   nginx:latest                                      "/docker-entrypoint.…"   7 months ago    Up 6 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+5965a80ce47d   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   7 months ago    Up 6 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+78084594efb9   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   7 months ago    Up 6 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+f524217aadf7   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   7 months ago    Up 6 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+ee31a937f509   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   7 months ago    Up 6 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+5a8c681a1472   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   7 months ago    Up 6 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+24d3d5d82e0e   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   7 months ago    Up 6 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+f9f18ae508e7   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   7 months ago    Up 6 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+4c02e629ac57   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   7 months ago    Up 6 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+a55df7f91384   nginx:latest                                      "/docker-entrypoint.…"   7 months ago    Up 6 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+eab3c3698bfb   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   7 months ago    Up 6 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+3dfefe41baf6   portainer/portainer-ce                            "/portainer"             23 months ago   Up 6 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+etracs_malinao@etracs_malinao:~/docker$

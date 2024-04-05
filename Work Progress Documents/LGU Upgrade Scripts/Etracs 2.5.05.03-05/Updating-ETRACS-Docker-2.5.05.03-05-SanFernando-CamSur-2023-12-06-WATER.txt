@@ -1,0 +1,220 @@
+=============================
+ Updating ETRACS Docker Repo 
+=============================
+
+About:
+
+   This document will guide you on how to 
+   upgrade your Water plugin to the latest 
+   build 255.08.01.001
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+$  ssh etracs@192.168.1.6
+
+    etracsmto
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+          This is only valid until Dec-31-2023
+
+
+03. Pull updates from DockerHub
+
+    $  docker pull ramesesinc/water-server:255.08.01.001
+    
+    $  docker pull ramesesinc/water-client:255.08.01.001
+
+
+04. Create the additional custom files and folders
+
+    $  cd ~/docker-new/_custom
+
+    $  mkdir -p report-files/water
+
+    $  touch datasources/waterds
+
+
+05. Edit the file "waterds"
+
+    $  nano datasources/waterds
+
+
+06. Add the following settings:
+
+
+dialect=mysql
+driverClass=com.mysql.jdbc.Driver
+url=jdbc:mysql://${dbserver_host}/${db_water}
+user=${dbserver_user}
+pwd=${dbserver_pass}
+
+
+
+   NOTE: To Save   ==> Press CTRL X, then Y, then ENTER
+         To Cancel ==> Press CTRL X, then N
+
+
+
+07. Edit the file "env.conf"
+
+    $  nano env.conf
+
+
+08. Add or update the following settings:
+
+
+db_water=water
+
+
+
+    NOTE: To Save   ==> Press CTRL X, then Y, then ENTER
+          To Cancel ==> Press CTRL X, then N
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as the main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+09. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+    
+
+    $  docker container prune -f
+    
+    $  docker volume prune -f
+
+    $  docker image prune -f
+
+
+10. Rename the old docker folder 
+
+    $  cd
+    
+    $  mv docker  docker-old-2023-12-07b
+
+
+11. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+12. Make sure that "etracs docker" network is up and running.
+
+    $  cd ~/docker/bin
+    
+    $  sh network-start.sh
+
+
+13. Run the "download" container
+
+    $  sh  restart-download.sh
+
+
+14. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+    or 
+
+    You may download the SQL patch files from the link below:
+
+    http://{YourServerIP}:8000/_upgrade/
+
+
+15. Open Navicat and login to the database server
+
+
+16. Open a "New Query" window and do the following:
+
+    16.01  Press CTRL + O to show the open dialog
+    
+    16.02  Go to folder "Z:/docker/_res/_upgrade" 
+           or to the folder where you downloaded the SQL patch files
+    
+    16.03  Open files sequentially starting from 00 
+    
+    16.04  Select the etracs main database first 
+
+    16.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    16.06  Repeat Step-16.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+17. Switch back to your Git Bash session
+
+
+18. Run the containers
+
+    $  sh start.sh
+
+
+19. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+20. Monitor the status and logs via Portainer
+    especially the following containers: 
+
+    * etracs-server
+
+    * water-server
+
+
+21. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!

@@ -1,0 +1,21 @@
+MARKET MODULE
+
+
+•	BATCH RENTAL RATE - REPEAT
+
+	- Fixed Rate & Repeat Every
+	- Percentage & Repeat Every
+	- Stuck on Idle 
+	- Error on clicking Deploy
+
+•	NEW ACCOUNT
+
+	- Cannot create new account. No error message.
+
+• 	CHANGE ACCOUNT INFO
+
+•	MARKET COLLECTIN
+
+	- Error on Payment (Mark Lim) / No error message.
+
+

@@ -1,0 +1,226 @@
+
+MTO eTRACS@LAPTOP-V3J40ME8 MINGW64 ~/OneDrive/Desktop
+$ ssh lgumalapatan@192.168.114.237
+lgumalapatan@192.168.114.237's password:
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-91-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Jan 19 10:58:28 AM PST 2024
+
+  System load:                      1.06982421875
+  Usage of /:                       23.3% of 195.80GB
+  Memory usage:                     18%
+  Swap usage:                       0%
+  Temperature:                      73.0 C
+  Processes:                        488
+  Users logged in:                  1
+  IPv4 address for br-0b1d524fcf88: 172.18.0.1
+  IPv4 address for br-11c8b8682ac9: 172.23.0.1
+  IPv4 address for br-211b99a9ed18: 172.28.0.1
+  IPv4 address for br-3de6804b4d1c: 172.20.0.1
+  IPv4 address for br-4004bc1ae4a2: 172.21.0.1
+  IPv4 address for br-796caceb2a04: 172.29.0.1
+  IPv4 address for br-97942c2b3ac6: 172.19.0.1
+  IPv4 address for br-def90961caa2: 172.24.0.1
+  IPv4 address for br-e44463469e6c: 172.26.0.1
+  IPv4 address for br-f6cbbbc6c222: 172.27.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for eno1:            192.168.114.237
+  IPv4 address for eno2:            192.168.114.238
+  IPv4 address for tun0:            100.96.1.18
+  IPv6 address for tun0:            fd:0:0:8101::2
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+16 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+Last login: Thu Jan 18 17:18:33 2024 from 192.168.114.170
+lgumalapatan@lgu-malapatan:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.3 LTS
+Release:        22.04
+Codename:       jammy
+lgumalapatan@lgu-malapatan:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       5.6Gi        20Gi        54Mi       4.6Gi        25Gi
+Swap:           23Gi          0B        23Gi
+lgumalapatan@lgu-malapatan:~$ cd docker
+lgumalapatan@lgu-malapatan:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+lgumalapatan@lgu-malapatan:~/docker$ git branch
+  master
+* sarangani-malapatan
+lgumalapatan@lgu-malapatan:~/docker$ git log --graph | head -100
+* commit 6799ec62521b291c10b17461532966bbeab2787a
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Mon Jul 3 23:48:38 2023 +0800
+|
+|     added patch script
+|
+*   commit 85184879f775f137ce34db1b9c44353f73e5c7ba
+|\  Merge: e4397e50 f0d164b6
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 23:47:23 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02-003' into sarangani-malapatan
+| |
+| * commit f0d164b6224aee357d3ab6dbd90fb16a329ca317
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:32:09 2023 +0800
+| |
+| |     updated config files
+| |
+| * commit a9b4dca00005393f615db9d80d60b5702dcd4c2a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jul 3 15:05:03 2023 +0800
+| |
+| |     etracs: bug fixes on entity schemas particularly when using lookup
+| |
+| * commit 293a81fdb1d93f822053b8789f42e24aedbf6839
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Jun 29 11:53:14 2023 +0800
+| |
+| |     etracs: updates
+| |
+| |     bpls:
+| |     - bug fixed on voiding of business payment receipt
+| |     - business payment receipt can be voided with no
+| |       restriction only if the receipt date is greater
+| |       than the date of the permit issuance.
+| |
+| |     entity:
+| |     - bug fixed on taxpayer profile listing eliminating fields like photo and thumbnail
+| |     - bug fixed on taxpayer profile lookup eliminating fields like photo and thumbnail
+| |
+* | commit e4397e501c95863ee5c67f743a87f4d69e7c5f74
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Tue Jun 20 11:09:35 2023 +0800
+| |
+| |     UPGRADE: rptis: 2.5.05.02 script
+| |
+* | commit 2ace12ab805722f27026259e7782a7e824bbd85d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jun 19 21:51:39 2023 +0800
+| |
+| |     added upgrade scripts for 2.5.05.02
+| |
+* | commit fc7a9413d4923e47c0c409f8d909856429748cbc
+|\| Merge: 12960544 2dc410de
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Mon Jun 19 16:09:19 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.02' into sarangani-malapatan
+| |
+| |     # Conflicts:
+| |     #       custom-template.tar.gz
+| |
+| * commit 2dc410de393234840c393184d1a782d3b4d706ac
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 11:05:22 2023 +0800
+| |
+| |     etracs: updated the compose file
+| |
+| * commit 6eede3980dab19e09f18e8d1f8267c2694cc9272
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 10:19:21 2023 +0800
+| |
+| |     bin: updated
+| |
+| * commit 05ea84c0e9de5e19ee99af3999d6705caa78893f
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Apr 11 10:16:50 2023 +0800
+| |
+| |     etracs upgraded to 2.5.05.02
+| |
+| * commit e733aad7178ae595a3b1b7f38a1d9598ec92bd03
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Thu Mar 16 14:59:45 2023 +0800
+| |
+| |     updated the report facility
+| |
+| * commit 796e6b07aabe785a5eaf7dcac43ef882742e094d
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 14 16:51:32 2023 +0800
+| |
+| |     admin: updated the client lib
+| |
+| * commit f994cf5f1764ea459f8348543c397da0b72da5dc
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 14 15:21:37 2023 +0800
+| |
+| |     updated etrac255 platform
+| |
+| * commit 515d3f2e8695da783f7af2108748c43336b3161a
+lgumalapatan@lgu-malapatan:~/docker$ git status
+On branch sarangani-malapatan
+Your branch is up to date with 'origin/sarangani-malapatan'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   appserver/etracs/docker-compose.yml
+        modified:   system/download/nginx/resources/platform/etracs255-platform.zip
+        modified:   system/download/node/resources/downloads/modules/bpls/rameses-gov-etracs-bpls.jar
+        modified:   system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax-report.jar
+        modified:   system/download/node/resources/downloads/modules/rptis/rameses-gov-etracs-rptis-landtax.jar
+        modified:   system/download/node/resources/downloads/modules/treasury/rameses-gov-treasury-report.jar
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        _res/connections/market
+        _res/patches/market/
+        appserver/etracs/dev_modules/bpls/rameses-gov-etracs-2_50-bridge.jar/
+        appserver/etracs/modules/ext/ctc/
+        appserver/etracs/modules/ext/eor/
+        bin/restart-market.sh
+        bin/stop-market.sh
+        system/download/nginx/resources/platform/JavaSetup8u341.exe
+        system/download/nginx/resources/platform/LX-310_Drv_Ver1_1497909 (1).zip
+        system/download/node/resources/downloads/market-pub-updates.myml
+        system/download/node/resources/downloads/market-updates.myml
+        system/download/node/resources/downloads/modules/bpls/rameses-gov-etracs-bpls-option.jar
+        system/download/node/resources/downloads/modules/bpls/rameses-gov-etracs-bpls-tracs.jar
+        system/download/node/resources/downloads/modules/core/market-pub-updates.pyml
+        system/download/node/resources/downloads/modules/core/market-updates.pyml
+        system/download/node/resources/downloads/modules/core/v2/
+        system/download/node/resources/downloads/modules/ctc/
+        system/download/node/resources/downloads/modules/entity/market-pub-updates.pyml
+        system/download/node/resources/downloads/modules/entity/market-updates.pyml
+        system/download/node/resources/downloads/modules/etracs/market-pub-updates.pyml
+        system/download/node/resources/downloads/modules/etracs/market-updates.pyml
+        system/download/node/resources/downloads/modules/shared/market-pub-updates.pyml
+        system/download/node/resources/downloads/modules/shared/market-updates.pyml
+        system/download/node/resources/downloads/modules/shared/v2/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+lgumalapatan@lgu-malapatan:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED         STATUS                       PORTS                                                                                                                                       NAMES
+6a07a51820cb   ramesesinc/node-download-server:0.0.3             "docker-entrypoint.s…"   3 months ago    Up 3 hours                   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+40f7151167f6   nginx:latest                                      "/docker-entrypoint.…"   3 months ago    Up 3 hours                   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+28644b249f7d   ramesesinc/etracs-server-municipality:2.5.05.02   "/bin/bash /apps/sta…"   3 months ago    Up 3 hours                   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+f21a807fa6b9   ramesesinc/gdx-proxy-server:v004                  "/docker-entrypoint.…"   5 months ago    Up 3 hours                   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+6dd186c2c625   ramesesinc/gdx-client:1.04.03                     "/bin/bash /apps/sta…"   5 months ago    Up 3 hours                   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+3229d1202941   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   6 months ago    Up 3 hours                   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+a29e63aeff66   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   6 months ago    Up 3 hours                   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+c1e53323e0af   nginx:latest                                      "/docker-entrypoint.…"   6 months ago    Up 3 hours                   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+29a50bd91a8a   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   6 months ago    Up 3 hours                   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+c0bbf239aad7   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   6 months ago    Up 3 hours                   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+bee4c83ee3fa   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   6 months ago    Up 3 hours                   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+9c4cb8653132   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   6 months ago    Up 3 hours                   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+4ebc8e16feb4   portainer/portainer-ce:latest                     "/portainer"             7 months ago    Up 3 hours                   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+81a66df3c381   ramesesinc/enterprise-common-server:255.05.001    "/bin/bash /apps/sta…"   13 months ago   Exited (127) 13 months ago   0.0.0.0:8074->8070/tcp, :::8074->8070/tcp                                                                                                   market-server
+lgumalapatan@lgu-malapatan:~/docker$

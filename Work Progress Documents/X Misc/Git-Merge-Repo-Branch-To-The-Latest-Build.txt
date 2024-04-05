@@ -1,0 +1,107 @@
+
+On your Windows machine, open a Git Bash console 
+and execute the following steps below: 
+
+
+## 01. Clone a repo branch 
+## 
+
+    User: git
+    Pass: ramesesinc
+    IP  : nas-rameses
+
+    Repo: etracs-city-deployments.git
+    RepoBranch : negoc-sancarlos
+    
+    Repo-Directory-Name: <Same to the RepoBranch>
+
+
+## 02. Go to the folder {Repo-Directory-Name}
+##
+$ cd {Repo-Directory-Name}
+
+
+## 03. check the status of your working repo
+##
+$ git status
+
+On branch negoc-sancarlos
+Your branch is up to date with 'origin/negoc-sancarlos'.
+
+nothing to commit, working tree clean
+
+
+## 04. create a staging branch
+##
+$ git branch negoc-sancarlos-staging
+
+
+## 05. checkout the staging branch
+##
+$ git checkout negoc-sancarlos-staging
+
+Switched to branch 'negoc-sancarlos-staging'
+
+
+## 06. check the status again to make sure
+##
+$ git status
+
+On branch negoc-sancarlos-staging
+nothing to commit, working tree clean
+
+
+## 07. check the remote registry endpoints
+##
+$ git remote -v
+
+origin  git@nas-rameses:etracs-city-deployments.git (fetch)
+origin  git@nas-rameses:etracs-city-deployments.git (push)
+
+
+## 08. fetch updates of a specific branch 
+## 
+$ git fetch origin 2.5.05.03-02
+
+git@nas-rameses's password:
+remote: Counting objects: 889, done.
+remote: Compressing objects: 100% (629/629), done.
+remote: Total 889 (delta 402), reused 617 (delta 220)
+Receiving objects: 100% (889/889), 2.59 MiB | 4.15 MiB/s, done.
+Resolving deltas: 100% (402/402), completed with 138 local objects.
+From nas-rameses:etracs-city-deployments
+ * branch            2.5.05.03-02 -> FETCH_HEAD
+ * [new branch]      2.5.05.03-02 -> origin/2.5.05.03-02
+
+
+## 09. merge the updated branch to the staging branch 
+## 
+$ git merge origin/2.5.05.03-02
+
+  ** Automatic merge failed; fix conflicts and then commit the result.
+
+
+## 10. Fix the conflicts manually and then commit the result
+## 
+$ git gui 
+
+
+## 11. Run the garbage collection
+##
+$ git gc 
+
+
+## 12. merge the staging to the actual branch 
+##
+$ git checkout negoc-sancarlos
+$ git merge negoc-sancarlos-staging
+
+
+## 13. delete the staging branch 
+##
+$ git branch -D negoc-sancarlos-staging
+
+
+## 14. push updates 
+##
+$ git push

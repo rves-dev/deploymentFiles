@@ -1,0 +1,164 @@
+
+Administrator@WIN-7S3LP8ATNVI MINGW64 /c/etracs255-server-viga (master)
+$ git remote -v
+origin  file:///c/gitrepo/etracs255-server-viga.git (fetch)
+origin  file:///c/gitrepo/etracs255-server-viga.git (push)
+
+Administrator@WIN-7S3LP8ATNVI MINGW64 /c/etracs255-server-viga (master)
+$ git branch
+* master
+  update-20220407
+
+Administrator@WIN-7S3LP8ATNVI MINGW64 /c/etracs255-server-viga (master)
+$ git log --graph | head -100
+* commit 07964476be9a27e42112fbc196dd8ff4a0f14dac
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Fri Apr 8 10:18:07 2022 +0800
+|
+|     RES: patch: rptis v2.5.04.04.04
+|
+* commit 4b5602a55265a6167518a6c00ccc854603aa1578
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Thu Apr 7 21:48:29 2022 +0800
+|
+|     RPTIS: 2.5.04.03.02
+|
+* commit ca46b0389755749c4bca1eeedbdab0da706c98e0
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Aug 4 20:35:48 2021 +0800
+|
+|     LANDTAX: share: handle compromise
+|
+* commit 88e12391403977d8c2ab7d5e2032d750caee0595
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Aug 4 16:15:16 2021 +0800
+|
+|     LANDTAX: share: handle compromise
+|
+* commit 65b33b4cb365e03d51707e51c491b306b6ecffcc
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Aug 4 16:00:27 2021 +0800
+|
+|     LANDTAX: share: handle compromise
+|
+* commit baebb3099204a88d1187a0853acab8805f98c06f
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Fri Jul 30 09:46:18 2021 +0800
+|
+|     upgraded to 2.5.04.01.01 except for RPTIS
+|
+* commit ca3f40d9339678099d77b531c98189112e11ba3c
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Mon May 31 09:47:28 2021 +0800
+|
+|     LANDTAX: rptledger: add filter to closePaidAvDifference
+|
+* commit c29ba29be5c3ba6ce58f1808bd56b2ebc9c67af4
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Tue May 11 17:39:48 2021 +0800
+|
+|     LANDTAX: rptreceipt: fix from/to qtr payment
+|
+* commit 4523f515df0374ca5ae7d1f422a118ecb69e391f
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Tue Apr 27 20:54:57 2021 +0800
+|
+|     RPTIS: disable services
+|     - sync2
+|     - notification-v254
+|
+* commit 8310278e803b3792e7c13a8111041952452b7dc0
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Tue Mar 30 15:40:08 2021 +0800
+|
+|     CUSTOM: noa: update signatory
+|
+* commit e988e8938efb98d72ec674ac472854bce6a65318
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Tue Mar 30 15:36:16 2021 +0800
+|
+|     CUSTOM: noa update
+|
+*   commit bf7f25390a5717d16e9084143dd124115fee0d3b
+|\  Merge: f737b69 76fd85e
+| | Author: Jessie Zamora <jzamss@gmail.com>
+| | Date:   Tue Mar 30 15:26:54 2021 +0800
+| |
+| |     Merge branch 'master' of https://github.com/ramesesinc/etracs255-server-viga
+| |
+| * commit 76fd85e4dfd2af34042c31dd1a2998e6cf05a992
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Mar 30 14:57:11 2021 +0800
+| |
+| |     patches: updated
+| |
+| * commit d2810e6568b812c1760341de9484becd53988d20
+| | Author: lgu-viga <lgu-viga@camsur.gov.ph>
+| | Date:   Thu Mar 25 12:26:14 2021 +0800
+| |
+| |     custom: updated
+| |
+* | commit f737b69ab4190cb915374dea5aa8cba779478951
+|/  Author: Jessie Zamora <jzamss@gmail.com>
+|   Date:   Tue Mar 30 15:26:47 2021 +0800
+|
+|       CUSTOM: noa report
+|
+* commit 0f894817ee1b01eb65ba143b717da3a33e9894e9
+| Author: Jessie Zamora <jzamss@gmail.com>
+| Date:   Wed Mar 17 12:01:09 2021 +0800
+|
+|     LANDTAX: report: rptc: compromise classifcation update
+|
+* commit d434dd90d453f0b90afe4b0bfb4af7a75d499cc7
+
+Administrator@WIN-7S3LP8ATNVI MINGW64 /c/etracs255-server-viga (master)
+$ git status
+Refresh index: 100% (3046/3046), done.
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   web/resources/downloads/modules/custom/gov-lgu-viga-af52-form.jar
+        new file:   web/resources/downloads/modules/custom/gov-lgu-viga-af53-form.jar
+        new file:   web/resources/downloads/modules/custom/viga-treasury-cashreceipt-forms.jar
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   services/apps/etracs25/modules.conf.d/rptis.conf
+        modified:   services/modules/rptis/rameses-gov-etracs-rptis-landtax-report-services.jar/scripts/LandTaxReportAbstractTaxCollectionService
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-af51c-or.jar
+        deleted:    web/resources/downloads/modules/custom/gov-lgu-viga-af53-form.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-af53-or.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-bpls-form.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-bpls.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-landtax-report.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga-rpt56-or.jar
+        modified:   web/resources/downloads/modules/custom/gov-lgu-viga.jar
+        modified:   web/resources/downloads/modules/custom/lgu-gov-viga-af58-or.jar
+        modified:   web/resources/downloads/modules/updates-dev.xml
+        modified:   web/resources/downloads/modules/updates-local.xml
+        modified:   web/resources/downloads/modules/updates.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bin/.osiris_pid - Shortcut.lnk
+        web/resources/downloads/modules/custom/gov-lgu-viga-af51c-or09012022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-af51c-or10042022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-af53-or09012022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-af53-or10042022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-af907-form.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-bpls-form02022023.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-bpls01252023.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-bpls09122022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-landtax-report10092023.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga-rpt56-or09012022.jar
+        web/resources/downloads/modules/custom/gov-lgu-viga09012022.jar
+        web/resources/downloads/modules/custom/lgu-gov-viga-af58-or09012022.jar
+        web/resources/downloads/modules/custom/lgu-gov-viga-af58-or10042022.jar
+
+
+Administrator@WIN-7S3LP8ATNVI MINGW64 /c/etracs255-server-viga (master)
+$

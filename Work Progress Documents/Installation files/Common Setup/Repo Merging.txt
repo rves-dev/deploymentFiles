@@ -1,0 +1,91 @@
+=========================================
+	GIT MERGE - UPDATING REPO
+=========================================
+
+
+# 	Clone target LGU REPO to local directory
+
+
+		$	git clone -b {province-municipality} user@IP:etracs-{LGU-Type}-deployments.git {LGU-name}
+
+
+# 	Go to the Repo Folder (Repo-Directory-Name)
+
+	
+		$	cd {LGU-name}
+
+
+# 	Check Repo Status & Branch
+
+
+		$	git status
+
+		$ 	git branch
+
+
+# 	Create a staging branch. Checkout to the staging branch.
+
+
+		$ 	git branch {LGU-name}-staging
+
+		$	git checkout {LGU-name}-staging
+
+		$ 	git remote -v
+
+
+# 	Fetch updates for specific branch.
+
+
+		$	git fetch origin 2.5.05.03-02
+
+
+# 	Open Repo Directory in Sublime Text/VS Code.
+#	Check current version of Repo.
+#	Merge the updated branch to the staging branch.
+
+
+		$	git merge origin/2.5.05.03-02
+
+
+		//Automatic merge failed; fix conflicts and then commit the result.
+
+
+#	Fix the conflicts manually and then commit the result.
+# 	Use git gui to monitor conflicts.
+
+
+		$ 	git gui
+
+
+#	Use gitk to check official branch and staging branch update levels.
+
+
+		$	gitk
+
+
+#	Run git Garbage Collection
+
+
+		$	git gc
+
+
+#	Merge the staging branch to the actual branch.
+
+
+		$ 	git checkout {LGU-name}
+
+		$	git merge {LGU-name}-staging
+
+		$ 	gitk
+
+
+#	Delete the staging branch.
+
+
+		#	git branch -D {LGU-name}-staging
+
+
+#	Push the updates.
+
+
+		$	git push

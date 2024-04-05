@@ -1,0 +1,28 @@
+===========================================
+SERVER CREDENTIALS - LGU Viga, Catanduanes
+===========================================
+
+
+SERVER
+Login: 	lguviga
+Pass:	p@ssw0rd
+
+
+Webmin - port 10000
+Login: 	lguviga
+Pass:	p@ssw0rd
+
+
+Portainer - port 9000
+Login: 	admin
+Pass:	p@ssw0rd1234
+
+
+Samba/Shared Folder
+Login:	lguviga
+Pass: 	1234
+
+
+MySQL - port 3306
+Login:	root
+Pass:	P@ssw0rd#

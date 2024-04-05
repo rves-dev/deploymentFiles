@@ -29,11 +29,11 @@ $ sudo nano smb.conf
 # Go to the bottom of the file and add the following lines below 
 # Change the "root" to the actual user account that you are using
 # 
-[root]
-   path = /home/root
+[training]
+   path = /home/training
    browseable = yes
    read only = no
-   valid users = @root root
+   valid users = @training training
 
 # 
 # Press Ctrl X then press Y then press ENTER to save changes or 

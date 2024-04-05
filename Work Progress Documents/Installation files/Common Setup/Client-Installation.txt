@@ -4,63 +4,60 @@ Client Installation
 1. Download ETRACS Client Platform
 http://{SERVER-IP}:8000/platform/etracs255-platform.zip
 
-2. Copy the downloaded file "etracs255-platform.zip" to drive C:
+2. Unzip the downloaded file "etracs255-platform.zip" to C:\Apps Directory. (Create the Apps directory if non existent)
 
-3. Unzip the file "etracs255-platform.zip" without providing a preferred target directory.
+3. Open the file "etracs255-platform/client.conf"
 
-4. Open the file "etracs255-platform/client.conf"
-
-5. Change the IP address from localhost to the actual IP address of your server
+4. Change the IP address from localhost to the actual IP address of your server
 
 	app.url=http://{SERVER-IP}:8000/downloads/modules/updates.xml
 	app.debug=true
 	app.clientcode=
 
 
-6. Install Java Runtime 1.8
+5. Install Java Runtime 1.8
 
-7. Check Java status
+	https://drive.google.com/file/d/12YTrfCw0rEmLpoXq5wptpi3BhcIT0Ynm/view?usp=sharing
 
-7.1 Open a Windows Command Prompt and
-run the following command:
 
-	java -version
+6. Check Java status
 
-8. Run the batch file "etracs25_platform.bat"
+	6.1 Open a Windows Command Prompt and
+		run the following command:
 
-9. Registration of Terminal or the Workstation
+		java -version
 
-	9.1 Go to http://SERVER-IP:8080 and login
-		User: admin
-		Pass: 1
-	9.2 Get the available Terminal Key and assign it 	to the workstation for the registration
 
-10. Login to ETRACS
-		User: admin
-		Pass: 1
+		If java version is not 1.8, set jdk1.8 for JAVA_HOME in System Environment Variables.
 
-11. Generate Terminal Keys
+
+7. Run the batch file "etracs25_platform.bat"
+
+	If prompted with a "Windows protected your PC window",
+	Click on "More info" and select "Run Anyway.
+
+
+8. Registration of Terminal or the Workstation
+
+	8.1 Go to http://SERVER-IP:8080 and login
+		
+		Default login:
+			User: admin
+			Pass: 1
+
+	8.2 Get the available Terminal Key and assign it to the workstation for the registration
+
+9. Login to ETRACS
+		
+		Default login
+			User: admin
+			Pass: 1
+
+10. Generate Terminal Keys
 	11.1 Go to "Home-> Administration-> Terminals"
 	11.2 Click "Generate Keys" and enter the number of keys to generate
 
-12. Install the platform and Register the terminal of the other workstations
+11. Install the platform and Register the terminal of the other workstations
 	(instruct the IT of LGU)
 
-13. Edit and correct the LGU information
-from the Organization feature
-
-	13.1 Go to "Home-> Administration-> Organizations"
-
-		** For Municipality Setup:
-		13.1.1 Click "Municipality" and edit the information
-		13.1.2 Click "Province" and edit the information
-
-		** For City Setup:
-		13.2.1 Click "City" and edit the information
-		** For Province Setup:
-		13.2.2 Click "Province" and edit the information
-
-14. Deploy or Install the custom LGU Logo
-	** See Logo Installation Guide
-	
-15. Done.
+12. Done.

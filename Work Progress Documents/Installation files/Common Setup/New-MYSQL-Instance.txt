@@ -1,0 +1,41 @@
+CREATING ANOTHER INSTANCE OF MYSQL IN WINDOWS
+==================================================
+
+* Create a new mysql directory in C: Drive
+
+* Copy a my.ini file from running mysql Directory
+
+	edit the following parameters in my.ini file:
+
+
+		- port = 
+		- baseDir =
+		- dataDir =
+		- server ID =
+		- ssl=0
+
+* Run a CMD as Administrator and CD to new mysql directory
+
+	>	cd C:\\{new-mysql-directory}
+
+* MYSQLD
+
+	>	mysqld --initialize-insecure --basedir="C:\\mysql3307" --datadir="C:\\mysql3307\Data"
+
+	>	mysqld --install mysql3307 --defaults-file="C:\mysql3307\mysql3307.ini"
+
+	>	net start mysql3307
+
+* Configure new MySQL instance
+
+	>	mysql -u root -p -P3307
+
+		mysql> SET PASSWORD FOR 'root'@'localhost'=password("1234");
+
+		mysql> CREATE USER root@'%' IDENTIFIED BY '1234';
+
+		mysql> GRANT ALL PRIVILEGES ON *.* TO root@'%';
+
+		mysql> FLUSH PRIVILEGES;
+
+		mysql> \q

@@ -36,7 +36,6 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 
 *RESTARTING PORTAINER (Soft Restart)
 	docker stop portainer
-	docker ps
 	docker ps -a
 	docker start portainer
 
@@ -160,3 +159,15 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 	Change Value from 0 to 1
 
 
+
+* Prune Docker Resources
+
+	docker volume prune -f
+
+	docker system prune -f
+
+	docker network prune -f
+
+	docker image prune -f
+
+	docker container prune -f

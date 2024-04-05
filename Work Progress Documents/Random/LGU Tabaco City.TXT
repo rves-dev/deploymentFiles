@@ -1,0 +1,42 @@
+LGU: Tabaco City, Albay
+
+AnyDesk : 159396907
+ServrOS : Windows Server OS
+Username: lgutabaco
+Password: etracs_version2
+
+IP Address: 192.168.12.104 on eth0 (via HyperV)
+Time Zone  : Asia/Manila (PST, +0800)
+
+WEBMIN
+Username: lgutabaco
+Password: etracs_version2
+
+PORTAINER
+Username: admin
+Password: letmep@ssw0rdp@ssw0rd
+
+SAMBA
+Username: lgutabaco
+Password: p@ssw0rd
+
+\\ip address of the ubuntu
+
+
+REPO-BRANCH: albay-tabaco 
+LGU-TYPE   : city
+
+Cloning of deployment repository = SUCCESS
+Download all Docker Images       = SUCCESS
+
+? docker.service - Docker Application Container Engine
+   Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+   Active: active (running)
+
+? nmbd.service - Samba NMB Daemon
+   Loaded: loaded (/lib/systemd/system/nmbd.service; enabled; vendor preset: enabled)
+   Active: active (running)
+
+
+
+

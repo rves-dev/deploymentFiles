@@ -1,0 +1,37 @@
+* Setup the ff:
+
+MARKET CENTER - Market Locations
+
+MARKET SECTION - Different sections inside the market
+
+	Categories
+		* fish
+		* meat
+		* fruits
+		* dry goods
+
+MARKET RENTAL UNIT - types of rental unit
+
+		* space
+		* stall
+		* table
+		* block
+		* tile
+
+	//	Attach rates to rental units
+
+* Setup market item account - ETRACS/MASTER/FINANCIAL/ITEM ACCOUNTS(REVENUE)
+
+		MARKET RENTAL
+		MARKET RENTAL SURCHARGE
+		MARKET RENTAL PENALTY (INTEREST)
+
+* Setup Treasury Collection Type - ETRACS/MASTER/TREASURY/COLLECTION TYPE/
+
+		MARKET_COLLECTION
+
+
+* Capture accounts
+* Create bill
+* Collection
+
