@@ -25,6 +25,12 @@ MARKET PLUGIN USER MANUAL
 
 •	Login as Market user account
 
+		# Market client.conf
+
+			app.url=http://{SERVER_IP}:8131/resources/downloads/updates.xml
+			app.debug=true
+			app.clientcode=
+
 
 	Open Market Client and login with the market user account recently created.
 

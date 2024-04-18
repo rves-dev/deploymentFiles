@@ -1,0 +1,189 @@
+====================================
+ Updating ETRACS Docker - 2.5.05.03 
+====================================
+
+About:
+
+   This document will guide you on how to 
+   update your ETRACS-Docker repo to the 
+   latest build 2.5.05.03-12
+
+
+Keywords: 
+
+   <User>       - User name of your ubuntu server 
+   <ServerIP>   - IP address of your ubuntu server
+
+
+Open "Git Bash" terminal and login to the server via SSH
+
+    $  ssh lgulala@192.168.3.102
+
+
+
+01. Duplicate the docker folder 
+
+    $  cd 
+    
+    $  cp  -rvfp  docker  docker-new 
+
+
+02. Pull updates from GitHub
+
+    $  cd ~/docker-new
+    
+    $  git reset --hard
+    
+    $  git pull
+
+
+    NOTE: Credentials to be used in pulling updates 
+
+          User: etracslgurepo
+          Pass: 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
+
+
+03. Pull updates from DockerHub
+
+    $  cd ~/docker-new/bin
+    
+    $  sh update-docker-images.sh
+
+
+    $  ramesesinc/market-server:255.08.01.001
+
+    $  ramesesinc/market-client:255.08.01.001
+
+
+04. Create the additional custom files and folders
+
+    $  cd ~/docker-new/_custom
+
+    $  mkdir -p mail
+
+    $  touch mail/primary.conf
+    
+    $  touch mail/bpls.conf
+
+    $  mkdir -p report-files/enterprise
+    
+    $  mkdir -p report-files/epayment
+
+
+    $  mkdir -p report-files/market
+
+
+
+Now the "docker-new" repo folder is fully updated.
+We will now switched the new folder as the main folder.
+
+But first inform everyone to close their ETRACS client 
+in preparation for the upgrade procedure. 
+
+Wait until they confirmed.
+
+
+05. Stop all containers from the old docker 
+
+    $  cd ~/docker/bin
+    
+    $  sh stop-gdx.sh
+    
+    $  sh stop.sh
+    
+
+    $  docker container prune -f
+    
+    $  docker volume prune -f
+
+    $  docker image prune -f
+
+
+06. Rename the old docker according to your preferred name 
+
+    $  cd
+    
+    $  mv docker  docker-old-2024-04-18
+
+
+07. Rename the new docker folder as the official "docker"
+
+    $  cd
+    
+    $  mv docker-new  docker
+
+
+08. Run the "download-server" container
+
+    $  cd ~/docker/bin
+
+    $  sh restart-download.sh
+
+
+09. On your Windows PC, open the Samba shared folder of the docker machine
+    and mount it to drive Z, but be sure to uncheck or disable the option 
+    "Reconnect"
+
+    To locate the upgrade scripts go to "z:/docker/_res/_upgrade"
+
+    or 
+
+    You may download the SQL patch files from the link below:
+
+    http://{YourServerIP}:8000/_upgrade/
+
+
+10. Open Navicat and login to the database server
+
+
+11. Open a "New Query" window and do the following:
+
+    11.01  Press CTRL + O to show the open dialog
+    
+    11.02  Go to folder "Z:/docker/_res/_upgrade" 
+           or to the folder where you downloaded the SQL patch files
+    
+    11.03  Open files sequentially starting from 00 
+    
+    11.04  Select the etracs main database first 
+
+    11.05  Press CTRL + R for each file 
+           to execute and apply the updates.
+
+    11.06  Repeat Step-11.01 until all files are executed.
+
+    
+    Proceed to the next step if all scripts 
+    are successfully executed.
+
+
+12. Switch back to your Git Bash session
+
+
+14. Run the containers
+
+    $  cd ~/docker/bin
+    
+    $  sh start.sh
+
+
+15. Run GDX container
+
+    $  sh restart-gdx.sh
+
+
+    NOTE: You may press CTRL + C 
+          when you see colored text messages 
+          in the console log to exit from the 
+          blocking processed.
+
+
+16. Monitor the status and logs via Portainer
+    especially the "etracs-server" container
+
+
+17. Inform everyone that they can now 
+    open the ETRACS client and login
+
+
+DONE!
