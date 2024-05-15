@@ -1,0 +1,194 @@
+  Usage of /home:                 3.3% of 135.69GB
+  Memory usage:                   10%
+  Swap usage:                     0%
+  Processes:                      349
+  Users logged in:                0
+  IP address for eno50:           192.168.1.99
+  IP address for br-b1f8eacb22db: 172.21.0.1
+  IP address for br-b2cfdc223514: 172.18.0.1
+  IP address for br-cfb3cc661bab: 172.19.0.1
+  IP address for docker0:         172.17.0.1
+  IP address for br-f06a1432beed: 172.24.0.1
+  IP address for br-4e5deab73bf1: 172.25.0.1
+  IP address for br-ea7e7184f702: 172.20.0.1
+  IP address for br-f4589b3433fb: 172.22.0.1
+  IP address for br-d035f015d7e2: 172.23.0.1
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+251 packages can be updated.
+111 updates are security updates.
+
+New release '20.04.6 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon May  6 16:58:59 2024
+etracs_admin@etracs_server:~$ ls
+docker  zzz-backups
+etracs_admin@etracs_server:~$ clear
+etracs_admin@etracs_server:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            31G        3.0G         20G        3.5M        8.0G         27G
+Swap:          8.0G          0B        8.0G
+etracs_admin@etracs_server:~$ cd docker
+etracs_admin@etracs_server:~/docker$
+etracs_admin@etracs_server:~/docker$ git remote -v
+origin  https://etracslgurepo@github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://etracslgurepo@github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs_admin@etracs_server:~/docker$ git branch
+* nuevavizcaya-solano
+etracs_admin@etracs_server:~/docker$ git log --graph | head -100
+* commit c2b3d0f9b0186abe50c800f3fa48ad256c523269
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Aug 13 14:44:09 2022 +0800
+|
+|     CTC: upgrade
+|
+*   commit 2d7d92cf1aec9c162fd2cda04911257433f46abc
+|\  Merge: 9492cc87 67a3a071
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Sat Aug 6 18:55:57 2022 +0800
+| |
+| |     Merge branch 'nuevavizcaya-solano' of https://github.com/ramesesinc/etracs-municipality-deployments into nuevavizcaya-solano
+| |
+| * commit 67a3a0716236fa460732849a091a8141ecef09e6
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Sat Aug 6 15:55:06 2022 +0800
+| |
+| |     UPGRADE: landtax: rulesets and rules script
+| |
+| * commit 5ddc507bc217982fbe1327ec8929cfdf0606366e
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Sat Aug 6 15:28:19 2022 +0800
+| |
+| |     UPGRADE: landtax: rulesets and rules
+| |
+| * commit 3658021b1ea294e48d978931621638fbd258260b
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Sat Aug 6 15:20:58 2022 +0800
+| |
+| |     UPGRADE: rptis: landtax account mapping
+| |
+| * commit cdeb8b9e6de84e96d8fbfb0213952e6273e28cd5
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Sat Aug 6 14:23:51 2022 +0800
+| |
+| |     UPGRADE: rptis: v2.5.04.05.03
+| |
+* | commit 9492cc874ff5b1d768afdfb374a5c97f974e2535
+|/  Author: worgflores <worgflores@gmail.com>
+|   Date:   Sat Aug 6 18:55:42 2022 +0800
+|
+|       removed
+|
+* commit ad134b46f1d751f532af55db9108feb1a5538e0e
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Sat Aug 6 11:04:10 2022 +0800
+|
+|     upgrade
+|
+*   commit a72964fda66d001bbbcc1ef976b4e08404ddd881
+|\  Merge: fc2462bf 6039155e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Jun 1 13:43:13 2022 +0800
+| |
+| |     Merge branch 'master' into nuevavizcaya-solano
+| |
+| * commit 6039155e619515cdd224878b7de86000e030993a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Jun 1 13:21:33 2022 +0800
+| |
+| |     bpls: fixed sql files for reserved keywords
+| |
+* |   commit fc2462bf7e365553d0e6ca9ac236273157fc050a
+|\ \  Merge: 0b7a2174 41ec72da
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Wed May 11 15:32:42 2022 +0800
+| |
+| |       Merge branch 'master' into nuevavizcaya-solano
+| |
+| * commit 41ec72da690955bfd5114373f42f3b9aefcb4ed9
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 15:28:58 2022 +0800
+| |
+| |     remove gdx-node-script
+| |
+* |   commit 0b7a2174d0f560af79ccce577a01be6440db835b
+|\ \  Merge: 3be1ca8c 81557648
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Wed May 11 14:59:01 2022 +0800
+| |
+| |       Merge branch 'master' into nuevavizcaya-solano
+| |
+| * commit 8155764852b0279cea4726c0f5c67b2f37b5b8f2
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 14:41:42 2022 +0800
+| |
+| |     rptis: client: updated
+| |
+| * commit 60a1450094c07a188b1f2b95f1eb890783d3d6df
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 14:28:12 2022 +0800
+| |
+| |     appserver: etracs: upgraded to 2.5.04.05.01
+| |
+* |   commit 3be1ca8cb1fed41d12c5c697226ca515bda1046f
+|\ \  Merge: 3afad8e1 765f4dde
+| |/  Author: worgflores <worgflores@gmail.com>
+| |   Date:   Wed May 11 10:01:08 2022 +0800
+| |
+| |       Merge branch 'master' into nuevavizcaya-solano
+etracs_admin@etracs_server:~/docker$ git status
+On branch nuevavizcaya-solano
+Your branch is up to date with 'origin/nuevavizcaya-solano'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/etracs/dev_modules/bpls/rameses-gov-etracs-bpls-reports-services.jar/sql/bpapplication_report.sql
+        modified:   appserver/etracs/dev_modules/bpls/rameses-gov-etracs-bpls-reports-services.jar/sql/bpapplication_report_mssql.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_bldg.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_land.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_mach.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_misc.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/faasreport_planttree.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-report-services.jar/sql/tdreport.sql
+        modified:   appserver/etracs/dev_modules/rptis/rameses-gov-etracs-rptis-services.jar/scripts/RPUService
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        appserver/etracs/modules/gov-lgu-solano-bpls-services.jar/
+        appserver/etracs/modules/gov-lgu-solano-rptis-services.jar/
+        system/download/nginx/resources/platform/Epson-L360-printer-Driver-for-windows-64-bit.exe
+        system/download/nginx/resources/platform/Epson-L360-scanner-Driver-for-windows-32-bit-and-64-bit.exe
+        system/download/nginx/resources/platform/EpsonTMU220B.zip
+        system/download/nginx/resources/platform/N91LADUDPU.txt
+        system/download/nginx/resources/platform/TouchScreen.zip
+        system/download/nginx/resources/platform/customreport.zip
+        system/download/nginx/resources/platform/jdk-8u271-windows-x64.exe
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracs_admin@etracs_server:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED         STATUS        PORTS                                                                                                                                       NAMES
+0eadba29837d   ramesesinc/etracs-server-municipality:2.5.04.05.01   "/bin/bash /apps/sta…"   21 months ago   Up 22 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+cfef504e02fc   ramesesinc/local-epayment-server:2.5.01.02.06        "/bin/bash /apps/sta…"   21 months ago   Up 22 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+1e6df57ec01a   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   21 months ago   Up 22 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+cad6b9ece28c   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   21 months ago   Up 22 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+51a247ea2d68   ramesesinc/etracs-web:2.5.02.01                      "/bin/bash /apps/sta…"   21 months ago   Up 22 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+1e54c4da9875   nginx:latest                                         "/docker-entrypoint.…"   21 months ago   Up 22 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+6063b329c005   ramesesinc/queue-server:2.5.02.01                    "/bin/bash /apps/sta…"   21 months ago   Up 22 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+bcbbe9dbbf3c   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   21 months ago   Up 22 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+931e4a31127a   nginx:latest                                         "/docker-entrypoint.…"   21 months ago   Up 22 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+6adca73c8121   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   21 months ago   Up 22 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+4fef8b9f747c   portainer/portainer                                  "/portainer"             3 years ago     Up 22 hours   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                                                   portainer
+etracs_admin@etracs_server:~/docker$

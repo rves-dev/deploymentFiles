@@ -1,0 +1,8 @@
+BOHOL_PANGLAO Issues:
+
+- Duplicate Bill Item
+
+	(Bill item from Deleted/Cancelled Bill persists)
+
+- Information regarding water reading on ledger vs etracs billing month
+

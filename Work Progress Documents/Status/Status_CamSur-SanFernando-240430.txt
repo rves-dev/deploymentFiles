@@ -1,0 +1,196 @@
+
+IT-Department@DESKTOP-QUA7QJ7 MINGW64 ~/Desktop
+$ ssh etracs@192.168.1.6
+etracs@192.168.1.6's password:
+Permission denied, please try again.
+etracs@192.168.1.6's password:
+Permission denied, please try again.
+etracs@192.168.1.6's password:
+
+
+IT-Department@DESKTOP-QUA7QJ7 MINGW64 ~/Desktop
+$ ssh etracs@192.168.1.6
+etracs@192.168.1.6's password:
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-213-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Apr 30 10:44:17 PST 2024
+
+  System load:  0.17                Users logged in:                1
+  Usage of /:   12.4% of 195.80GB   IP address for eno1:            192.168.1.6
+  Memory usage: 16%                 IP address for docker0:         172.17.0.1
+  Swap usage:   0%                  IP address for br-762fd0ceffd6: 172.25.0.1
+  Processes:    217
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+148 packages can be updated.
+1 update is a security update.
+
+
+Last login: Tue Apr 30 07:25:00 2024 from 192.168.1.102
+etracs@sfwss-server:~$ ls
+'BACKUP DOCKER'   docker-images           gitrepo            water-server.tar
+ docker           docker-old-2023-12-10   water-client.tar   zzz
+etracs@sfwss-server:~$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            23G        3.7G         18G        3.6M        1.3G         19G
+Swap:          4.0G          0B        4.0G
+etracs@sfwss-server:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 18.04.5 LTS
+Release:        18.04
+Codename:       bionic
+etracs@sfwss-server:~$ cd docker
+etracs@sfwss-server:~/docker$ git remote -v
+local   etracs@192.168.1.6:gitrepo/etracs-municipality-deployments.git (fetch)
+local   etracs@192.168.1.6:gitrepo/etracs-municipality-deployments.git (push)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+etracs@sfwss-server:~/docker$ git branch
+* camsur-sanfernando
+etracs@sfwss-server:~/docker$ git log --graph | head -100
+* commit 9debc00c30591f7aa1dc7457de6e2d42f081625a
+| Author: Elmo Nazareno <elmonazareno@Elmos-MacBook-Pro-2.local>
+| Date:   Fri Mar 15 11:14:34 2024 +0800
+|
+|     upgraded water
+|
+* commit f3b2c5b291c4ffe0f8fbc1410c314bc7ae2e62a0
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Tue Dec 12 13:33:41 2023 +0800
+|
+|     removed
+|
+*   commit 356c7c2e93efb5852b4e2110713e9cfdcdbba485
+|\  Merge: d5c75984 4f5b7147
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Dec 12 13:32:51 2023 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.03-06' into camsur-sanfernando
+| |
+| |     # Conflicts:
+| |     #       _res/_upgrade/README
+| |     #       appserver/etracs/docker-compose-ext.yml
+| |     #       appserver/etracs/docker-compose-plugins.yml
+| |     #       appserver/etracs/plugins/README
+| |     #       bin/appserver-start.sh
+| |     #       bin/start.sh
+| |     #       bin/stop.sh
+| |     #       system/download/nginx/_src/scripts/run.sh
+| |     #       system/download/plugins/README
+| |
+| *   commit 4f5b7147e1406cacf214f17aa06f44c92f356694
+| |\  Merge: 1e1716a4 6d4059f2
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Dec 12 12:55:06 2023 +0800
+| | |
+| | |     Merge remote-tracking branch 'template-main/master' into 2.5.05.03-06
+| | |
+| | |     # Conflicts:
+| | |     #       _res/bin.tar.gz
+| | |     #       _res/env.conf
+| | |     #       appserver/etracs/docker-compose-ext.yml
+| | |     #       appserver/etracs/docker-compose.yml
+| | |     #       bin/appserver-start.sh
+| | |     #       bin/email-start.sh
+| | |     #       bin/email-stop.sh
+| | |     #       bin/start.sh
+| | |     #       bin/stop.sh
+| | |     #       system/download/node/resources/downloads/pub-updates.myml
+| | |     #       system/download/node/resources/downloads/updates.myml
+| | |
+| | * commit 6d4059f2a5db350d047f129238952eac7ce8b95c
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Tue Dec 12 11:28:29 2023 +0800
+| | |
+| | |     appserver/etracs: restructured and refactored
+| | |
+| | |     system/download: removed the node folder and transferred to etracs
+| | |
+* | | commit d5c75984cb3ec0781764651c6188fb99471e3b88
+| | | Author: wflores <wflores@gmail.com>
+| | | Date:   Mon Dec 11 02:14:33 2023 +0000
+| | |
+| | |     waterworks: updated
+| | |
+* | | commit b41eb2be075442cdca3d05b62763fa560913ef90
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Mon Dec 11 09:57:23 2023 +0800
+| | |
+| | |     waterworks: updated
+| | |
+* | | commit c784bd251bc25316db859510d944db9d35e2ce7d
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Sat Dec 9 09:51:11 2023 +0800
+| | |
+| | |     reactivated the Waterworks plugin
+| | |
+* | | commit 88537dc477de3bd6fe7e2bfd4ac0853c5dd09131
+| | | Author: wflores <wflores@gmail.com>
+| | | Date:   Thu Dec 7 06:21:14 2023 +0000
+| | |
+| | |     added upgrade scripts for WATER plugin
+| | |
+* | | commit 70f98a88cd28d374896612971777b50e5fa80418
+| | | Author: wflores <wflores@gmail.com>
+| | | Date:   Thu Dec 7 06:20:45 2023 +0000
+| | |
+| | |     removed
+| | |
+* | | commit 0ea337f9ba552a5993bd6835dcf776ea09f20056
+| | | Author: wflores <wflores@gmail.com>
+| | | Date:   Thu Dec 7 05:31:00 2023 +0000
+| | |
+| | |     removed
+| | |
+* | | commit c58a2e836c26b85309b64d5217ad5555ee66de5b
+| | | Author: wflores <wflores@gmail.com>
+| | | Date:   Thu Dec 7 04:52:33 2023 +0000
+| | |
+| | |     bin: updated
+| | |
+etracs@sfwss-server:~/docker$ git status
+On branch camsur-sanfernando
+Your branch is up to date with 'origin/camsur-sanfernando'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   appserver/waterworks/modules/rameses-gov-etracs-waterworks2-services.jar/scripts/WaterworksBillService
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        system/download/nginx/resources/platform/etracs25_platform-waterworks.zip
+        system/download/nginx/resources/platform/etracs25_platform-waterworks1.rar
+        system/download/nginx/resources/platform/etracs25_platform1.rar
+        water-client.tar
+        water-server.tar
+
+no changes added to commit (use "git add" and/or "git commit -a")
+etracs@sfwss-server:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                  CREATED        STATUS                          PORTS                                                                              NAMES
+3c95e034b993   ramesesinc/enterprise-common-server:255.05.001    "/bin/bash /apps/sta…"   3 hours ago    Up 3 hours                      0.0.0.0:8076->8070/tcp                                                             waterworks-server
+efaf6cfd1a15   ramesesinc/etracs-client-municipality:2.5.05.03   "docker-entrypoint.s…"   3 hours ago    Up 3 hours                      0.0.0.0:8170->8170/tcp                                                             etracs-client
+e2360167a1cc   ramesesinc/etracs-server-municipality:2.5.05.03   "/bin/bash /apps/sta…"   3 hours ago    Up 3 hours                      0.0.0.0:8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, 8080/tcp                 etracs-server
+05701df522ee   ramesesinc/water-client:255.08.02.001             "docker-entrypoint.s…"   6 weeks ago    Restarting (1) 49 seconds ago                                                                                      water-client
+a849c11adaa7   ramesesinc/water-server:255.08.02.001             "/bin/bash /apps/sta…"   6 weeks ago    Up 3 hours                      0.0.0.0:8040->8040/tcp                                                             water-server
+02aea2dc0c62   ramesesinc/local-epayment-server:2.5.01.02.06     "/bin/bash /apps/sta…"   4 months ago   Up 3 hours                      0.0.0.0:8095->8070/tcp                                                             epayment-server
+81e3352e8e54   ramesesinc/etracs-web:2.5.02.01                   "/bin/bash /apps/sta…"   4 months ago   Up 3 hours                      0.0.0.0:8080->8080/tcp                                                             etracs-web
+47e96b09f0e9   ramesesinc/queue-server:2.5.02.01                 "/bin/bash /apps/sta…"   4 months ago   Up 3 hours                      8061/tcp, 0.0.0.0:9960->8060/tcp, 0.0.0.0:9970->8070/tcp, 0.0.0.0:9980->8080/tcp   queue-server
+f0963fcc3ffb   nginx:latest                                      "/docker-entrypoint.…"   4 months ago   Up 3 hours                      0.0.0.0:9999->80/tcp                                                               queue-proxy
+8c8a9ee13c80   nginx:latest                                      "/docker-entrypoint.…"   4 months ago   Up 3 hours                      0.0.0.0:80->80/tcp, 0.0.0.0:8000->80/tcp                                           download-server
+92f399f101b3   ramesesinc/notification-server:1.0                "docker-entrypoint.s…"   4 months ago   Up 3 hours                      0.0.0.0:7080->8080/tcp                                                             rameses-notification-server
+3b50ab2ade50   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   4 months ago   Up 3 hours                      0.0.0.0:2527->25/tcp                                                               mail-bpls
+80e246448db9   ramesesinc/mail-server:1.01                       "/usr/local/bin/dumb…"   4 months ago   Up 3 hours                      0.0.0.0:2525->25/tcp                                                               mail-primary
+88c716044b3c   portainer/portainer                               "/portainer"             3 years ago    Up 3 hours                      0.0.0.0:9000->9000/tcp                                                             portainer
+etracs@sfwss-server:~/docker$

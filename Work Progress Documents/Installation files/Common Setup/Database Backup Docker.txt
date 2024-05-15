@@ -1,74 +1,81 @@
 =============================================
-DATABASE BACK-UP - Docker
+DATABASE BACK-UP - Docker (DANAO, BOHOL)
 =============================================
 
 First things first, install the following 
 required apps on your Windows PC:
 
+- Git
+
+Optional:
+
 - Navicat for MySQL 
 - Sublime Text Editor
 
+Backup the ETRACS databases
 
-01. Inform everyone to close their ETRACS client
+1  Log-in to Server via SSH
 
-02. Shutdown the ETRACS Server
+       $ ssh osiris@192.168.5.10
 
-    02.01  Login to the Server via Git Bash
-
-           $  ssh server@server-ip
-
-    02.02  Stop ETRACS Docker Server
-
-           $  cd docker/bin
-
-           $  sh stop.sh
+       //password:   osiris@danao
 
 
-    02.03  Stop GDX Server
 
-           $  sh stop-gdx.sh
+2  Navigate to backup directory
 
-
-03. Backup the ETRACS databases
-
-    03.01  Create a backup target folder     
-
-           $ cd
-
-           $ mkdir dbbackup-20231017
-
-           $ cd dbbackup-20231017
+       $ cd db-backup
 
 
-    03.02  Backup the etracs main db
-
-           $ mysqldump --max-allowed-packet=16M -u root -p -f etracs255_lguname > etracs255_lguname.sql
+3  Create a backup target folder     
 
 
-    03.03  Backup the image db
+       $ mkdir dbbackup-20240507
 
-           $ mysqldump -u root -p -f etracs255_image > etracs255_lguname_image.sql
-
-
-    03.04  Backup the notification db
-
-           $ mysqldump -u root -p -f etracs255_notification > etracs255_lguname_notification.sql
+       $ cd dbbackup-20240507
 
 
-    03.05  Compress the backup files
+4.     Backup Databases
 
-           $  cd ..
+       4.1  Backup the etracs main db
 
-           $  tar -czvf  dbbackup-20231017tar.gz  dbbackup-20231017
+              $ mysqldump --max-allowed-packet=16M -u root -p -f etracs255_danao > etracs255_danao.sql
 
-    03.06  Exit from your SSH session
-
-           $  exit
+              //password: 255@danaO25
 
 
-    03.07  Download the compressed backup file on your Windows Desktop
+       Optional:
 
-           $  cd ~/Desktop
 
-           $  scp  server@server-ip:dbbackup-20231017.tar.gz .
+       4.2  Backup the image db
+
+              $ mysqldump -u root -p -f etracs255_image > etracs255_danao_image.sql
+
+              //password: 255@danaO25
+
+
+       4.3  Backup the notification db
+
+              $ mysqldump -u root -p -f etracs255_notification > etracs255_danao_notification.sql
+
+              //password: 255@danaO25
+
+
+5  Compress the backup files
+
+       $  cd ..
+
+       $  tar -czvf  dbbackup-20240507tar.gz  dbbackup-20240507
+
+
+6  Exit from your SSH session
+
+       $  exit
+
+
+7  Download the compressed backup file on your Windows Desktop
+
+       $  cd ~/Desktop
+
+       $  scp  server@server-ip:db-backup/dbbackup-20231017.tar.gz .
 

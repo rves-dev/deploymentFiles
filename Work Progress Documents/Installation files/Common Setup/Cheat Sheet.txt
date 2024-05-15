@@ -171,3 +171,8 @@ MINIMUM REQUIREMENTS & SETUP TYPE:
 	docker image prune -f
 
 	docker container prune -f
+
+*
+
+
+	http://{server-ip}:8070/osiris3/cache/

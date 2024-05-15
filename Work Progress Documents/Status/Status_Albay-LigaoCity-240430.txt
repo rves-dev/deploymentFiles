@@ -1,0 +1,203 @@
+
+totz@DESKTOP-MQ4EIA8 MINGW64 ~/OneDrive/Desktop
+$ ssh lguligao@192.168.2.202
+lguligao@192.168.2.202's password:
+Welcome to Ubuntu 20.04.3 LTS (GNU/Linux 5.4.0-177-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue 30 Apr 2024 05:25:38 AM UTC
+
+  System load:                      0.0
+  Usage of /:                       24.7% of 392.65GB
+  Memory usage:                     38%
+  Swap usage:                       0%
+  Processes:                        519
+  Users logged in:                  1
+  IPv4 address for br-68a16d4b1c37: 172.18.0.1
+  IPv4 address for br-709936ef6903: 172.26.0.1
+  IPv4 address for br-7656c65063b2: 192.168.48.1
+  IPv4 address for br-c3bcfc62aab3: 172.25.0.1
+  IPv4 address for br-d979f8634040: 172.24.0.1
+  IPv4 address for docker0:         172.17.0.1
+  IPv4 address for ens32:           192.168.1.9
+  IPv6 address for ens32:           2001:4454:27c:a300:20c:29ff:fe48:337
+  IPv4 address for ens33:           192.168.2.202
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+157 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+New release '22.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Tue Apr 30 00:03:30 2024 from 192.168.2.103
+lguligao@etracs-ubuntu-server:~$ cd docker
+lguligao@etracs-ubuntu-server:~/docker$ git remote -v
+origin  https://github.com/ramesesinc/etracs-city-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-city-deployments.git (push)
+lguligao@etracs-ubuntu-server:~/docker$ cat  _custom/env.conf
+lgu_name=CITY OF LIGAO
+
+app_server_ip=192.168.2.202
+
+dbserver_host=192.168.2.201
+dbserver_user=sa
+dbserver_pass=Etracsligao1
+
+channel=207
+fileupload_channel=${channel}
+
+channelgroup=etracsalbay
+filipizen_group=albay_ligao
+
+sms_acctname=207
+sms_apikey=a52a2e31f4eaa25f7485dd3ddb24e83e
+
+server_ip=192.168.2.202
+lguligao@etracs-ubuntu-server:~/docker$ git branch
+* albay-ligao
+lguligao@etracs-ubuntu-server:~/docker$ git log --graph | head -100
+* commit 28a66de04edc5020ef02e50a14d4b4689e5672d0
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Wed Feb 21 16:27:36 2024 +0800
+|
+|     DEV: rptis: 2.5.05.03: rptis and landtax jar update
+|
+* commit e17e14946bf3380c1fbed7cb1dbd3c2ff497a1b7
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Wed Feb 21 12:54:04 2024 +0800
+|
+|     DEV: rptis: 2.5.05.03 update
+|
+* commit b84befd660611e0934aa98c802181247075e028c
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Tue Feb 20 17:23:54 2024 +0800
+|
+|     DEV: rptis: 2.5.05.03: mount services and client
+|
+* commit 0f3d176dd60ccd2d7cbd509ff254aea3209b0fe5
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Tue Feb 13 11:26:19 2024 +0800
+|
+|     DEV: landtax: report: fix statement of share period
+|
+* commit c5046c30ecb552e8c3ec08cf0afea45d5a63b6f8
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Tue Feb 6 12:10:01 2024 +0800
+|
+|     DEV: rptis: fix mounted services folder
+|
+* commit 6701dc0d15c883687023c3a8671a168b36c11596
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Tue Feb 6 11:51:40 2024 +0800
+|
+|     DEV: rptis: exppose services
+|
+* commit 4c2a5c4fd0b0a4ef82c2ddf26a979357a201c2eb
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Tue Feb 6 11:37:13 2024 +0800
+|
+|     DEV: landtax: mount landtax-services
+|
+* commit 487a54c8ae8f2c796e6bc8675c49585193cfb968
+| Author: Jessie S. Zamora <jzamss@gmail.com>
+| Date:   Mon Feb 5 16:38:42 2024 +0800
+|
+|     UPGRADE: rptis: 2.5.05.03
+|
+* commit e59d5ef0170fb954080d76917eb8a5f069e5c699
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jan 18 08:50:14 2024 +0800
+|
+|     comis: updated
+|
+* commit 5f3e01cbb1d89f35561fb8303261ea8bed406c28
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Wed Jan 17 13:12:54 2024 +0800
+|
+|     added upgrade script
+|
+*   commit 93c2fc8533490593adca21b2c2375f85ff3fb55c
+|\  Merge: 1918ed64 88f23ba1
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Jan 17 13:11:31 2024 +0800
+| |
+| |     Merge remote-tracking branch 'origin/2.5.05.03-09b' into albay-ligao
+| |
+| |     # Conflicts:
+| |     #       appserver/etracs/docker-compose-ext.yml
+| |     #       appserver/etracs/docker-compose.yml
+| |     #       bin/start.sh
+| |     #       bin/stop.sh
+| |     #       system/download/docker-compose-ext.yml
+| |     #       system/download/docker-compose.yml
+| |
+| * commit 88f23ba1a8a24468e12e857d7850313cbc68a3e4
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jan 16 08:43:15 2024 +0800
+| |
+| |     etracs: upgraded to 2.5.05.03-09b
+| |
+| * commit b4496e695f0dc768e546c26eb6c2fbae88a23bb9
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jan 16 08:33:33 2024 +0800
+| |
+| |     etracs: upgraded to 2.5.05.03-10
+| |
+| * commit 69b46d85b40e415af4be3d6d8eaf92a3268b1063
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Tue Jan 16 08:32:13 2024 +0800
+| |
+| |     bpls: bug fixed on BusinessApplicationRenewInterceptor
+| |
+| *   commit 48709dc913a2898cc5425af6dc15a1804503c711
+| |\  Merge: 110f1610 c25ad360
+| | | Author: worgflores <worgflores@gmail.com>
+| | | Date:   Fri Jan 12 12:39:43 2024 +0800
+| | |
+| | |     Merge remote-tracking branch 'template-main/master' into 2.5.05.03-09
+| | |
+lguligao@etracs-ubuntu-server:~/docker$ git status
+On branch albay-ligao
+Your branch is up to date with 'origin/albay-ligao'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   appserver/etracs/dev_modules/rptis-2.5.05.03/server/rameses-gov-etracs-rptis-landtax-services.jar/sql/rptreceipt.sql
+        modified:   appserver/etracs/dev_modules/rptis-2.5.05.03/server/rameses-gov-etracs-rptis-report-services.jar/scripts/RPTReportTMCRService
+        modified:   appserver/etracs/dev_modules/rptis-2.5.05.03/server/rameses-gov-etracs-rptis-report-services.jar/sql/rptreport_tmcr.sql
+
+no changes added to commit (use "git add" and/or "git commit -a")
+lguligao@etracs-ubuntu-server:~/docker$ docker ps -a
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED        STATUS       PORTS                                                                                                                                       NAMES
+fe70a616b9a1   ramesesinc/enterprise-common-server:255.05.001   "/bin/bash /apps/sta…"   5 hours ago    Up 5 hours   0.0.0.0:8074->8070/tcp, :::8074->8070/tcp                                                                                                   comis-server
+680b20f3022f   ramesesinc/etracs-server-city:2.5.05.03          "/bin/bash /apps/sta…"   5 hours ago    Up 5 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+23f35a38e27f   ramesesinc/etracs-client-city:2.5.05.03          "docker-entrypoint.s…"   5 hours ago    Up 5 hours   0.0.0.0:8170->8170/tcp, :::8170->8170/tcp                                                                                                   etracs-client
+d3892b73d68c   nginx:latest                                     "/docker-entrypoint.…"   2 months ago   Up 5 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-server
+388f4ff39d24   ramesesinc/gdx-client:1.05                       "/bin/bash /apps/sta…"   3 months ago   Up 5 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+8a9a423d31a2   ramesesinc/gdx-proxy-server:v006                 "/docker-entrypoint.…"   3 months ago   Up 5 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+c0f3476fd8ee   ramesesinc/enterprise-common-server:255.05.001   "/bin/bash /apps/sta…"   3 months ago   Up 5 hours   0.0.0.0:8077->8070/tcp, :::8077->8070/tcp                                                                                                   local-vrs-server
+9b49eea41f76   ramesesinc/local-epayment-server:2.5.01.02.06    "/bin/bash /apps/sta…"   3 months ago   Up 5 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+9f911bb61205   ramesesinc/etracs-web:2.5.02.01                  "/bin/bash /apps/sta…"   3 months ago   Up 5 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+22111efd9cee   nginx:latest                                     "/docker-entrypoint.…"   3 months ago   Up 5 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+905e355c9dea   ramesesinc/queue-server:2.5.02.01                "/bin/bash /apps/sta…"   3 months ago   Up 5 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+5b2b53e98414   ramesesinc/notification-server:1.0               "docker-entrypoint.s…"   3 months ago   Up 5 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+f0ff9a7e8b92   ramesesinc/mail-server:1.01                      "/usr/local/bin/dumb…"   3 months ago   Up 5 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+d8050bde8364   ramesesinc/mail-server:1.01                      "/usr/local/bin/dumb…"   3 months ago   Up 5 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+a3d1afd2a1be   stilliard/pure-ftpd:latest                       "/bin/sh -c '/run.sh…"   2 years ago    Up 5 hours   0.0.0.0:21->21/tcp, :::21->21/tcp, 0.0.0.0:30000-30020->30000-30020/tcp, :::30000-30020->30000-30020/tcp                                    ftpd
+d0af1a944c2f   portainer/portainer                              "/portainer"             2 years ago    Up 5 hours   0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                                                   portainer
+lguligao@etracs-ubuntu-server:~/docker$ exit
+logout
+Connection to 192.168.2.202 closed.
+
+totz@DESKTOP-MQ4EIA8 MINGW64 ~/OneDrive/Desktop
+$

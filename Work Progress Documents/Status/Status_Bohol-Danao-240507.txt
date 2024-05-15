@@ -1,0 +1,144 @@
+
+User@Adohr-Laptop MINGW64 ~/Desktop
+$ ssh osiris@192.168.5.10
+osiris@192.168.5.10's password:
+Web console: https://danao.localdomain:9090/ or https://192.168.5.10:9090/
+
+Last login: Tue May  7 10:08:41 2024 from 192.168.5.4
+[osiris@danao ~]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           30Gi       3.8Gi        24Gi        13Mi       2.2Gi        26Gi
+Swap:         7.6Gi          0B       7.6Gi
+[osiris@danao ~]$ cd docker
+[osiris@danao docker]$ git remote -v
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (fetch)
+origin  https://github.com/ramesesinc/etracs-municipality-deployments.git (push)
+[osiris@danao docker]$ git branch
+* bohol-danao
+[osiris@danao docker]$ git log --graph | head -100
+* commit c1e85709fbc7fa73e5bf80378f23b083d71830d8
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jan 26 10:39:44 2023 +0800
+|
+|     etracs: added CTC plugin
+|
+* commit ec76f1b6806cdf37e5dd0d560943cf05453cb64e
+| Author: worgflores <worgflores@gmail.com>
+| Date:   Thu Jan 26 10:37:33 2023 +0800
+|
+|     etracs: added eor adapter
+|
+*   commit 6f8e48fe76552740a642b712068cdeda510670a4
+|\  Merge: 375f7da4 6039155e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Jun 1 13:28:56 2022 +0800
+| |
+| |     Merge branch 'master' into bohol-danao
+| |
+| * commit 6039155e619515cdd224878b7de86000e030993a
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed Jun 1 13:21:33 2022 +0800
+| |
+| |     bpls: fixed sql files for reserved keywords
+| |
+* | commit 375f7da40f82ec7c28a138ed5fe45aba5ce6d31e
+|\| Merge: 391f32d9 41ec72da
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 15:29:22 2022 +0800
+| |
+| |     Merge branch 'master' into bohol-danao
+| |
+| * commit 41ec72da690955bfd5114373f42f3b9aefcb4ed9
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 15:28:58 2022 +0800
+| |
+| |     remove gdx-node-script
+| |
+* | commit 391f32d92684e53dc0313e32cba9d021be3e2280
+|\| Merge: 9ed90db4 81557648
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 14:45:15 2022 +0800
+| |
+| |     Merge branch 'master' into bohol-danao
+| |
+| * commit 8155764852b0279cea4726c0f5c67b2f37b5b8f2
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 14:41:42 2022 +0800
+| |
+| |     rptis: client: updated
+| |
+| * commit 60a1450094c07a188b1f2b95f1eb890783d3d6df
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 14:28:12 2022 +0800
+| |
+| |     appserver: etracs: upgraded to 2.5.04.05.01
+| |
+* | commit 9ed90db43283f8d91be1a0b7b6500430285d151a
+|\| Merge: 12633a40 765f4dde
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 09:39:09 2022 +0800
+| |
+| |     Merge branch 'master' into bohol-danao
+| |
+| * commit 765f4dde134157ae549ad2c9d0461aa5387d9ae1
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 11 09:22:46 2022 +0800
+| |
+| |     updates
+| |
+| |     - OrgLookupService
+| |     - ItemAccountInterceptor
+| |     - Collector Cashbook
+| |     - DepositSlipService
+| |     - CashReceiptInterceptor
+| |     - client: core: updated
+| |     - client: shared: updated
+| |     - client: treasury: updated
+| |
+| * commit 65bb056661d2b25f6d0654406e57b6d9ff45cc89
+| | Author: Jessie S. Zamora <jzamss@gmail.com>
+| | Date:   Thu May 5 09:31:06 2022 +0800
+| |
+| |     DEV_MODULES: version rptis-250404
+| |
+* | commit 12633a408d406d3f27374f07cdac24121cb33b76
+|\| Merge: 52794b19 8f8b822e
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 4 17:11:02 2022 +0800
+| |
+| |     Merge branch 'master' into bohol-danao
+| |
+| * commit 8f8b822e808a46256f84d1999c6677e3e2d421c7
+| | Author: worgflores <worgflores@gmail.com>
+| | Date:   Wed May 4 17:09:49 2022 +0800
+| |
+| |     updates
+| |
+| |     - client: core: updated
+| |     - client: etracs: updated
+[osiris@danao docker]$ git status
+On branch bohol-danao
+Your branch is up to date with 'origin/bohol-danao'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        system/download/nginx/resources/platform/jdk-8u271-windows-i586.exe
+        system/download/nginx/resources/platform/jdk-8u271-windows-x64.exe
+
+nothing added to commit but untracked files present (use "git add" to track)
+[osiris@danao docker]$ docker ps -a
+CONTAINER ID   IMAGE                                                COMMAND                  CREATED         STATUS        PORTS                                                                                                                                       NAMES
+06e6d80d662e   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   7 months ago    Up 19 hours   0.0.0.0:2527->25/tcp, :::2527->25/tcp                                                                                                       mail-bpls
+9e33a1366771   ramesesinc/mail-server:1.01                          "/usr/local/bin/dumb…"   7 months ago    Up 19 hours   0.0.0.0:2525->25/tcp, :::2525->25/tcp                                                                                                       mail-primary
+00f63797739a   ramesesinc/etracs-server-municipality:2.5.04.05.01   "/bin/bash /apps/sta…"   15 months ago   Up 19 hours   0.0.0.0:8060-8061->8060-8061/tcp, :::8060-8061->8060-8061/tcp, 0.0.0.0:8070->8070/tcp, :::8070->8070/tcp, 8080/tcp                          etracs-server
+3a48b80a975d   ramesesinc/gdx-proxy-server:v004                     "/docker-entrypoint.…"   15 months ago   Up 19 hours   0.0.0.0:7000->80/tcp, 0.0.0.0:8500->80/tcp, :::7000->80/tcp, :::8500->80/tcp                                                                gdx-proxy-server
+229cba6dd7ce   ramesesinc/gdx-client:1.04.03                        "/bin/bash /apps/sta…"   15 months ago   Up 19 hours   0.0.0.0:8571->8571/tcp, :::8571->8571/tcp                                                                                                   gdx-client
+797d383619e0   ramesesinc/local-epayment-server:2.5.01.02.06        "/bin/bash /apps/sta…"   15 months ago   Up 19 hours   0.0.0.0:8095->8070/tcp, :::8095->8070/tcp                                                                                                   epayment-server
+9c9925e8de17   ramesesinc/etracs-web:2.5.02.01                      "/bin/bash /apps/sta…"   15 months ago   Up 19 hours   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                                   etracs-web
+29b496a5150d   ramesesinc/queue-server:2.5.02.01                    "/bin/bash /apps/sta…"   15 months ago   Up 19 hours   8061/tcp, 0.0.0.0:9960->8060/tcp, :::9960->8060/tcp, 0.0.0.0:9970->8070/tcp, :::9970->8070/tcp, 0.0.0.0:9980->8080/tcp, :::9980->8080/tcp   queue-server
+a5ca844acf9b   nginx:latest                                         "/docker-entrypoint.…"   15 months ago   Up 19 hours   0.0.0.0:9999->80/tcp, :::9999->80/tcp                                                                                                       queue-proxy
+3e3cde9e4321   nginx:latest                                         "/docker-entrypoint.…"   15 months ago   Up 19 hours   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:8000->80/tcp, :::8000->80/tcp                                                                    download-nginx-server
+8448e3e76494   ramesesinc/node-download-server:0.0.3                "docker-entrypoint.s…"   15 months ago   Up 19 hours   0.0.0.0:8001->8000/tcp, :::8001->8000/tcp                                                                                                   download-node-server
+1e5afd03ac36   ramesesinc/notification-server:1.0                   "docker-entrypoint.s…"   15 months ago   Up 19 hours   0.0.0.0:7080->8080/tcp, :::7080->8080/tcp                                                                                                   rameses-notification-server
+a831d0cdc1f3   portainer/portainer-ce                               "/portainer"             2 years ago     Up 19 hours   8000/tcp, 9443/tcp, 0.0.0.0:9000->9000/tcp, :::9000->9000/tcp                                                                               portainer
+[osiris@danao docker]$
